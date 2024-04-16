@@ -20,18 +20,27 @@
     </header>
     <main>
         <section>
-            <!--<table border="1">
-                <tr>
-                    <th>Chave</th>
-                    <th>Valor</th>
-                </tr>
-                {% for key, value in data.items() %}
-                <tr>
-                    <td>{{ key }}</td>
-                    <td>{{ value }}</td>
-                </tr>
-                {% endfor %}
-            </table>  -->
+            <div class="container text-center">
+                <h2> Exemplo:  {{ titulo}} </h2>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Nome</th>
+                      <th>Quantidade</th>
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for produto in catalogo%}
+                       <tr>
+                            <td>{{produto.nome}}</td>
+                            <td>{{produto.quantidade}}</td>
+                       </tr>
+                  {%endfor%}          
+                  
+                </tbody>
+                </table>
+              </div>
             
         </section>
     </main>

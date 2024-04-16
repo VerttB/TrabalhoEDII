@@ -1,10 +1,10 @@
 
 :root{
     --cor-de-fundo: rgb(255, 255, 255);
-    --cor-barra: rgb(10, 9, 9);
-    --cor-texto: white;
-    --cor-texto-hover: grey;
-    --cor-titulo: rgb(0, 0, 0);
+    --cor-barra: rgb(114, 134, 211);
+    --cor-texto:rgb(255, 242, 242);
+    --cor-texto-hover: rgb(229, 224, 255);
+    --cor-titulo: rgb(142, 167, 233);
 }
 
 .mudar-tema{
@@ -80,7 +80,7 @@ body{
 .conteudo{
     width: 80%;
     margin-left: 10%;
-    background-color: grey;
+    /* background-color: grey; */
     display: flex;
     flex-direction: column;
 }
