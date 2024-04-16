@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/indexStyle.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/indexStyle.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <ul class="cabecalho__lista">
+            <li><a class="cabecalho__lista__link" href={{url_for('principal')}}>Home</a></li>
+            <li><a class="cabecalho__lista__link" href={{url_for('about')}}>About us</a></li>
+            <li><a class="cabecalho__lista__link" href={{url_for('catalogo')}}>Catalogo</a></li>
+        </ul>
+    <div class="cabecalho__extras">
+        <button class="cabecalho__extras__Download button" onclick="">Download</button>
+        <button  id="changeTheme" class="cabecalho__extras__Cor button">Mudar Tema</button>
+    </div>
+    </header>
+    <main>
+        <section class="conteudo">
+            <h1 class="conteudo__titulo">Trabalho de ED II - Estrutura de Dados II</h1>
+            <p class="conteudo__texto"> O objetivo do trabalho é desenvolver um site de e-commerse em 3 etapas, incluindo os conceitos de organização de arquivos,
+                como uma aplicação Web, utilizando o framework Flask</p>
+            <p class="conteudo__texto">O trabalho divido em 3 etapas, onde na 1º etapa deve ser criado um tipo de catálogo
+                online, onde aqueles que entrarem na aplicação WEB poderão ver diversos produtos disponíveis, fazer consultas 
+                desses produtos e compras.
+                Os produtos virão de um dicionário feito em python.
+            </p>
+            <p class="conteudo__texto">Na 2ª etapa o objetivo será criar arquivos indexados utilizando árvores do tipo B
+            para registrar as vendas feitas no site></p>
+            <p class="conteudo__texto">Na 3ª etapa, utilizando dos conhecimentos de grafos deve ser criado
+                um sistema de entrega de produtos, que seja capaz de calcular as rotas, informando ao cliente o preço do frete
+            e tempo estimado de entrega </p>
+        </section>
+    </main>
+
+    <script>
+        document.querySelector("#changeTheme").addEventListener("click", () => {
+        document.body.classList.toggle("mudar-tema");
+});
+
+</script>
+</body>
+</html>

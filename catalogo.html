@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/indexStyle.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <ul class="cabecalho__lista">
+            <li><a class="cabecalho__lista__link" href={{url_for('principal')}}>Home</a></li>
+            <li><a class="cabecalho__lista__link" href={{url_for('about')}}>About us</a></li>
+            <li><a class="cabecalho__lista__link" href={{url_for('catalogo')}}>Catalogo</a></li>
+           
+        </ul>
+        <div class="cabecalho__extras">
+            <button class="cabecalho__extras__Download button" onclick="">Download</button>
+            <button id="changeTheme" class="cabecalho__extras__Cor button">Mudar Tema</button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <!--<table border="1">
+                <tr>
+                    <th>Chave</th>
+                    <th>Valor</th>
+                </tr>
+                {% for key, value in data.items() %}
+                <tr>
+                    <td>{{ key }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+                {% endfor %}
+            </table>  -->
+            
+        </section>
+    </main>
+    <script>
+        document.querySelector("#changeTheme").addEventListener("click", () => {
+        document.body.classList.toggle("mudar-tema");
+});
+</script>
+</body>
+</html>
