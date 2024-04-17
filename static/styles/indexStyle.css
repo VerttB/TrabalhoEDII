@@ -1,16 +1,18 @@
 
 :root{
     --cor-de-fundo: rgb(255, 255, 255);
-    --cor-barra: rgb(114, 134, 211);
-    --cor-texto:rgb(255, 242, 242);
+    --cor-barra: rgb(25, 4, 130);
+    --cor-texto-barra:rgb(255, 242, 242);
+    --cor-texto: black;
     --cor-texto-hover: rgb(229, 224, 255);
-    --cor-titulo: rgb(142, 167, 233);
+    --cor-titulo: black;
 }
 
 .mudar-tema{
     --cor-de-fundo: rgb(34, 40, 49);
     --cor-barra: rgb(49, 54, 63);
-    --cor-texto: rgb(238, 238, 238);
+    --cor-texto-barra: rgb(238, 238, 238);
+    --cor-texto: white;
     --cor-texto-hover: rgb(118, 171, 174);
     --cor-titulo: rgb(238, 238, 238);
 }
@@ -45,9 +47,10 @@ body{
 
 .cabecalho__lista__link{
     text-align: center;
-    color: var(--cor-texto);
+    color: var(--cor-texto-barra);
     padding: 15 0 0 10;
     text-decoration: none;
+    font-weight: 700;
 }
 .cabecalho__lista__link:hover{
     color:var(--cor-texto-hover);
@@ -63,7 +66,7 @@ body{
     margin-right: 1rem;
 }
 .button{
-    
+    font-weight: bold;
     cursor: pointer;
     height: 3em;
     border-radius: 10px;
@@ -97,5 +100,5 @@ body{
     width: 60%;
     color: var(--cor-texto);
     font-size: 2em;
-    font-weight:600;
+    font-weight:500;
 }

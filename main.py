@@ -2,14 +2,8 @@ from flask import Flask,url_for,render_template
 import os
 
 # inicializaçaõ
-app = Flask(__name__)
 
-diretorio_atual = os.path.dirname(os.path.abspath(__file__))
-
-# Configurar o diretório de templates para o diretório atual
-app.jinja_loader.searchpath = diretorio_atual
-# rotas
-app.static_folder = 'static'
+app = Flask(__name__, template_folder='templates', static_folder='static')
 
 @app.route('/')
 def principal():
