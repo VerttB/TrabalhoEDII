@@ -6,18 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="cabecalho">
-        <ul class="cabecalho__lista">
-            <li><a class="cabecalho__lista__link" href={{url_for('principal')}}>Home</a></li>
-            <li><a class="cabecalho__lista__link" href={{url_for('about')}}>About us</a></li>
-            <li><a class="cabecalho__lista__link" href={{url_for('catalogo')}}>Catalogo</a></li>
-           
-        </ul>
-        <div class="cabecalho__extras">
-            <button class="cabecalho__extras__Download button" onclick="">Download</button>
-            <button id="changeTheme" class="cabecalho__extras__Cor button">Mudar Tema</button>
-        </div>
-    </header>
+  {% extends "header.html" %}
+{%block content%}
     <main>
         <section>
             <div class="container text-center">
@@ -49,5 +39,6 @@
         document.body.classList.toggle("mudar-tema");
 });
 </script>
+{%endblock%}
 </body>
 </html>

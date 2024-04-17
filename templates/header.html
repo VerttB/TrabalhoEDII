@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/indexStyle.css') }}">
+    <title>Document</title>
+</head>
+<header class="cabecalho">
+    <div class="cabecalho__empresa">
+        <h1 class="cabecalho__empresa__titulo">DrugStores</h1>
+
+    </div>
+    <ul class="cabecalho__lista">
+        <li><a class="cabecalho__lista__link" href={{url_for('principal')}}>Home</a></li>
+        <li><a class="cabecalho__lista__link" href={{url_for('about')}}>About us</a></li>
+        <li><a class="cabecalho__lista__link" href={{url_for('catalogo')}}>Catalogo</a></li>
+       
+    </ul>
+    <div class="cabecalho__extras">
+        <button class="cabecalho__extras__Download button" onclick="">Download</button>
+        <button id="changeTheme" class="cabecalho__extras__Cor button">Mudar Tema</button>
+    </div>
+</header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
