@@ -32,4 +32,5 @@ def about():
 
 
 #execução
+print("iae alysson")
 app.run(debug = True)
