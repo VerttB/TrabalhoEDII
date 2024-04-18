@@ -23,19 +23,24 @@
     
     <main>
         <section class="conteudo">
-            <h1 class="conteudo__titulo">Trabalho de ED II - Estrutura de Dados II</h1>
-            <p class="conteudo__texto"> O objetivo do trabalho é desenvolver um site de e-commerse em 3 etapas, incluindo os conceitos de organização de arquivos,
+            <div class="conteudo__informacoes">
+            <h1 class="conteudo__informacoes__titulo">Trabalho de ED II - Estrutura de Dados II</h1>
+            <p class="conteudo__informacoes__texto"> O objetivo do trabalho é desenvolver um site de e-commerse em 3 etapas, incluindo os conceitos de organização de arquivos,
                 como uma aplicação Web, utilizando o framework Flask</p>
-            <p class="conteudo__texto">O trabalho divido em 3 etapas, onde na 1º etapa deve ser criado um tipo de catálogo
+            <p class="conteudo__informacoes__texto">O trabalho divido em 3 etapas, onde na 1º etapa deve ser criado um tipo de catálogo
                 online, onde aqueles que entrarem na aplicação WEB poderão ver diversos produtos disponíveis, fazer consultas 
                 desses produtos e compras.
                 Os produtos virão de um dicionário feito em python.
             </p>
-            <p class="conteudo__texto">Na 2ª etapa o objetivo será criar arquivos indexados utilizando árvores do tipo B
+            <p class="conteudo__informacoes__texto">Na 2ª etapa o objetivo será criar arquivos indexados utilizando árvores do tipo B
             para registrar as vendas feitas no site></p>
-            <p class="conteudo__texto">Na 3ª etapa, utilizando dos conhecimentos de grafos deve ser criado
+            <p class="conteudo__informacoes__texto">Na 3ª etapa, utilizando dos conhecimentos de grafos deve ser criado
                 um sistema de entrega de produtos, que seja capaz de calcular as rotas, informando ao cliente o preço do frete
             e tempo estimado de entrega </p>
+        </div>
+        <div class="contudo__imageem">
+        <img class="conteudo__imagem__img" src="{{ url_for('static', filename='assets/imagem-remedios.png') }}" alt="imagem">
+    </div>
         </section>
     </main>
 
@@ -46,5 +51,6 @@
 
 </script>
 {% endblock %}
+
 </body>
 </html>

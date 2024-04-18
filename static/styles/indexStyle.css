@@ -1,6 +1,6 @@
 
 :root{
-    --cor-de-fundo: rgb(111, 139, 170);
+    --cor-de-fundo: rgb(240, 209, 209);
     --cor-barra: rgb(45, 58, 177);
     --cor-texto-barra:rgb(255, 242, 242);
     --cor-texto: black;
@@ -91,23 +91,40 @@ body{
 
 .conteudo{
     background-color: var(--cor-de-fundo);
+    margin-left: 5%;
     display: flex;
-    flex-direction: column;
-    margin-left: 10%;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.conteudo__titulo{
+.conteudo__informacoes{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
+
+.conteudo__informacoes__titulo{
     font-size: 3em;
     color: var(--cor-titulo);
     font-weight:600;
 
 }
 
-.conteudo__texto{
+.conteudo__informacoes__texto{
     text-align: justify;
     width: 60%;
     color: var(--cor-texto);
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight:500;
-    
+}
+.conteudo__imagem{
+    margin-right: 10%;
+}
+.conteudo__imagem__img{
+    height: 80vh;
+}
+
+.about{
+    flex-direction: column;
 }
