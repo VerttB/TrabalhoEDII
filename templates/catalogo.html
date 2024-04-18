@@ -9,7 +9,7 @@
   {% extends "header.html" %}
 {%block content%}
     <main>
-        <section>
+        <section class="conteudo catalogo">
             <div class="container text-center">
                 <h2> Exemplo:  {{ titulo}} </h2>
                 <table class="table table-bordered">
@@ -17,6 +17,7 @@
                     <tr>
                       <th>Nome</th>
                       <th>Quantidade</th>
+                      <th>Preço</th>
                       
                     </tr>
                   </thead>
@@ -25,13 +26,15 @@
                        <tr>
                             <td>{{produto.nome}}</td>
                             <td>{{produto.quantidade}}</td>
+                            <td>{{produto.preco}}
                        </tr>
                   {%endfor%}          
                   
                 </tbody>
                 </table>
               </div>
-            
+    
+    
         </section>
     </main>
     <script>

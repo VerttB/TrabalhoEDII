@@ -13,9 +13,9 @@ def principal():
 def catalogo():
     titulo= "Catalogo"
     catalogo = [
-        {"nome": "Cadeira", "quantidade": 8},
-        {"nome": "Cafeteira", "quantidade": 4},
-        {"nome": "Mixer", "quantidade": 6},
+        {"nome": "Cadeira", "quantidade": 8, "preco" : 10},
+        {"nome": "Cafeteira", "quantidade": 4, "preco" : 20},
+        {"nome": "Mixer", "quantidade": 6, "preco" : 30},
     ]
     return render_template('catalogo.html', titulo = titulo, catalogo = catalogo)
 

@@ -112,8 +112,8 @@ body{
 }
 
 .conteudo__informacoes__texto{
-    text-align: justify;
-    width: 60%;
+    text-align:left;
+    /* width: 80%; */
     color: var(--cor-texto);
     font-size: 1.75rem;
     font-weight:500;
@@ -127,4 +127,33 @@ body{
 
 .about{
     flex-direction: column;
+}
+
+.catalogo{
+    width: 100%;
+    margin-left: 0;
+    align-content: center;
+}
+th{
+    background-color: #04AA6D;
+    height: 50px;
+    width: 100px;
+    color: var(--cor-texto);
+}
+.table{
+    border-collapse: collapse;
+    
+}
+
+th,td{
+    text-align: center;
+}
+
+tr:hover{
+    background-color: rgb(209, 236, 245);
+}
+.table, thead, th,td{
+    border: 2px solid black;
+    width: 50%;
+    
 }
