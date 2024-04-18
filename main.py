@@ -1,4 +1,4 @@
-from flask import Flask,url_for,render_template
+from flask import Flask,url_for,render_template,send_file
 import os
 
 # inicializaçaõ
@@ -22,6 +22,11 @@ def catalogo():
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+@app.route('/download')
+def download():
+    path = 'arquivos/teste.txt'
+    return send_file(path, as_attachment=True)
 
 # @app.route('/index')
 # def sobre3():
