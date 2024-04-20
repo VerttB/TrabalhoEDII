@@ -1,4 +1,4 @@
-dict = {}
+import json
 
 def adicionarProduto():
     pass
@@ -8,7 +8,10 @@ def atualizarPesquisa():
     pass
 def modificarProduto():
     pass
-def criarArquivo():
+def atualizarArquivo():
     pass
 def lerArquivo():
-    pass
+    dados = {}
+    with open('arquivos/teste.json', 'r') as arquivo:
+        dados = json.load(arquivo)
+    return dados

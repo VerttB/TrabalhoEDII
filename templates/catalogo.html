@@ -2,19 +2,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/reset.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/indexStyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/catalogo.css')}}">
     <title>Document</title>
 </head>
+
 <body>
   {% extends "header.html" %}
 {%block content%}
     <main>
-        <section class="conteudo catalogo">
-            <div class="container text-center">
+        <section class="conteudo__catalogo">
+            <div class="conteudo__catalogo__tabela">
                 <h2> Exemplo:  {{ titulo}} </h2>
                 <table class="table table-bordered">
                   <thead>
                     <tr>
+                      <th>Id</th>
                       <th>Nome</th>
                       <th>Quantidade</th>
                       <th>Preço</th>
@@ -22,19 +26,18 @@
                     </tr>
                   </thead>
                   <tbody>
-                  {% for produto in catalogo%}
+                  {% for produto_id,produto_itens in catalogo.items() %}
                        <tr>
-                            <td>{{produto.nome}}</td>
-                            <td>{{produto.quantidade}}</td>
-                            <td>{{produto.preco}}
+                            <td>{{produto_id}}</td>
+                            <td>{{produto_itens['nome']}}</td>
+                            <td>{{produto_itens['quantidade']}}</td>
+                            <td>{{produto_itens['preco']}}
                        </tr>
                   {%endfor%}          
                   
                 </tbody>
                 </table>
               </div>
-    
-    
         </section>
     </main>
     <script>

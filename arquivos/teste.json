@@ -1,0 +1,17 @@
+{
+    "1": {
+        "nome": "Paracetamol",
+        "quantidade": 100,
+        "preco": 12.99
+    },
+    "2": {
+        "nome": "Dipirona",
+        "quantidade": 80,
+        "preco": 8.50
+    },
+    "3": {
+        "nome": "Omeprazol",
+        "quantidade": 60,
+        "preco": 18.75
+    }
+}

@@ -1,0 +1,19 @@
+:root{
+    --cor-de-fundo: rgb(185, 184, 184);
+    --cor-barra: rgb(45, 58, 177);
+    --cor-texto-barra:rgb(255, 242, 242);
+    --cor-texto: black;
+    --cor-texto-hover: rgb(229, 224, 255);
+    --cor-titulo-barra: rgb(255, 242, 242);
+    --cor-titulo: black;
+}
+
+.mudar-tema{
+    --cor-de-fundo: rgb(34, 40, 49);
+    --cor-barra: rgb(49, 54, 63);
+    --cor-texto-barra: rgb(238, 238, 238);
+    --cor-texto: white;
+    --cor-texto-hover: rgb(118, 171, 174);
+    --cor-titulo-barra: rgb(238, 238, 238);
+    --cor-titulo: rgb(238, 238, 238);
+}

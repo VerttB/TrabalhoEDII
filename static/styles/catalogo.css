@@ -1,0 +1,49 @@
+@import url("variaveis.css");
+
+
+.catalogo__catalogo{
+    
+    display: grid;
+    justify-content: center; 
+    align-items: center; 
+    position: relative;
+    width: 100%;
+
+}
+
+.conteudo__catalogo__tabela{
+
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+   
+}
+th{
+    background-color: rgb(197, 189, 189);
+    height: 50px;
+    width: 100px;
+    color: var(--cor-texto);
+}
+.table{
+    border-collapse: collapse;
+    
+}
+
+th,td{
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: #858383;
+}
+tr:hover{
+    background-color: rgb(209, 236, 245);
+}
+.table, thead, th,td{
+    border: 2px solid black;
+    width: 50%;
+}
