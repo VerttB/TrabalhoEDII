@@ -13,25 +13,29 @@
 {%block content%}
     <main>
         <section class="conteudo__catalogo">
-            <div class="conteudo__catalogo__tabela">
+            <div class="conteudo__catalogo__tabela bloco">
                 <h2> Exemplo:  {{ titulo}} </h2>
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th>Id</th>
-                      <th>Nome</th>
-                      <th>Quantidade</th>
-                      <th>Preço</th>
+                      <th id="thead__Id" >Id</th>
+                      <th id="thead__nome">Nome</th>
+                      <th id="thead__quantidade">Quantidade</th>
+                      <th id="thread__preco">Preço</th>
+                      <th id="thead__descricao">Descrição</th>
                       
                     </tr>
                   </thead>
+                    
                   <tbody>
                   {% for produto_id,produto_itens in catalogo.items() %}
                        <tr>
                             <td>{{produto_id}}</td>
                             <td>{{produto_itens['nome']}}</td>
                             <td>{{produto_itens['quantidade']}}</td>
-                            <td>{{produto_itens['preco']}}
+                            <td>{{produto_itens['preco']}}</td>
+                            <td>{{produto_itens['descricao']}}</td>
+                            
                        </tr>
                   {%endfor%}          
                   

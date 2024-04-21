@@ -27,7 +27,7 @@ def about():
 
 @app.route('/download')
 def download():
-    path = 'arquivos/teste.txt'
+    path = 'arquivos/teste.json'
     return send_file(path, as_attachment=True)
 
 # @app.route('/lerTexto', methods=['POST'])
