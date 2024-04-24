@@ -1,14 +1,8 @@
 @import url("variaveis.css");
 
-
-.catalogo__catalogo{
-    
-    display: grid;
-    justify-content: center; 
-    align-items: center; 
-    position: relative;
-    width: 100%;
-
+.conteudo__catalogo__tabela{
+   overflow: auto; 
+   padding-bottom: 50px;
 }
 
 th{
@@ -19,7 +13,6 @@ th{
 }
 .table{
     border-collapse: collapse;
-    
 }
 
 th,td{
