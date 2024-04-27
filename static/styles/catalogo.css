@@ -1,38 +1,59 @@
 @import url("variaveis.css");
 
+
+.conteudo__catalogo{
+    background-color: var(cor-de-fundo);
+}
 .conteudo__catalogo__tabela{
    overflow: auto; 
    padding-bottom: 50px;
+ 
+   
 }
 
 th{
-    background-color: rgb(197, 189, 189);
+    background-color: var(--cor-tabela-head);
     height: 50px;
     width: 100px;
     color: var(--cor-texto);
 }
-.table{
-    border-collapse: collapse;
+
+th:first-child{
+    border-top-left-radius: 16px;
+}
+th:last-child{
+    border-top-right-radius: 16px;
 }
 
 th,td{
     text-align: center;
 }
+
+tr{
+    color: var(--cor-texto);
+}
 tr:nth-child(even) {
-    background-color: #858383;
+    background-color: var(--cor-tabela-itens);
+}
+
+tr:nth-child(odd){
+    background-color: var(--cor-tabela-itens-secundario);
 }
 tr:hover{
-    background-color: rgb(209, 236, 245);
+    background-color: var(--cor-tabela-itens-hover);
 }
-.table, th, td{
-    border: 2px solid black;
-    height: 3rem;
 
+.table, th, td{
+    /* border: 2px solid black; */
+    height: 3rem;
 }
+
 .table{
     overflow-x: auto;
     max-width: 100%;
 }
+
+
 
 #thead__id{
     width: 3rem;

@@ -1,4 +1,6 @@
 from flask import Flask,url_for,render_template,send_file,request
+from flask_paginate import Pagination, get_page_parameter
+import funcoesSite
 import os
 import dicionario
 
@@ -12,14 +14,14 @@ def principal():
 
 @app.route('/catalogo')
 def catalogo():
-    titulo= "Catalogo"
-    catalogo = dicionario.lerArquivo()
-    print(f"Esse é o catalogo: {catalogo}")
-    #     {"nome": "Cadeira", "quantidade": 8, "preco" : 10},
-    #     {"nome": "Cafeteira", "quantidade": 4, "preco" : 20},
-    #     {"nome": "Mixer", "quantidade": 6, "preco" : 30},
-    
-    return render_template('catalogo.html', titulo = titulo, catalogo = catalogo)
+    catalogo = dicionario.lerArquivo()  # Supondo que lerArquivo() é uma função que retorna o dicionário
+    pagina = request.args.get(get_page_parameter(), type=int, default=1)
+    qtd_por_pagina = 15
+    total = len(catalogo)
+    pagination_data = funcoesSite.get_pagina(catalogo, (pagina - 1) * qtd_por_pagina, qtd_por_pagina)
+    icone_1 = '<<'
+    paginacao = Pagination(page=pagina, total=total, qtd_per_page=qtd_por_pagina, prev_label='<<', next_label='>>')  
+    return render_template('catalogo.html', paginacao = paginacao, catalogo = pagination_data)
 
 @app.route('/about')
 def about():
@@ -27,7 +29,7 @@ def about():
 
 @app.route('/download')
 def download():
-    path = 'arquivos/teste.json'
+    path = 'arquivos/catalago.json'
     return send_file(path, as_attachment=True)
 
 # @app.route('/lerTexto', methods=['POST'])
@@ -44,6 +46,4 @@ def download():
 
 
 #execução
-print(f"Esse é o catalogo: {catalogo}")
-print("iae alysson")
 app.run(debug = True)

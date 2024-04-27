@@ -114,7 +114,7 @@ body{
 }
 
 .bloco{
-    background-color: rgb(255, 255, 255);
+    background-color: var(--cor-de-fundo-bloco) ;
     width: 80%;
     margin-right: 10%;
     margin-left: 10%;
@@ -127,4 +127,13 @@ body{
 
 .index{
     flex-direction: row;
+}
+
+.rodape{
+    display: flex;
+    justify-content: end;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: var(--cor-texto-barra);
+    background-color: var(--cor-barra);
 }
