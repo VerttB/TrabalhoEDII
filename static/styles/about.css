@@ -1,0 +1,27 @@
+@import url(variaveis.css);
+
+.about{
+    flex-direction: column;
+}
+.lista__link{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    vertical-align: middle;
+    border: 2px solid green;
+    background-color: var(--cor-de-fundo);
+    width: 500px;
+    margin: 64px 0px;
+}
+.lista__link img{
+    width: 5rem;
+    border-radius: 100%;
+    margin: 10px 10px;
+}
+
+.lista__link a{
+    text-decoration: none;
+    color: var(--cor-texto) ;
+}
+
+

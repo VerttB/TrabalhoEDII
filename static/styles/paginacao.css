@@ -1,3 +1,5 @@
+@import url(variaveis.css);
+
 .pagination {
     display: flex;
     justify-content: center;
@@ -8,15 +10,29 @@
 .pagination li {
     margin: 0 5px;
 }
-
+.pagination li:last-child, li:first-child{
+    visibility: hidden;
+}
+.pagination span{
+  display: none;
+}
 .pagination li a {
     text-decoration: none;
+    color: var(--cor-texto);
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 16px;
 }
-
+.pagination li a:hover{
+    background-color: var(--cor-tabela-itens-hover);
+}
 .pagination li.active a {
-    background-color: var(--cor-de-fundo-tabela);
+    background-color: var(--cor-tabela-itens-hover);
     color: var(--cor-texto);
 }
+
+.page-item a{
+    text-decoration: none;
+    color: var(cor-texto-barra);
+}
+

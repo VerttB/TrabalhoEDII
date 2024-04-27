@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='styles/reset.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/indexStyle.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/about.css')}}">
+
     <title>Document</title>
 </head>
 <body>
@@ -11,11 +13,18 @@
 
     {%block content%}
     <main>
-        <section class="conteudo about">
-            <diva class="bloco">
-           <p class="conteudo__texto">Github de quem fez o trab</p>
-           <a href="https://github.com/verttb">Verttb</a>
-           <a href="https://github.com/Cainan-bas">Cainan-bas</a>
+        <section class="conteudo ">
+            <div class="about bloco ">
+    
+           <div class="about__links">
+           <ul class="lista">
+           <li class="lista__link"><img src="{{ url_for('static', filename='assets/alysson.png')}}" alt="">
+            <a href="https://github.com/verttb">Verttb</a></li>
+        
+           <li class="lista__link"><img src="{{ url_for('static', filename='assets/cainan.png')}}" alt="">
+            <a href="https://github.com/Cainan-bas">Cainan-bas</a></li>
+        </ul>
+        </div>
         </div>
         </section>
     </main>

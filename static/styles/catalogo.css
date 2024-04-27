@@ -7,10 +7,8 @@
 .conteudo__catalogo__tabela{
    overflow: auto; 
    padding-bottom: 50px;
- 
-   
-}
 
+}
 th{
     background-color: var(--cor-tabela-head);
     height: 50px;
@@ -45,29 +43,30 @@ tr:hover{
 
 .table, th, td{
     /* border: 2px solid black; */
-    height: 3rem;
+    height: 3.25em;
 }
 
 .table{
+    margin-top: 3em;
     overflow-x: auto;
-    max-width: 100%;
+    border-spacing: 0;
 }
 
 
 
 #thead__id{
-    width: 3em;
+    width: 6em;
 }
 #thead__nome{
-    width: 4em;
+    width: 8em;
 }
 #thread__quantidade{
-    width: 8em;
+    width: 10em;
 }
 #thread__preco{
-    width: 8em;
+    width: 10em;
 }
 #thead__descricao{
-    width: 50em;
+    width: 60em;
    
 }
