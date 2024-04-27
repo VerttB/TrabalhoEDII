@@ -56,19 +56,18 @@ tr:hover{
 
 
 #thead__id{
-    width: 3rem;
+    width: 3em;
 }
 #thead__nome{
-    width: auto;
+    width: 4em;
 }
 #thread__quantidade{
-    width: auto;
+    width: 8em;
 }
 #thread__preco{
-    width: auto;
-    width: 3rem;
+    width: 8em;
 }
 #thead__descricao{
-    width: 40rem;
+    width: 50em;
    
 }

@@ -16,11 +16,10 @@ def principal():
 def catalogo():
     catalogo = dicionario.lerArquivo()  # Supondo que lerArquivo() é uma função que retorna o dicionário
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
-    qtd_por_pagina = 15
+    qtd_por_pagina = 13
     total = len(catalogo)
     pagination_data = funcoesSite.get_pagina(catalogo, (pagina - 1) * qtd_por_pagina, qtd_por_pagina)
-    icone_1 = '<<'
-    paginacao = Pagination(page=pagina, total=total, qtd_per_page=qtd_por_pagina, prev_label='<<', next_label='>>')  
+    paginacao = Pagination(page=pagina, total=total, qtd_per_page=qtd_por_pagina, per_page = qtd_por_pagina, format_number=True)  
     return render_template('catalogo.html', paginacao = paginacao, catalogo = pagination_data)
 
 @app.route('/about')
