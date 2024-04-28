@@ -1,0 +1,11 @@
+@media (max-width: 1920px){
+    
+    .bloco{
+        width: 100vw;
+        margin: 0px;
+    }
+
+    .table{
+        width: 80%;
+    }
+}
