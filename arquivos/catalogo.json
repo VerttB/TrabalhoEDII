@@ -178,5 +178,67 @@
         "quantidade": 40,
         "preco": 20.25,
         "descricao": "Antidiabético oral utilizado no tratamento do diabetes tipo 2."
+    },
+    "31": {
+        "nome": "Cocaína",
+        "quantidade": 100,
+        "preco": 100.00,
+        "descricao": "Estimulante do sistema nervoso central, altamente viciante e ilegal em muitos países."
+    },
+    "32": {
+        "nome": "Heroína",
+        "quantidade": 50,
+        "preco": 200.00,
+        "descricao": "Opióide altamente viciante, ilegal e associado a sérios riscos à saúde e à dependência."
+    },
+    "33": {
+        "nome": "Crack",
+        "quantidade": 75,
+        "preco": 50.00,
+        "descricao": "Derivado da cocaína, altamente viciante e produzido como uma forma cristalina para fumar."
+    },
+    "34": {
+        "nome": "LSD",
+        "quantidade": 30,
+        "preco": 150.00,
+        "descricao": "Alucinógeno poderoso que altera a percepção, causando experiências sensoriais intensas e ilusões."
+    },
+    "35": {
+        "nome": "Anfetamina",
+        "quantidade": 80,
+        "preco": 75.00,
+        "descricao": "Estimulante sintético, conhecido por aumentar o estado de alerta e a energia, mas altamente viciante e ilegal."
+    },
+    "36": {
+        "nome": "MDMA (Ecstasy)",
+        "quantidade": 40,
+        "preco": 120.00,
+        "descricao": "Entactógeno e estimulante psicoativo, popular em festas de música eletrônica, mas ilegal e perigoso."
+    },
+    "37": {
+        "nome": "Metanfetamina",
+        "quantidade": 60,
+        "preco": 100.00,
+        "descricao": "Estimulante altamente viciante, semelhante à anfetamina, mas com efeitos mais potentes e perigosos."
+    },
+    "38": {
+        "nome": "Maconha",
+        "quantidade": 120,
+        "preco": 80.00,
+        "descricao": "Cannabis, uma das drogas ilícitas mais comuns, com efeitos psicoativos e recreativos."
+    },
+    "39": {
+        "nome": "Mescalina",
+        "quantidade": 25,
+        "preco": 200.00,
+        "descricao": "Alucinógeno natural encontrado em certos cactos, conhecido por produzir visões coloridas e experiências espirituais."
+    },
+    "40": {
+        "nome": "Psilocibina (Cogumelos Mágicos)",
+        "quantidade": 35,
+        "preco": 180.00,
+        "descricao": "Alucinógeno natural encontrado em certos cogumelos, conhecido por produzir viagens psicodélicas e estados alterados de consciência."
     }
+
+    
 }

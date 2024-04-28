@@ -10,7 +10,7 @@
 .pagination li {
     margin: 0 5px;
 }
-.pagination li:last-child, li:first-child{
+.pagination .page-item:last-child, .page-item:first-child{
     visibility: hidden;
 }
 .pagination span{

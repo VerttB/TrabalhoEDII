@@ -29,6 +29,7 @@ th,td{
 
 tr{
     color: var(--cor-texto);
+    transition: 0.3s ease;
 }
 tr:nth-child(even) {
     background-color: var(--cor-tabela-itens);
@@ -39,6 +40,7 @@ tr:nth-child(odd){
 }
 tr:hover{
     background-color: var(--cor-tabela-itens-hover);
+    
 }
 
 .table, th, td{
@@ -47,7 +49,7 @@ tr:hover{
 }
 
 .table{
-    margin-top: 3em;
+    margin-top: 1em;
     overflow-x: auto;
     border-spacing: 0;
 }
@@ -58,7 +60,7 @@ tr:hover{
     width: 6em;
 }
 #thead__nome{
-    width: 8em;
+    width: 12em;
 }
 #thread__quantidade{
     width: 10em;
@@ -69,4 +71,35 @@ tr:hover{
 #thead__descricao{
     width: 60em;
    
+}
+
+.tabela_pesquisa{
+    display: flex;
+    gap: 0px;
+}
+.pesquisa__input{
+    margin-top: 1em;
+    width: 60em;
+    padding: 5px 5px;
+    border-right:hidden;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+
+.pesquisa__botao{
+    margin-top: 1em;
+    cursor: pointer;
+    padding: 0px 10px;
+    background-color: rgb(128, 128, 227);
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    transition: 0.3s ease;
+
+}
+
+.pesquisa__botao:hover{
+    background-color: var(--cor-tabela-itens-hover);
+}
+.pesquisa__botao:active{
+    background-color: rgb(255, 0, 0);
 }

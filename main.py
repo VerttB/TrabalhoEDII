@@ -13,12 +13,14 @@ def principal():
     return render_template('index.html')
 
 @app.route('/catalogo')
-def catalogo():
+def catalogo(nomeAprocurar=None):
     catalogo = dicionario.lerArquivo()  # Supondo que lerArquivo() é uma função que retorna o dicionário
+    if(nomeAprocurar is not None and nomeAprocurar != ''):
+        catalogo = funcoesSite.filtrarDicionario(catalogo, nomeAprocurar)
+    
     total = len(catalogo)
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
     qtd_por_pagina = 15
-    
     pagination_data = funcoesSite.get_pagina(catalogo, (pagina - 1) * qtd_por_pagina, qtd_por_pagina)
     paginacao = Pagination(page=pagina, total=total, qtd_per_page=qtd_por_pagina, per_page = qtd_por_pagina,search =False, format_number=True, aria_label='e')  
     return render_template('catalogo.html', paginacao = paginacao, catalogo = pagination_data)
@@ -29,13 +31,16 @@ def about():
 
 @app.route('/download')
 def download():
-    path = 'arquivos/catalago.json'
+    path = 'arquivos/catalogo.json'
     return send_file(path, as_attachment=True)
 
-# @app.route('/lerTexto', methods=['POST'])
-# def lerTexto():
-#     texto = request.form['texto']
-#     return f"O texto digitado foi {texto}"
+@app.route('/lerTexto', methods=['POST', 'GET'])
+def lerTexto():
+    if request.method == 'POST':
+        texto = request.form.get('texto')
+        print(f"Texto {texto}")
+        return catalogo(texto)
+   # return render_template('about.html')
 
 # @app.route('/index')
 # def sobre3():

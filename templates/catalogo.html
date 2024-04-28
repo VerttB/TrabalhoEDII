@@ -6,15 +6,24 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/indexStyle.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/catalogo.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/paginacao.css')}}">
-    <title>Document</title>
 </head>
 
 <body>
-  {% extends "header.html" %}
+{% extends "header.html" %}
+
 {%block content%}
     <main>
+      
         <section class="conteudo__catalogo">
+          
             <div class="conteudo__catalogo__tabela bloco">
+              <form action="{{ url_for('lerTexto')}}" method="post">
+              <div class="tabela_pesquisa">
+              <input class="pesquisa__input" type="text" id="texto" name="texto" placeholder="Nome do produto">
+            <button class="fa-solid fa-magnifying-glass pesquisa__botao" type="submit"></button>
+          </div>
+            </form>
+            
                 <table class="table table-bordered">
                   <thead>
                     <tr>
