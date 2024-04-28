@@ -36,9 +36,12 @@ def download():
 
 @app.route('/lerTexto', methods=['POST', 'GET'])
 def lerTexto():
+    texto = ''
     if request.method == 'POST':
         texto = request.form.get('texto')
         print(f"Texto {texto}")
+        return catalogo(texto)
+    else:
         return catalogo(texto)
    # return render_template('about.html')
 
