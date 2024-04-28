@@ -32,7 +32,7 @@
                       <th id="thead__quantidade">Quantidade</th>
                       <th id="thread__preco">Preço</th>
                       <th id="thead__descricao">Descrição</th>
-                    </tr>
+                      </tr>
                   </thead>
                   <tbody>
                   {% for produto_id,produto_itens in catalogo.items() %}
@@ -41,7 +41,7 @@
                             <td>{{produto_itens['nome']}}</td>
                             <td>{{produto_itens['quantidade']}}</td>
                             <td>{{produto_itens['preco']}}</td>
-                            <td>{{produto_itens['descricao']}}</td>   
+                            <td>{{produto_itens['descricao']}}</td>  
                        </tr>
                   {%endfor%}          
                 </tbody>

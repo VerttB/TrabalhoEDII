@@ -29,9 +29,9 @@ th,td{
 
 tr{
     color: var(--cor-texto);
-    transition: 0.2s ease;
     cursor: pointer;
 }
+
 tr:nth-child(even) {
     background-color: var(--cor-tabela-itens);
 }
@@ -41,8 +41,8 @@ tr:nth-child(odd){
 }
 tr:hover{
     background-color: var(--cor-tabela-itens-hover);
-    
 }
+
 
 .table, th, td{
     /* border: 2px solid black; */
@@ -99,8 +99,6 @@ tr:hover{
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
     transition: 0.3s ease;
-
-
 }
 
 .pesquisa__botao:hover{
