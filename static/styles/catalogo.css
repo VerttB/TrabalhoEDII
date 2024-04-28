@@ -29,7 +29,8 @@ th,td{
 
 tr{
     color: var(--cor-texto);
-    transition: 0.3s ease;
+    transition: 0.2s ease;
+    cursor: pointer;
 }
 tr:nth-child(even) {
     background-color: var(--cor-tabela-itens);
@@ -52,6 +53,10 @@ tr:hover{
     margin-top: 1em;
     overflow-x: auto;
     border-spacing: 0;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+
 }
 
 
@@ -80,7 +85,7 @@ tr:hover{
 .pesquisa__input{
     margin-top: 1em;
     width: 60em;
-    padding: 5px 5px;
+    padding: 10px 5px;
     border-right:hidden;
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
@@ -89,11 +94,12 @@ tr:hover{
 .pesquisa__botao{
     margin-top: 1em;
     cursor: pointer;
-    padding: 0px 10px;
+    padding: 10px 15px;
     background-color: rgb(128, 128, 227);
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
     transition: 0.3s ease;
+
 
 }
 

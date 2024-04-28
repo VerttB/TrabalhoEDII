@@ -12,5 +12,4 @@ def filtrarDicionario(dados,texto=None):
     for item_id,item in dados.items():
         if texto is not None and texto in item['nome']:
             novo_dicionario[item_id] = item
-
     return novo_dicionario

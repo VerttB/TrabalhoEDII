@@ -33,6 +33,14 @@
         <p class="rodade__texto">©️By ConglomeradoLet</p>
     </footer>
     <script>
+      window.addEventListener('DOMContentLoaded', (event) =>{
+      var tema = localStorage.getItem('theme')
+      if(tema != null){
+        document.body.classList.add(tema)
+      }
+      
+    });
+
         document.querySelector("#changeTheme").addEventListener("click", () => {
         document.body.classList.toggle("mudar-tema");
         tema_atual = document.body.classList.contains('mudar-tema') ? 'mudar-tema' : ''
@@ -43,9 +51,18 @@
       if(tema != null){
         document.body.classList.add(tema)
       }
-    })
+      
+    });
+    
+    function armazenaTexto(){
+        let texto = document.querySelector('input').value
+        localStorage.setItem('texto', texto);
+    }
 
-    console.log(document.querySelector('input').value)
+    window.onload = function(){
+      var texto = localStorage.getItem('texto');
+      document.querySelector('input').setAttribute('value', texto);
+    }
 </script>
 </body>
 </html>
