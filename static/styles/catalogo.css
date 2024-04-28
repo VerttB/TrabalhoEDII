@@ -3,10 +3,16 @@
 
 .conteudo__catalogo{
     background-color: var(cor-de-fundo);
+    height: auto;
+}
+
+.conteudo__catalogo > .bloco{
+    height: auto;
 }
 .conteudo__catalogo__tabela{
-   overflow: auto; 
+   
    padding-bottom: 50px;
+   height: auto;
 
 }
 th{
@@ -45,13 +51,16 @@ tr:hover{
 
 
 .table, th, td{
-    /* border: 2px solid black; */
+    font-family: "Source Code Pro", monospace;
+    font-weight: 500;
     height: 3.25em;
 }
-
+td{
+    height: 4.5em;
+}
 .table{
     margin-top: 1em;
-    overflow-x: auto;
+    overflow-x: hidden;
     border-spacing: 0;
     box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
     border-top-right-radius: 16px;

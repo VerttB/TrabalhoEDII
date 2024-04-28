@@ -17,6 +17,7 @@ def principal():
 def catalogo():
   
     catalogo = dicionario.lerArquivo()
+    
 
     if(request.method == 'POST'):
         nomeAprocurar = request.form.get('texto', '')

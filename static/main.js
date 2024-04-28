@@ -33,6 +33,7 @@ function testeClick() {
             console.log(this.innerText);
             filhos = this.getElementsByTagName('td');
             console.log(filhos[2].innerText);
+            alert('Produto Adicionado ao Carrinho');
         });
     });
 }

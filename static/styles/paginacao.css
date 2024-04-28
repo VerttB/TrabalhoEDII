@@ -4,11 +4,12 @@
     display: flex;
     justify-content: center;
     list-style: none;
+    gap: 12px;
     margin-top: 10px;
 }
 
 .pagination li {
-    margin: 0 5px;
+    margin-top: 25px;
 }
 .pagination .page-item:last-child, .page-item:first-child{
     visibility: hidden;
