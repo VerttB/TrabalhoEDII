@@ -31,7 +31,7 @@ def catalogo():
     total = len(catalogo)
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
     qtd_por_pagina = 15
-    pagination_data = funcoesSite.get_pagina(catalogo, (pagina - 1) * qtd_por_pagina, qtd_por_pagina, pagina-1)
+    pagination_data = funcoesSite.Organizar_Dados_Dentro_Da_Pagina(catalogo, (pagina - 1) * qtd_por_pagina, qtd_por_pagina, pagina-1)
     
     paginacao = Pagination(page=pagina, total=total, qtd_per_page=qtd_por_pagina, per_page = qtd_por_pagina,search =False, format_number=True)  
     return render_template('catalogo.html', paginacao = paginacao, catalogo = pagination_data, nomeAprocurar = nomeAprocurar)
