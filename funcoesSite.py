@@ -22,7 +22,8 @@ def Organizar_Dados_Dentro_Da_Pagina(dados, inicio, qtd_por_pagina, pagina):
 def filtrarDicionario(dados,texto=None):
     novo_dicionario = {}
     for item_id,item in dados.items():
-        if texto is not None and texto in item['nome']:
+        nome = item['nome'].upper()
+        if texto is not None and texto.upper() in nome:
             novo_dicionario[item_id] = item
     # print(novo_dicionario)
     return novo_dicionario
