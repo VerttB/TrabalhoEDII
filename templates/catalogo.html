@@ -17,7 +17,7 @@
         <section class="conteudo__catalogo">
           
             <div class="conteudo__catalogo__tabela bloco">
-              <form action="{{ url_for('lerTexto')}}" method="post">
+              <form action="{{ url_for('catalogo')}}" method="POST">
               <div class="tabela_pesquisa">
               <input class="pesquisa__input" type="text" id="texto" name="texto" placeholder="Nome do produto">
             <button class="fa-solid fa-magnifying-glass pesquisa__botao" type="submit" onclick="armazenaTexto()"></button>

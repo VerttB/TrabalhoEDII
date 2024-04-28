@@ -23,17 +23,8 @@
     </a>
         <button id="changeTheme" class="cabecalho__extras__Cor button">Mudar Tema</button>
     </div>
-</header>
-    {% block content %}
-    {% endblock %}
-
- 
-
-    <footer class="rodape">
-        <p class="rodade__texto">©️By ConglomeradoLet</p>
-    </footer>
-    <script>
-      window.addEventListener('DOMContentLoaded', (event) =>{
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) =>{
       var tema = localStorage.getItem('theme')
       if(tema != null){
         document.body.classList.add(tema)
@@ -53,7 +44,6 @@
       }
       
     });
-    
     function armazenaTexto(){
         let texto = document.querySelector('input').value
         localStorage.setItem('texto', texto);
@@ -63,6 +53,18 @@
       var texto = localStorage.getItem('texto');
       document.querySelector('input').setAttribute('value', texto);
     }
+</script>  
+</header>
+    {% block content %}
+    {% endblock %}
+
+ 
+
+    <footer class="rodape">
+        <p class="rodade__texto">©️By ConglomeradoLet</p>
+    </footer>
+    <script>
+      
 </script>
 </body>
 </html>
