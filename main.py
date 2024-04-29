@@ -57,7 +57,12 @@ def about():
 @app.route('/download')
 def download():
     path = 'arquivos/catalogo.json'
-    return send_file(path, as_attachment=True)
+    zip_path = 'arquivos/catalogo.zip'
+    
+    with zipfile.ZipFile(zip_path, 'w') as zipf:
+        zipf.write(path, 'catalogo.json')
+    
+    return send_file(zip_path, as_attachment=True)
 
 
 

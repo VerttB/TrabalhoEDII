@@ -95,3 +95,4 @@ function comunicaPython(mensagem, rota){
 }
 
 
+  
