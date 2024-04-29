@@ -33,6 +33,9 @@ function testeClick() {
             console.log(this.innerText);
             filhos = this.getElementsByTagName('td');
             console.log(filhos[2].innerText);
+        //    # let valor = parseInt(filhos[2].innerText)
+            filhos[2].innerText = filhos[2].innerText - 1
+            console.log(filhos[2].innerText)
             alert('Produto Adicionado ao Carrinho');
         });
     });
