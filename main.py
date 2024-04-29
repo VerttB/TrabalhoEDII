@@ -1,11 +1,12 @@
-from flask import Flask,url_for,render_template,send_file,request, session, jsonify
+from flask import Flask,url_for,render_template,send_file,request, session, jsonify, redirect, make_response
 from flask_paginate import Pagination, get_page_parameter
 import funcoesSite
 import os
 import dicionario
+import zipfile
 
 # inicializaçaõ
-catalogo = {}
+catalogo = dicionario.lerArquivo()
 textoRecebido = ''
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.secret_key = 'chave'
@@ -14,17 +15,18 @@ app.secret_key = 'chave'
 def principal():
     return render_template('index.html')
 
-@app.route('/delete',  methods=['GET', 'POST'])
-def delete():
+@app.route('/delete',  methods=['POST'])
+def delete_produto():
     dados = request.json
     mensagem = dados['mensagem']
     print("Mensagem recebida do JavaScript:", mensagem)
-    resposta = "Mensagem recebida com sucesso!"
-    return jsonify(f'Vai se ferrar js {mensagem}')
+    print(f'Tipo do dado {type(mensagem)}')
+    dados = dicionario.lerArquivo()
+    dicionario.removerProduto(dados, str(mensagem))
+    return jsonify('Mensagem recebida')
 
 @app.route('/catalogo', methods=['GET', 'POST'])
 def catalogo():
-    
     catalogo = dicionario.lerArquivo()
     
 

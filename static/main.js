@@ -1,6 +1,5 @@
-var lista = []
-testeClick();
-
+var itens = []
+var elementoSelecionado = null
 window.addEventListener('DOMContentLoaded', (event) =>{
     var tema = localStorage.getItem('theme')
     if(tema != null){
@@ -23,32 +22,64 @@ window.addEventListener('DOMContentLoaded', (event) =>{
   window.onload = function(){
     var texto = localStorage.getItem('texto');
     document.querySelector('input').setAttribute('value', texto);
-    testeClick();
+    pegarInfo();
+    deleteOnPy();
+    clicavel();
   }
 
-function testeClick() {
+function clicavel(){
+    var tabela = document.querySelectorAll('tr');
+    tabela.forEach(function(elemento){
+      elemento.onclick = function(){
+        toggleSelecao(elemento);
+      };
+    });
+  }
+    function toggleSelecao(elemento) {
+  
+      // Alterna a seleção do elemento atual
+      if (elemento === elementoSelecionado) {
+          // 3 === é para ver se é do mesmo tipo
+          elemento.style.backgroundColor = ''; // Volta a cor de fundo original
+          elementoSelecionado = null;
+      } else {
+          
+          elemento.style.backgroundColor = 'rgb(214, 90, 49)';
+          elementoSelecionado = elemento;
+      }
+  }
+
+function pegarInfo() {
     var lista = document.querySelectorAll('tr');
     lista.forEach(function(elemento) {
         elemento.addEventListener('click', function() {
             console.log(this.innerText);
             filhos = this.getElementsByTagName('td');
-            console.log(filhos[0].innerText);
-            var input2 = document.getElementById('texto_recebido');
-           // filhos[1].innerText = filhos[1].innerText - 1;
-            console.log(filhos[2].innerText);
-            input2.value = filhos[0].innerText
-            console.log(`Valor do input ${input2.value}`);
-           // alert('Produto Adicionado ao Carrinho');
+            itens = filhos
         });
     });
+   
 }
 
-function enviarMensagemParaPython() {
-  var mensagem = "tomar no cu do JavaScript!";
+ function deleteOnPy(){
+     let button = document.getElementById('deletar');
+     button.addEventListener('click', function(){
+        console.log("Poisé: " + itens[0].innerText);
+        comunicaPython(itens[0].innerText, '/delete');
+        window.location.reload();
+     });
+ }
+
+// function modifyOnPy(){
+//   let button = document.getElementById('modificar');
+// }
+
+
 
   // Fazer uma solicitação AJAX para enviar a mensagem para o servidor Python
+function comunicaPython(mensagem, rota){
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", "/delete", true); // Rota Flask para receber a mensagem
+  xhr.open("POST", rota, true); // Rota Flask para receber a mensagem
   xhr.setRequestHeader("Content-Type", "application/json"); // Definir o tipo de conteúdo como JSON
   xhr.onreadystatechange = function () {
       if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -62,3 +93,5 @@ function enviarMensagemParaPython() {
   };
   xhr.send(JSON.stringify({ mensagem: mensagem }));
 }
+
+

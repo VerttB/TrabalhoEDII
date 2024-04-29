@@ -25,9 +25,13 @@
           </div>
             </form>
            
-              <button class="fa-solid fa-magnifying-glass pesquisa__botao" onclick="enviarMensagemParaPython()"></button>
-         
+              <!-- <button class="fa-solid fa-magnifying-glass pesquisa__botao" onclick="enviarMensagemParaPython()"></button> -->
+              <div class="tabela__button">
+                <button id="deletar" class="button">Deletar</button>
+                <button id="modificar" class="button">Modificar</button>
+              </div>
                 <table class="table table-bordered">
+
                   <thead>
                     <tr>
                       <th id="thead__Id" >Id</th>
@@ -45,6 +49,7 @@
                             <td>{{produto_itens['quantidade']}}</td>
                             <td>{{produto_itens['preco']}}</td>
                             <td>{{produto_itens['descricao']}}</td>  
+                            <!-- <td onclick="enviarMensagemParaPython()" class="adicionar_carrinho"><button class="adicionar_carrinho__button fa-solid fa-cart-shopping"></button></td> -->
                        </tr>
                   {%endfor%}          
                 </tbody>
