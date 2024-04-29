@@ -1,4 +1,4 @@
-from flask import Flask,url_for,render_template,send_file,request, session
+from flask import Flask,url_for,render_template,send_file,request, session, jsonify
 from flask_paginate import Pagination, get_page_parameter
 import funcoesSite
 import os
@@ -14,9 +14,17 @@ app.secret_key = 'chave'
 def principal():
     return render_template('index.html')
 
+@app.route('/delete',  methods=['GET', 'POST'])
+def delete():
+    dados = request.json
+    mensagem = dados['mensagem']
+    print("Mensagem recebida do JavaScript:", mensagem)
+    resposta = "Mensagem recebida com sucesso!"
+    return jsonify(f'Vai se ferrar js {mensagem}')
+
 @app.route('/catalogo', methods=['GET', 'POST'])
 def catalogo():
-  
+    
     catalogo = dicionario.lerArquivo()
     
 

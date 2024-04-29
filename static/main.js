@@ -43,4 +43,22 @@ function testeClick() {
     });
 }
 
+function enviarMensagemParaPython() {
+  var mensagem = "tomar no cu do JavaScript!";
 
+  // Fazer uma solicitação AJAX para enviar a mensagem para o servidor Python
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/delete", true); // Rota Flask para receber a mensagem
+  xhr.setRequestHeader("Content-Type", "application/json"); // Definir o tipo de conteúdo como JSON
+  xhr.onreadystatechange = function () {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+              // Resposta do servidor Python
+              console.log("Resposta do Python:", xhr.responseText);
+          } else {
+              console.error("Erro ao enviar mensagem para o Python");
+          }
+      }
+  };
+  xhr.send(JSON.stringify({ mensagem: mensagem }));
+}

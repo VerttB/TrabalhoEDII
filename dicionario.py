@@ -17,8 +17,7 @@ def modificarProduto(dict):
 
 def atualizarArquivo(dict):
     with open('arquivos/catalogo.json', 'w') as arquivo:
-        arquivo.write(json.dump(dict)) 
-    pass
+        arquivo.write(json.dumps(dict)) 
 
 
 def lerArquivo():
