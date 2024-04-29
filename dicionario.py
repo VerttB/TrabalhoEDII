@@ -11,8 +11,12 @@ def removerProduto(dict, id_delete):
         if(id_delete == id):
             dict[id].pop()
 
-def modificarProduto(dict):
-    pass
+def modificarProduto(dict, id_alterar, tipo, text):
+    tipo_str = ['quantidade', 'preco']
+    tipo = tipo - 2
+    for id, produto in dict.items():
+        if id == id_alterar:
+            produto[tipo_str[tipo]] = text
 
 
 def atualizarArquivo(dict):
