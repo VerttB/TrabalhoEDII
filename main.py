@@ -4,6 +4,8 @@ import funcoesSite
 import os
 import dicionario
 import zipfile
+import csv
+import json
 
 # inicializaçaõ
 catalogo = dicionario.lerArquivo()
@@ -57,15 +59,32 @@ def about():
 @app.route('/download')
 def download():
     path = 'arquivos/catalogo.json'
+    csv_path = 'arquivos/catalogo_csv.csv'
+
+    #Abre o arquivo JSON
+    with open(path, 'r') as file:
+        Arqui_JSON = json.load(file)
+
+    #Transforma JSON em CSV
+
+    with open(csv_path, 'w', newline='') as csvfile:
+        fieldnames = ['id', 'nome', 'quantidade', 'preco', 'descricao']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        
+        writer.writeheader()
+        for key, value in Arqui_JSON.items():
+            writer.writerow({'id': key, 'nome': value['nome'], 'quantidade': value['quantidade'], 'preco': value['preco'], 'descricao': value['descricao']})
+
+    #Gera arquivo ZIP
+
     zip_path = 'arquivos/catalogo.zip'
     
     with zipfile.ZipFile(zip_path, 'w') as zipf:
         zipf.write(path, 'catalogo.json')
+        zipf.write(csv_path, 'catalogo_csv.csv')
     
     return send_file(zip_path, as_attachment=True)
 
 
 
-
 app.run(debug = True)
-

@@ -1,0 +1,38 @@
+id,nome,quantidade,preco,descricao
+4,Amoxicilina,50,25.0,Antibiótico amplamente utilizado no tratamento de infecções bacterianas.
+5,Ibuprofeno,120,9.99,"Analgésico, antipirético e anti-inflamatório não esteroide (AINE) utilizado no tratamento da dor e inflamação."
+6,Cetoprofeno,40,15.5,Anti-inflamatório não esteroide (AINE) utilizado no tratamento de processos inflamatórios e dores musculares.
+7,Loratadina,90,7.25,Antialérgico utilizado no alívio dos sintomas de alergias sazonais e urticária.
+8,Dexametasona,30,35.75,"Corticoide com ação anti-inflamatória, imunossupressora e utilizada em diversas condições médicas."
+9,Sinvastatina,70,22.5,Estatina utilizada para diminuir o colesterol LDL e prevenir doenças cardiovasculares.
+10,Metformina,60,14.99,Antidiabético oral utilizado no tratamento do diabetes tipo 2.
+11,Ranitidina,40,10.25,Antagonista dos receptores H2 utilizado no tratamento de úlceras gástricas e refluxo ácido.
+12,Dipiridamol,25,30.0,Vasodilatador utilizado no tratamento de angina e prevenção de coágulos sanguíneos.
+13,Clonazepam,55,19.5,Benzodiazepínico utilizado no tratamento de transtornos de ansiedade e convulsões.
+14,Atorvastatina,65,28.75,Estatina utilizada para diminuir o colesterol LDL e prevenir doenças cardiovasculares.
+15,Hidroclorotiazida,75,17.8,Diurético utilizado no tratamento da hipertensão arterial e retenção de líquidos.
+16,Furosemida,45,12.3,Diurético de alça utilizado no tratamento da insuficiência cardíaca e edema.
+17,Escitalopram,85,24.99,Antidepressivo utilizado no tratamento da depressão e transtornos de ansiedade.
+18,Lisinopril,60,11.75,Inibidor da enzima conversora de angiotensina (IECA) utilizado no tratamento da hipertensão arterial e insuficiência cardíaca.
+19,Salmeterol,35,22.0,Broncodilatador de longa duração utilizado no tratamento da asma e doença pulmonar obstrutiva crônica (DPOC).
+20,Fluticasona,40,18.5,Corticosteroide inalatório utilizado no tratamento da asma e rinite alérgica.
+21,Levotiroxina,80,9.99,"Hormônio sintético utilizado no tratamento de distúrbios da tireoide, como hipotireoidismo."
+22,Carvedilol,55,15.25,Bloqueador beta utilizado no tratamento da insuficiência cardíaca e hipertensão arterial.
+23,Montelucaste,70,21.5,Antagonista do receptor de leucotrienos utilizado no tratamento da asma e rinite alérgica.
+24,Naproxeno,50,14.75,Analgésico e anti-inflamatório não esteroide (AINE) utilizado no tratamento da dor e inflamação.
+25,Ondansetrona,45,32.0,Antiemético utilizado no tratamento de náuseas e vômitos associados a quimioterapia e cirurgia.
+26,Pantoprazol,60,16.5,Inibidor da bomba de prótons utilizado no tratamento de úlceras gástricas e refluxo gastroesofágico.
+27,Rosuvastatina,55,27.8,Estatina utilizada para diminuir o colesterol LDL e prevenir doenças cardiovasculares.
+28,Cloridrato de Ciprofloxacino,30,19.99,Antibiótico fluoroquinolona utilizado no tratamento de infecções bacterianas.
+29,Salbutamol,90,13.5,Broncodilatador utilizado no tratamento da asma e doença pulmonar obstrutiva crônica (DPOC).
+30,Gliclazida,40,20.25,Antidiabético oral utilizado no tratamento do diabetes tipo 2.
+31,Cocaína,100,100.0,"Estimulante do sistema nervoso central, altamente viciante e ilegal em muitos países."
+32,Heroína,50,200.0,"Opióide altamente viciante, ilegal e associado a sérios riscos à saúde e à dependência."
+33,Crack,75,50.0,"Derivado da cocaína, altamente viciante e produzido como uma forma cristalina para fumar."
+34,LSD,30,150.0,"Alucinógeno poderoso que altera a percepção, causando experiências sensoriais intensas e ilusões."
+35,Anfetamina,80,75.0,"Estimulante sintético, conhecido por aumentar o estado de alerta e a energia, mas altamente viciante e ilegal."
+36,MDMA (Ecstasy),40,120.0,"Entactógeno e estimulante psicoativo, popular em festas de música eletrônica, mas ilegal e perigoso."
+37,Metanfetamina,60,100.0,"Estimulante altamente viciante, semelhante à anfetamina, mas com efeitos mais potentes e perigosos."
+38,Maconha,120,80.0,"Cannabis, uma das drogas ilícitas mais comuns, com efeitos psicoativos e recreativos."
+39,Mescalina,25,200.0,"Alucinógeno natural encontrado em certos cactos, conhecido por produzir visões coloridas e experiências espirituais."
+40,Psilocibina (Cogumelos Mágicos),35,180.0,"Alucinógeno natural encontrado em certos cogumelos, conhecido por produzir viagens psicodélicas e estados alterados de consciência."
