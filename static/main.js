@@ -32,11 +32,13 @@ function testeClick() {
         elemento.addEventListener('click', function() {
             console.log(this.innerText);
             filhos = this.getElementsByTagName('td');
+            console.log(filhos[0].innerText);
+            var input2 = document.getElementById('texto_recebido');
+           // filhos[1].innerText = filhos[1].innerText - 1;
             console.log(filhos[2].innerText);
-        //    # let valor = parseInt(filhos[2].innerText)
-            filhos[2].innerText = filhos[2].innerText - 1
-            console.log(filhos[2].innerText)
-            alert('Produto Adicionado ao Carrinho');
+            input2.value = filhos[0].innerText
+            console.log(`Valor do input ${input2.value}`);
+           // alert('Produto Adicionado ao Carrinho');
         });
     });
 }

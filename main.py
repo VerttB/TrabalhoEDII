@@ -5,7 +5,8 @@ import os
 import dicionario
 
 # inicializaçaõ
-
+catalogo = {}
+textoRecebido = ''
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.secret_key = 'chave'
 
@@ -21,6 +22,8 @@ def catalogo():
 
     if(request.method == 'POST'):
         nomeAprocurar = request.form.get('texto', '')
+        textoRecebido = request.form.get('texto_recebido', '')
+        
         session['nomeAprocurar'] = nomeAprocurar
     else:
          nomeAprocurar = request.args.get('texto', '')
@@ -46,4 +49,8 @@ def download():
     path = 'arquivos/catalogo.json'
     return send_file(path, as_attachment=True)
 
+
+
+
 app.run(debug = True)
+
