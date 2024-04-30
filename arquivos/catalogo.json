@@ -1,1 +1,248 @@
+<<<<<<< HEAD
 {"6": {"nome": "Cetoprofeno", "quantidade": "100", "preco": 15.5, "descricao": "Anti-inflamat\u00c3\u00b3rio n\u00c3\u00a3o esteroide (AINE) utilizado no tratamento de processos inflamat\u00c3\u00b3rios e dores musculares."}, "7": {"nome": "Loratadina", "quantidade": "200", "preco": 7.25, "descricao": "Antial\u00c3\u00a9rgico utilizado no al\u00c3\u00advio dos sintomas de alergias sazonais e urtic\u00c3\u00a1ria."}, "8": {"nome": "Dexametasona", "quantidade": "100", "preco": 35.75, "descricao": "Corticoide com a\u00c3\u00a7\u00c3\u00a3o anti-inflamat\u00c3\u00b3ria, imunossupressora e utilizada em diversas condi\u00c3\u00a7\u00c3\u00b5es m\u00c3\u00a9dicas."}, "9": {"nome": "Sinvastatina", "quantidade": 70, "preco": 22.5, "descricao": "Estatina utilizada para diminuir o colesterol LDL e prevenir doen\u00c3\u00a7as cardiovasculares."}, "10": {"nome": "Metformina", "quantidade": 60, "preco": 14.99, "descricao": "Antidiab\u00c3\u00a9tico oral utilizado no tratamento do diabetes tipo 2."}, "11": {"nome": "Ranitidina", "quantidade": 40, "preco": 10.25, "descricao": "Antagonista dos receptores H2 utilizado no tratamento de \u00c3\u00balceras g\u00c3\u00a1stricas e refluxo \u00c3\u00a1cido."}, "12": {"nome": "Dipiridamol", "quantidade": 25, "preco": 30.0, "descricao": "Vasodilatador utilizado no tratamento de angina e preven\u00c3\u00a7\u00c3\u00a3o de co\u00c3\u00a1gulos sangu\u00c3\u00adneos."}, "13": {"nome": "Clonazepam", "quantidade": 55, "preco": 19.5, "descricao": "Benzodiazep\u00c3\u00adnico utilizado no tratamento de transtornos de ansiedade e convuls\u00c3\u00b5es."}, "14": {"nome": "Atorvastatina", "quantidade": 65, "preco": 28.75, "descricao": "Estatina utilizada para diminuir o colesterol LDL e prevenir doen\u00c3\u00a7as cardiovasculares."}, "15": {"nome": "Hidroclorotiazida", "quantidade": 75, "preco": 17.8, "descricao": "Diur\u00c3\u00a9tico utilizado no tratamento da hipertens\u00c3\u00a3o arterial e reten\u00c3\u00a7\u00c3\u00a3o de l\u00c3\u00adquidos."}, "16": {"nome": "Furosemida", "quantidade": 45, "preco": 12.3, "descricao": "Diur\u00c3\u00a9tico de al\u00c3\u00a7a utilizado no tratamento da insufici\u00c3\u00aancia card\u00c3\u00adaca e edema."}, "17": {"nome": "Escitalopram", "quantidade": 85, "preco": 24.99, "descricao": "Antidepressivo utilizado no tratamento da depress\u00c3\u00a3o e transtornos de ansiedade."}, "18": {"nome": "Lisinopril", "quantidade": 60, "preco": 11.75, "descricao": "Inibidor da enzima conversora de angiotensina (IECA) utilizado no tratamento da hipertens\u00c3\u00a3o arterial e insufici\u00c3\u00aancia card\u00c3\u00adaca."}, "19": {"nome": "Salmeterol", "quantidade": 35, "preco": 22.0, "descricao": "Broncodilatador de longa dura\u00c3\u00a7\u00c3\u00a3o utilizado no tratamento da asma e doen\u00c3\u00a7a pulmonar obstrutiva cr\u00c3\u00b4nica (DPOC)."}, "20": {"nome": "Fluticasona", "quantidade": 40, "preco": 18.5, "descricao": "Corticosteroide inalat\u00c3\u00b3rio utilizado no tratamento da asma e rinite al\u00c3\u00a9rgica."}, "21": {"nome": "Levotiroxina", "quantidade": 80, "preco": 9.99, "descricao": "Horm\u00c3\u00b4nio sint\u00c3\u00a9tico utilizado no tratamento de dist\u00c3\u00barbios da tireoide, como hipotireoidismo."}, "22": {"nome": "Carvedilol", "quantidade": 55, "preco": 15.25, "descricao": "Bloqueador beta utilizado no tratamento da insufici\u00c3\u00aancia card\u00c3\u00adaca e hipertens\u00c3\u00a3o arterial."}, "23": {"nome": "Montelucaste", "quantidade": 70, "preco": 21.5, "descricao": "Antagonista do receptor de leucotrienos utilizado no tratamento da asma e rinite al\u00c3\u00a9rgica."}, "24": {"nome": "Naproxeno", "quantidade": 50, "preco": 14.75, "descricao": "Analg\u00c3\u00a9sico e anti-inflamat\u00c3\u00b3rio n\u00c3\u00a3o esteroide (AINE) utilizado no tratamento da dor e inflama\u00c3\u00a7\u00c3\u00a3o."}, "25": {"nome": "Ondansetrona", "quantidade": 45, "preco": 32.0, "descricao": "Antiem\u00c3\u00a9tico utilizado no tratamento de n\u00c3\u00a1useas e v\u00c3\u00b4mitos associados a quimioterapia e cirurgia."}, "26": {"nome": "Pantoprazol", "quantidade": 60, "preco": 16.5, "descricao": "Inibidor da bomba de pr\u00c3\u00b3tons utilizado no tratamento de \u00c3\u00balceras g\u00c3\u00a1stricas e refluxo gastroesof\u00c3\u00a1gico."}, "27": {"nome": "Rosuvastatina", "quantidade": 55, "preco": 27.8, "descricao": "Estatina utilizada para diminuir o colesterol LDL e prevenir doen\u00c3\u00a7as cardiovasculares."}, "28": {"nome": "Cloridrato de Ciprofloxacino", "quantidade": 30, "preco": 19.99, "descricao": "Antibi\u00c3\u00b3tico fluoroquinolona utilizado no tratamento de infec\u00c3\u00a7\u00c3\u00b5es bacterianas."}, "29": {"nome": "Salbutamol", "quantidade": 90, "preco": 13.5, "descricao": "Broncodilatador utilizado no tratamento da asma e doen\u00c3\u00a7a pulmonar obstrutiva cr\u00c3\u00b4nica (DPOC)."}, "30": {"nome": "Gliclazida", "quantidade": 40, "preco": 20.25, "descricao": "Antidiab\u00c3\u00a9tico oral utilizado no tratamento do diabetes tipo 2."}, "31": {"nome": "Coca\u00c3\u00adna", "quantidade": 100, "preco": 100.0, "descricao": "Estimulante do sistema nervoso central, altamente viciante e ilegal em muitos pa\u00c3\u00adses."}, "32": {"nome": "Hero\u00c3\u00adna", "quantidade": 50, "preco": 200.0, "descricao": "Opi\u00c3\u00b3ide altamente viciante, ilegal e associado a s\u00c3\u00a9rios riscos \u00c3\u00a0 sa\u00c3\u00bade e \u00c3\u00a0 depend\u00c3\u00aancia."}, "33": {"nome": "Crack", "quantidade": 75, "preco": 50.0, "descricao": "Derivado da coca\u00c3\u00adna, altamente viciante e produzido como uma forma cristalina para fumar."}, "34": {"nome": "LSD", "quantidade": 30, "preco": 150.0, "descricao": "Alucin\u00c3\u00b3geno poderoso que altera a percep\u00c3\u00a7\u00c3\u00a3o, causando experi\u00c3\u00aancias sensoriais intensas e ilus\u00c3\u00b5es."}, "35": {"nome": "Anfetamina", "quantidade": 80, "preco": 75.0, "descricao": "Estimulante sint\u00c3\u00a9tico, conhecido por aumentar o estado de alerta e a energia, mas altamente viciante e ilegal."}, "36": {"nome": "MDMA (Ecstasy)", "quantidade": 40, "preco": 120.0, "descricao": "Entact\u00c3\u00b3geno e estimulante psicoativo, popular em festas de m\u00c3\u00basica eletr\u00c3\u00b4nica, mas ilegal e perigoso."}, "37": {"nome": "Metanfetamina", "quantidade": 60, "preco": 100.0, "descricao": "Estimulante altamente viciante, semelhante \u00c3\u00a0 anfetamina, mas com efeitos mais potentes e perigosos."}, "38": {"nome": "Maconha", "quantidade": 120, "preco": 80.0, "descricao": "Cannabis, uma das drogas il\u00c3\u00adcitas mais comuns, com efeitos psicoativos e recreativos."}, "39": {"nome": "Mescalina", "quantidade": 25, "preco": 200.0, "descricao": "Alucin\u00c3\u00b3geno natural encontrado em certos cactos, conhecido por produzir vis\u00c3\u00b5es coloridas e experi\u00c3\u00aancias espirituais."}, "40": {"nome": "Psilocibina (Cogumelos M\u00c3\u00a1gicos)", "quantidade": 35, "preco": 180.0, "descricao": "Alucin\u00c3\u00b3geno natural encontrado em certos cogumelos, conhecido por produzir viagens psicod\u00c3\u00a9licas e estados alterados de consci\u00c3\u00aancia."}}
+=======
+{
+    "1": {
+        "nome": "Paracetamol",
+        "quantidade": 100,
+        "preco": 12.99,
+        "descricao": "Analgésico e antipirético utilizado para aliviar a dor e reduzir a febre."
+    },
+    "2": {
+        "nome": "Dipirona",
+        "quantidade": 80,
+        "preco": 8.50,
+        "descricao": "Analgésico e antipirético eficaz no alívio da dor e febre."
+    },
+    "3": {
+        "nome": "Omeprazol",
+        "quantidade": 60,
+        "preco": 18.75,
+        "descricao": "Inibidor da bomba de prótons utilizado no tratamento de úlceras gástricas e refluxo gastroesofágico."
+    },
+    "4": {
+        "nome": "Amoxicilina",
+        "quantidade": 50,
+        "preco": 25.00,
+        "descricao": "Antibiótico amplamente utilizado no tratamento de infecções bacterianas."
+    },
+    "5": {
+        "nome": "Ibuprofeno",
+        "quantidade": 120,
+        "preco": 9.99,
+        "descricao": "Analgésico, antipirético e anti-inflamatório não esteroide (AINE) utilizado no tratamento da dor e inflamação."
+    },
+    "6": {
+        "nome": "Cetoprofeno",
+        "quantidade": 40,
+        "preco": 15.50,
+        "descricao": "Anti-inflamatório não esteroide (AINE) utilizado no tratamento de processos inflamatórios e dores musculares."
+    },
+    "7": {
+        "nome": "Loratadina",
+        "quantidade": 90,
+        "preco": 7.25,
+        "descricao": "Antialérgico utilizado no alívio dos sintomas de alergias sazonais e urticária."
+    },
+    "8": {
+        "nome": "Dexametasona",
+        "quantidade": 30,
+        "preco": 35.75,
+        "descricao": "Corticoide com ação anti-inflamatória, imunossupressora e utilizada em diversas condições médicas."
+    },
+    "9": {
+        "nome": "Sinvastatina",
+        "quantidade": 70,
+        "preco": 22.50,
+        "descricao": "Estatina utilizada para diminuir o colesterol LDL e prevenir doenças cardiovasculares."
+    },
+    "10": {
+        "nome": "Metformina",
+        "quantidade": 60,
+        "preco": 14.99,
+        "descricao": "Antidiabético oral utilizado no tratamento do diabetes tipo 2."
+    },
+    "11": {
+        "nome": "Ranitidina",
+        "quantidade": 40,
+        "preco": 10.25,
+        "descricao": "Antagonista dos receptores H2 utilizado no tratamento de úlceras gástricas e refluxo ácido."
+    },
+    "12": {
+        "nome": "Dipiridamol",
+        "quantidade": 25,
+        "preco": 30.00,
+        "descricao": "Vasodilatador utilizado no tratamento de angina e prevenção de coágulos sanguíneos."
+    },
+    "13": {
+        "nome": "Clonazepam",
+        "quantidade": 55,
+        "preco": 19.50,
+        "descricao": "Benzodiazepínico utilizado no tratamento de transtornos de ansiedade e convulsões."
+    },
+    "14": {
+        "nome": "Atorvastatina",
+        "quantidade": 65,
+        "preco": 28.75,
+        "descricao": "Estatina utilizada para diminuir o colesterol LDL e prevenir doenças cardiovasculares."
+    },
+    "15": {
+        "nome": "Hidroclorotiazida",
+        "quantidade": 75,
+        "preco": 17.80,
+        "descricao": "Diurético utilizado no tratamento da hipertensão arterial e retenção de líquidos."
+    },
+    "16": {
+        "nome": "Furosemida",
+        "quantidade": 45,
+        "preco": 12.30,
+        "descricao": "Diurético de alça utilizado no tratamento da insuficiência cardíaca e edema."
+    },
+    "17": {
+        "nome": "Escitalopram",
+        "quantidade": 85,
+        "preco": 24.99,
+        "descricao": "Antidepressivo utilizado no tratamento da depressão e transtornos de ansiedade."
+    },
+    "18": {
+        "nome": "Lisinopril",
+        "quantidade": 60,
+        "preco": 11.75,
+        "descricao": "Inibidor da enzima conversora de angiotensina (IECA) utilizado no tratamento da hipertensão arterial e insuficiência cardíaca."
+    },
+    "19": {
+        "nome": "Salmeterol",
+        "quantidade": 35,
+        "preco": 22.00,
+        "descricao": "Broncodilatador de longa duração utilizado no tratamento da asma e doença pulmonar obstrutiva crônica (DPOC)."
+    },
+    "20": {
+        "nome": "Fluticasona",
+        "quantidade": 40,
+        "preco": 18.50,
+        "descricao": "Corticosteroide inalatório utilizado no tratamento da asma e rinite alérgica."
+    },
+    "21": {
+        "nome": "Levotiroxina",
+        "quantidade": 80,
+        "preco": 9.99,
+        "descricao": "Hormônio sintético utilizado no tratamento de distúrbios da tireoide, como hipotireoidismo."
+    },
+    "22": {
+        "nome": "Carvedilol",
+        "quantidade": 55,
+        "preco": 15.25,
+        "descricao": "Bloqueador beta utilizado no tratamento da insuficiência cardíaca e hipertensão arterial."
+    },
+    "23": {
+        "nome": "Montelucaste",
+        "quantidade": 70,
+        "preco": 21.50,
+        "descricao": "Antagonista do receptor de leucotrienos utilizado no tratamento da asma e rinite alérgica."
+    },
+    "24": {
+        "nome": "Naproxeno",
+        "quantidade": 50,
+        "preco": 14.75,
+        "descricao": "Analgésico e anti-inflamatório não esteroide (AINE) utilizado no tratamento da dor e inflamação."
+    },
+    "25": {
+        "nome": "Ondansetrona",
+        "quantidade": 45,
+        "preco": 32.00,
+        "descricao": "Antiemético utilizado no tratamento de náuseas e vômitos associados a quimioterapia e cirurgia."
+    },
+    "26": {
+        "nome": "Pantoprazol",
+        "quantidade": 60,
+        "preco": 16.50,
+        "descricao": "Inibidor da bomba de prótons utilizado no tratamento de úlceras gástricas e refluxo gastroesofágico."
+    },
+    "27": {
+        "nome": "Rosuvastatina",
+        "quantidade": 55,
+        "preco": 27.80,
+        "descricao": "Estatina utilizada para diminuir o colesterol LDL e prevenir doenças cardiovasculares."
+    },
+    "28": {
+        "nome": "Cloridrato de Ciprofloxacino",
+        "quantidade": 30,
+        "preco": 19.99,
+        "descricao": "Antibiótico fluoroquinolona utilizado no tratamento de infecções bacterianas."
+    },
+    "29": {
+        "nome": "Salbutamol",
+        "quantidade": 90,
+        "preco": 13.50,
+        "descricao": "Broncodilatador utilizado no tratamento da asma e doença pulmonar obstrutiva crônica (DPOC)."
+    },
+    "30": {
+        "nome": "Gliclazida",
+        "quantidade": 40,
+        "preco": 20.25,
+        "descricao": "Antidiabético oral utilizado no tratamento do diabetes tipo 2."
+    },
+    "31": {
+        "nome": "Cocaína",
+        "quantidade": 100,
+        "preco": 100.00,
+        "descricao": "Estimulante do sistema nervoso central, altamente viciante e ilegal em muitos países."
+    },
+    "32": {
+        "nome": "Heroína",
+        "quantidade": 50,
+        "preco": 200.00,
+        "descricao": "Opióide altamente viciante, ilegal e associado a sérios riscos à saúde e à dependência."
+    },
+    "33": {
+        "nome": "Crack",
+        "quantidade": 75,
+        "preco": 50.00,
+        "descricao": "Derivado da cocaína, altamente viciante e produzido como uma forma cristalina para fumar."
+    },
+    "34": {
+        "nome": "LSD",
+        "quantidade": 30,
+        "preco": 150.00,
+        "descricao": "Alucinógeno poderoso que altera a percepção, causando experiências sensoriais intensas e ilusões."
+    },
+    "35": {
+        "nome": "Anfetamina",
+        "quantidade": 80,
+        "preco": 75.00,
+        "descricao": "Estimulante sintético, conhecido por aumentar o estado de alerta e a energia, mas altamente viciante e ilegal."
+    },
+    "36": {
+        "nome": "MDMA (Ecstasy)",
+        "quantidade": 40,
+        "preco": 120.00,
+        "descricao": "Entactógeno e estimulante psicoativo, popular em festas de música eletrônica, mas ilegal e perigoso."
+    },
+    "37": {
+        "nome": "Metanfetamina",
+        "quantidade": 60,
+        "preco": 100.00,
+        "descricao": "Estimulante altamente viciante, semelhante à anfetamina, mas com efeitos mais potentes e perigosos."
+    },
+    "38": {
+        "nome": "Maconha",
+        "quantidade": 120,
+        "preco": 80.00,
+        "descricao": "Cannabis, uma das drogas ilícitas mais comuns, com efeitos psicoativos e recreativos."
+    },
+    "39": {
+        "nome": "Mescalina",
+        "quantidade": 25,
+        "preco": 200.00,
+        "descricao": "Alucinógeno natural encontrado em certos cactos, conhecido por produzir visões coloridas e experiências espirituais."
+    },
+    "40": {
+        "nome": "Psilocibina (Cogumelos Mágicos)",
+        "quantidade": 35,
+        "preco": 180.00,
+        "descricao": "Alucinógeno natural encontrado em certos cogumelos, conhecido por produzir viagens psicodélicas e estados alterados de consciência."
+    }
+
+    
+}
+>>>>>>> f1b88a3548c3d541a68b582ffeb31ba30289d6cc
