@@ -24,6 +24,7 @@ window.addEventListener('DOMContentLoaded', (event) =>{
     document.querySelector('input').setAttribute('value', texto);
     pegarInfo();
     deleteOnPy();
+    modifyOnPy();
     clicavel();
   }
 
@@ -70,9 +71,15 @@ function pegarInfo() {
      });
  }
 
-// function modifyOnPy(){
-//   let button = document.getElementById('modificar');
-// }
+function modifyOnPy(){
+    let button = document.getElementById('modificar');
+    button.addEventListener('click', function(){
+        console.log("Poisé: " + itens[0].innerText);
+        var mensagem = itens[0].innerText + ' 2' + ' 100'
+        comunicaPython(mensagem, '/modifica');
+        window.location.reload();
+    });
+}
 
 
 
