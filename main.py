@@ -17,14 +17,6 @@ app.secret_key = 'chave'
 def principal():
     return render_template('index.html')
 
-@app.route('/modifica', methods=['POST'])
-def modifica_produto():
-    dados = request.json
-    mensagem = dados['mensagem']
-    print(f'Mensagem {mensagem}')
-    return jsonify('mensagem recebida')
-
-
 @app.route('/delete',  methods=['POST'])
 def delete_produto():
     dados = request.json

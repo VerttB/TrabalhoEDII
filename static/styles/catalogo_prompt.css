@@ -26,3 +26,6 @@
     padding: 20px;
     width: 25%;
 }
+.prompt__descricao{
+    display: none;
+}

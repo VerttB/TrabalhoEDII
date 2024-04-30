@@ -1,3 +1,4 @@
+
 var itens = []
 var elementoSelecionado = null
 window.addEventListener('DOMContentLoaded', (event) =>{
@@ -25,6 +26,7 @@ window.addEventListener('DOMContentLoaded', (event) =>{
     pegarInfo();
     deleteOnPy();
     modifyOnPy();
+    AddOnPy();
   }
 
 function clicavel(){
@@ -91,7 +93,9 @@ function modifyOnPy(){
     console.log(listaTratada)
       comunicaPython(listaTratada, '/modifica')
      prompt.style.display = 'none'
+     window.location.reload();
    })
+   
  }
     
  function setNomeProdutoPrompt(){
@@ -123,4 +127,31 @@ function comunicaPython(mensagem, rota){
 }
 
 
+function AddOnPy(){
+  const button = document.getElementById('adicionar');
+  const prompt = document.getElementById('prompt_box');
+  const input = document.getElementById('prompt_descricao');
+   
+  button.addEventListener('click', function(){
+   
+   prompt.style.display = 'flex';
+   input.style.display = 'block';
+   setNomeProdutoPrompt();
+  } )
+  const prompt_button =  document.getElementById('prompt_button');
+  prompt_button.addEventListener('click', function(){
+   
+     var lista = document.querySelectorAll('#prompt_input')
+     listaTratada = []
+     if (itens !== undefined && itens.length > 1) listaTratada.push(itens[0].innerText)
+     lista.forEach(function(elemento){
+      listaTratada.push(elemento.value);
+     })
+   console.log(listaTratada)
+     comunicaPython(listaTratada, '/adicionar')
+    prompt.style.display = 'none'
+    input.style.display = 'none'
+    window.location.reload();
+  })
   
+}
