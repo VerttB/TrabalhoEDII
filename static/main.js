@@ -69,55 +69,83 @@ function pegarInfo() {
      button.addEventListener('click', function(){
         console.log("Poisé: " + itens[0].innerText);
         comunicaPython(itens[0].innerText, '/delete');
+
         window.location.reload();
      });
  }
 
-function modifyOnPy(){
-   const button = document.getElementById('modificar');
-   const prompt = document.getElementById('prompt_box');
-    
-   button.addEventListener('click', function(){
-    
-    prompt.style.display = 'flex';
-    setNomeProdutoPrompt();
-   } )
-   const prompt_button =  document.getElementById('prompt_button');
-   prompt_button.addEventListener('click', function(){
-    
-      var lista = document.querySelectorAll('#prompt_input')
-      listaTratada = []
-      if (itens !== undefined && itens.length > 1) listaTratada.push(itens[0].innerText)
-      lista.forEach(function(elemento){
-       listaTratada.push(elemento.value);
-      })
-    console.log(listaTratada)
-      comunicaPython(listaTratada, '/modifica')
-     prompt.style.display = 'none'
-     window.location.reload();
-   })
-   
- }
+  
 
- function setNomeProdutoPrompt(){
-   const produto = document.getElementById('produto_prompt')
-   if (itens !== undefined && itens.length > 1) {
-    console.log('teste');
-    
-    produto.innerText = itens[1].innerText;
-}
+function modifyOnPy() {
+  const button = document.getElementById('modificar');
+  const prompt = document.getElementById('prompt_box');
+
+  button.addEventListener('click', function() {
+      prompt.style.display = 'flex';
+      setNomeProdutoPrompt();
+      document.getElementById('prompt_button').style.display = 'inline-block';
+      document.getElementById('prompt_adicionar_button').style.display = 'none';
+  });
+
+  const prompt_button = document.getElementById('prompt_button');
+  prompt_button.addEventListener('click', function() {
+      var lista = document.querySelectorAll('#prompt_input');
+      listaTratada = [];
+      if (itens !== undefined && itens.length > 1) listaTratada.push(itens[0].innerText);
+      lista.forEach(function(elemento) {
+          listaTratada.push(elemento.value);
+      });
+      console.log('oi do modificar' + listaTratada);
+      comunicaPython(listaTratada, '/modifica');
+      prompt.style.display = 'none'
+      
+      window.location.reload()
+  });
+  
 }
 
+function AddOnPy() {
+  const button = document.getElementById('adicionar');
+  const prompt = document.getElementById('prompt_box');
+  const input = document.getElementById('prompt_descricao');
+  const titulo = document.getElementById('prompt_titulo');
+  button.addEventListener('click', function() {
+      titulo.value = 'Adicionando Produtos';
+      prompt.style.display = 'flex';
+      input.style.display = 'inline-block';
+      document.getElementById('prompt_adicionar_button').style.display = 'inline-block';
+      document.getElementById('prompt_button').style.display = 'none';
+  });
 
-  // Fazer uma solicitação AJAX para enviar a mensagem para o servidor Python
+  const prompt_adicionar_button = document.getElementById('prompt_adicionar_button');
+  prompt_adicionar_button.addEventListener('click', function() {
+      let lista = document.querySelectorAll('#prompt_input');
+      let descricao = document.querySelector('#prompt_descricao');
+      listaTratada = [];
+      lista.forEach(function(elemento) {
+          listaTratada.push(elemento.value);
+      });
+      listaTratada.push(descricao.value);
+      console.log('eae do adicionar:' + listaTratada);
+      comunicaPython(listaTratada, '/adiciona');
+      prompt.style.display = 'none';
+      input.style.display = 'none';
+      window.location.reload()
+  });
+}
+
+
+
+
+
 function comunicaPython(mensagem, rota){
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", rota, true); // Rota Flask para receber a mensagem
-  xhr.setRequestHeader("Content-Type", "application/json"); // Definir o tipo de conteúdo como JSON
+  xhr.open("POST", rota, true); 
+  xhr.setRequestHeader("Content-Type", "application/json"); 
   xhr.onreadystatechange = function () {
       if (xhr.readyState === XMLHttpRequest.DONE) {
           if (xhr.status === 200) {
-              // Resposta do servidor Python
+             
               console.log("Resposta do Python:", xhr.responseText);
           } else {
               console.error("Erro ao enviar mensagem para o Python");
@@ -128,31 +156,11 @@ function comunicaPython(mensagem, rota){
 }
 
 
-function AddOnPy(){
-  const button = document.getElementById('adicionar');
-  const prompt = document.getElementById('prompt_box');
-  const input = document.getElementById('prompt_descricao');
-  const titulo = document.getElementById('prompt_titulo')
+function setNomeProdutoPrompt(){
+  const produto = document.getElementById('produto_prompt')
+  if (itens !== undefined && itens.length > 1) {
+   console.log('teste');
    
-  button.addEventListener('click', function(){
-   titulo.value = 'Adicionando Produtos';
-   prompt.style.display = 'flex';
-   input.style.display = 'inline-block';
-   setNomeProdutoPrompt();
-  } )
-  const prompt_button =  document.getElementById('prompt_button');
-  prompt_button.addEventListener('click', function(){
-  
-     var lista = document.querySelectorAll('#prompt_input')
-     listaTratada = []
-     lista.forEach(function(elemento){
-      listaTratada.push(elemento.value);
-     })
-   console.log(listaTratada)
-     comunicaPython(listaTratada, '/adiciona')
-    prompt.style.display = 'none'
-    input.style.display = 'none'
-    window.location.reload();
-  })
-  
+   produto.innerText = itens[1].innerText;
+}
 }
