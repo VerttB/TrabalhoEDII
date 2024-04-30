@@ -33,10 +33,9 @@ def delete_produto():
 def modifica_produto():
     dados = request.json
     mensagem = dados['mensagem']
-    valores = mensagem.split()
     
     dados = dicionario.lerArquivo()
-    dicionario.modificarProduto(dados, valores[0], valores[1], valores[2])
+    dicionario.modificarProduto(dados, mensagem[0], mensagem[1], mensagem[2], mensagem[3])
     return jsonify('Mensagem recebida')
 
 
