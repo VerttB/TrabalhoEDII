@@ -23,10 +23,9 @@ window.addEventListener('DOMContentLoaded', (event) =>{
     var texto = localStorage.getItem('texto');
     document.querySelector('input').setAttribute('value', texto);
     pegarInfo();
+    clicavel();
     deleteOnPy();
-    clicavel();
     modifyOnPy();
-    clicavel();
   }
 
 function clicavel(){
