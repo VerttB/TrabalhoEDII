@@ -24,6 +24,7 @@ window.addEventListener('DOMContentLoaded', (event) =>{
     document.querySelector('input').setAttribute('value', texto);
     pegarInfo();
     deleteOnPy();
+    clicavel();
     modifyOnPy();
     clicavel();
   }
