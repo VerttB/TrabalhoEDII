@@ -1,4 +1,9 @@
 id,nome,quantidade,preco,descricao
+1,Paracetamol,100,12.99,Analgésico e antipirético utilizado para aliviar a dor e reduzir a febre.
+2,Dipirona,80,8.5,Analgésico e antipirético eficaz no alívio da dor e febre.
+3,Omeprazol,60,18.75,Inibidor da bomba de prótons utilizado no tratamento de úlceras gástricas e refluxo gastroesofágico.
+4,Amoxicilina,50,25.0,Antibiótico amplamente utilizado no tratamento de infecções bacterianas.
+5,Ibuprofeno,120,9.99,"Analgésico, antipirético e anti-inflamatório não esteroide (AINE) utilizado no tratamento da dor e inflamação."
 6,Cetoprofeno,40,15.5,Anti-inflamatório não esteroide (AINE) utilizado no tratamento de processos inflamatórios e dores musculares.
 7,Loratadina,90,7.25,Antialérgico utilizado no alívio dos sintomas de alergias sazonais e urticária.
 8,Dexametasona,30,35.75,"Corticoide com ação anti-inflamatória, imunossupressora e utilizada em diversas condições médicas."

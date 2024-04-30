@@ -29,11 +29,24 @@ def modifica_produto():
 def delete_produto():
     dados = request.json
     mensagem = dados['mensagem']
+    print("Dados recebidos pelo Request JSON:", dados)
     print("Mensagem recebida do JavaScript:", mensagem)
     print(f'Tipo do dado {type(mensagem)}')
     dados = dicionario.lerArquivo()
     dicionario.removerProduto(dados, str(mensagem))
     return jsonify('Mensagem recebida')
+
+
+@app.route('/modifica', methods=['POST'])
+def modifica_produto():
+    dados = request.json
+    mensagem = dados['mensagem']
+    valores = mensagem.split()
+    
+    dados = dicionario.lerArquivo()
+    dicionario.modificarProduto(dados, valores[0], valores[1], valores[2])
+    return jsonify('Mensagem recebida')
+
 
 @app.route('/catalogo', methods=['GET', 'POST'])
 def catalogo():

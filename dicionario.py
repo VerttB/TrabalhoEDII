@@ -13,10 +13,10 @@ def removerProduto(dict, id_delete):
 
 def modificarProduto(dict, id_alterar, tipo, text):
     tipo_str = ['quantidade', 'preco']
-    tipo = tipo - 2
+    tipoInt = int(tipo) - 2
     for id, produto in dict.items():
         if id == id_alterar:
-            produto[tipo_str[tipo]] = text
+            produto[tipo_str[tipoInt]] = text
     atualizarArquivo(dict)
 
 
