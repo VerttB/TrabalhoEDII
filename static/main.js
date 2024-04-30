@@ -23,6 +23,7 @@ window.addEventListener('DOMContentLoaded', (event) =>{
     var texto = localStorage.getItem('texto');
     document.querySelector('input').setAttribute('value', texto);
     pegarInfo();
+    clicavel();
     deleteOnPy();
     modifyOnPy();
   }
@@ -93,7 +94,7 @@ function modifyOnPy(){
      prompt.style.display = 'none'
    })
  }
-    
+
  function setNomeProdutoPrompt(){
    const produto = document.getElementById('produto_prompt')
    if (itens !== undefined && itens.length > 1) {

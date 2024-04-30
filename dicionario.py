@@ -11,12 +11,12 @@ def removerProduto(dict, id_delete):
         dict.pop(id_delete)
         atualizarArquivo(dict)
 
-def modificarProduto(dict, id_alterar, tipo, text):
-    tipo_str = ['quantidade', 'preco']
-    tipoInt = int(tipo) - 2
+def modificarProduto(dict, id_alterar, nome, quant, valor):
     for id, produto in dict.items():
         if id == id_alterar:
-            produto[tipo_str[tipoInt]] = text
+            produto['nome'] = nome
+            produto['quantidade'] = quant
+            produto['preco'] = valor
     atualizarArquivo(dict)
 
 
