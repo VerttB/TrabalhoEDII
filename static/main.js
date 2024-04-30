@@ -23,12 +23,6 @@ window.addEventListener('DOMContentLoaded', (event) =>{
     var texto = localStorage.getItem('texto');
     document.querySelector('input').setAttribute('value', texto);
     pegarInfo();
-<<<<<<< HEAD
-    deleteOnPy();
-    modifyOnPy();
-=======
->>>>>>> 928f69879cc2e74f8b40e59bb15767da7a1acf83
-    clicavel();
     deleteOnPy();
     modifyOnPy();
   }
@@ -77,7 +71,6 @@ function pegarInfo() {
  }
 
 function modifyOnPy(){
-<<<<<<< HEAD
    const button = document.getElementById('modificar');
    const prompt = document.getElementById('prompt_box');
     
@@ -100,17 +93,7 @@ function modifyOnPy(){
      prompt.style.display = 'none'
    })
  }
-=======
-    let button = document.getElementById('modificar');
-    button.addEventListener('click', function(){
-        console.log("Poisé: " + itens[0].innerText);
-        var mensagem = itens[0].innerText + ' 2' + ' 100'
-        comunicaPython(mensagem, '/modifica');
-        window.location.reload();
-    });
-}
->>>>>>> 928f69879cc2e74f8b40e59bb15767da7a1acf83
-
+    
  function setNomeProdutoPrompt(){
    const produto = document.getElementById('produto_prompt')
    if (itens !== undefined && itens.length > 1) {
