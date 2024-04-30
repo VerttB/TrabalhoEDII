@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/indexStyle.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/catalogo.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/paginacao.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/catalogo_prompt.css')}}">
 </head>
 
 <body>
@@ -29,9 +30,26 @@
               <div class="tabela__button">
                 <button id="deletar" class="button">Deletar</button>
                 <button id="modificar" class="button">Modificar</button>
-              </div>
-                <table class="table table-bordered">
 
+              </div>
+              <div id="prompt_box" class="prompt__box">
+                <div class="prompt__novo">
+                  <div class="prompt__texto">
+                  <h2>Modificando o produto: </h2>
+                  <p  id="produto_prompt"></p>
+                <p>Insira o nome aqui</p>
+                </div> 
+                <input id="prompt_input" placeholder="Insira o nome" class="prompt__nome prompt__entrada" type="text">
+                <p>Insira a quantidade aqui</p>
+                <input id="prompt_input" placeholder="Insira a quantidade" class="prompt__quantidade prompt__entrada" type="text">
+                <p>Insira o preço aqui</p>
+                <input id="prompt_input" placeholder="Insira o preço" class="prompt__preco prompt__entrada" type="text">
+              </div>
+
+                <button id="prompt_button" class="prompt__button">Enviar</button>
+            </div>
+                <table class="table table-bordered">
+                  
                   <thead>
                     <tr>
                       <th id="thead__Id" >Id</th>

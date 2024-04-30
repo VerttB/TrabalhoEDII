@@ -24,6 +24,7 @@ window.addEventListener('DOMContentLoaded', (event) =>{
     document.querySelector('input').setAttribute('value', texto);
     pegarInfo();
     deleteOnPy();
+    modifyOnPy();
     clicavel();
   }
 
@@ -70,10 +71,38 @@ function pegarInfo() {
      });
  }
 
-// function modifyOnPy(){
-//   let button = document.getElementById('modificar');
-// }
+function modifyOnPy(){
+   const button = document.getElementById('modificar');
+   const prompt = document.getElementById('prompt_box');
+    
+   button.addEventListener('click', function(){
+    
+    prompt.style.display = 'flex';
+    setNomeProdutoPrompt();
+   } )
+   const prompt_button =  document.getElementById('prompt_button');
+   prompt_button.addEventListener('click', function(){
+    
+      var lista = document.querySelectorAll('#prompt_input')
+      listaTratada = []
+      if (itens !== undefined && itens.length > 1) listaTratada.push(itens[0].innerText)
+      lista.forEach(function(elemento){
+       listaTratada.push(elemento.value);
+      })
+    console.log(listaTratada)
+      comunicaPython(listaTratada, '/modifica')
+     prompt.style.display = 'none'
+   })
+ }
 
+ function setNomeProdutoPrompt(){
+   const produto = document.getElementById('produto_prompt')
+   if (itens !== undefined && itens.length > 1) {
+    console.log('teste');
+    
+    produto.innerText = itens[1].innerText;
+}
+}
 
 
   // Fazer uma solicitação AJAX para enviar a mensagem para o servidor Python

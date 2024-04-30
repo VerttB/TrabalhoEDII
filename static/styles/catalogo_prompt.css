@@ -1,0 +1,28 @@
+.prompt__box{
+    margin-top: 10%;
+    position: fixed;
+    width: 700px;
+    height: 500px;
+    background-color:rgba(112, 119, 161, 0.95);
+    display: none;
+    flex-direction: column;
+    text-align:center;
+    align-items: center;
+    gap: 10px;
+}
+
+.prompt_novo{
+    height:80%;
+    width: 80%;
+}
+.prompt__entrada{
+    border-radius: 24px;
+    height: 2.5em;
+    padding-left: 10px;
+}
+
+.prompt__button{
+    border-radius: 24px;
+    padding: 20px;
+    width: 25%;
+}
