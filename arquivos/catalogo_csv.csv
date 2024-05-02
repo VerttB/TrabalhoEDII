@@ -1,43 +1,45 @@
 id,nome,quantidade,preco,descricao
-1,Paracetamol,100,12.99,AnalgÃ©sico e antipirÃ©tico utilizado para aliviar a dor e reduzir a febre.
-2,Dipirona,80,8.5,AnalgÃ©sico e antipirÃ©tico eficaz no alÃ­vio da dor e febre.
-3,Omeprazol,60,18.75,Inibidor da bomba de prÃ³tons utilizado no tratamento de Ãºlceras gÃ¡stricas e refluxo gastroesofÃ¡gico.
-4,Amoxicilina,50,25.0,AntibiÃ³tico amplamente utilizado no tratamento de infecÃ§Ãµes bacterianas.
-5,Ibuprofeno,120,9.99,"AnalgÃ©sico, antipirÃ©tico e anti-inflamatÃ³rio nÃ£o esteroide (AINE) utilizado no tratamento da dor e inflamaÃ§Ã£o."
-6,Cetoprofeno,40,15.5,Anti-inflamatÃ³rio nÃ£o esteroide (AINE) utilizado no tratamento de processos inflamatÃ³rios e dores musculares.
-7,Loratadina,90,7.25,AntialÃ©rgico utilizado no alÃ­vio dos sintomas de alergias sazonais e urticÃ¡ria.
-8,Dexametasona,30,35.75,"Corticoide com aÃ§Ã£o anti-inflamatÃ³ria, imunossupressora e utilizada em diversas condiÃ§Ãµes mÃ©dicas."
-9,Sinvastatina,70,22.5,Estatina utilizada para diminuir o colesterol LDL e prevenir doenÃ§as cardiovasculares.
-10,Metformina,60,14.99,AntidiabÃ©tico oral utilizado no tratamento do diabetes tipo 2.
-11,Ranitidina,40,10.25,Antagonista dos receptores H2 utilizado no tratamento de Ãºlceras gÃ¡stricas e refluxo Ã¡cido.
-12,Dipiridamol,25,30.0,Vasodilatador utilizado no tratamento de angina e prevenÃ§Ã£o de coÃ¡gulos sanguÃ­neos.
-13,Clonazepam,55,19.5,BenzodiazepÃ­nico utilizado no tratamento de transtornos de ansiedade e convulsÃµes.
-14,Atorvastatina,65,28.75,Estatina utilizada para diminuir o colesterol LDL e prevenir doenÃ§as cardiovasculares.
-15,Hidroclorotiazida,75,17.8,DiurÃ©tico utilizado no tratamento da hipertensÃ£o arterial e retenÃ§Ã£o de lÃ­quidos.
-16,Furosemida,45,12.3,DiurÃ©tico de alÃ§a utilizado no tratamento da insuficiÃªncia cardÃ­aca e edema.
-17,Escitalopram,85,24.99,Antidepressivo utilizado no tratamento da depressÃ£o e transtornos de ansiedade.
-18,Lisinopril,60,11.75,Inibidor da enzima conversora de angiotensina (IECA) utilizado no tratamento da hipertensÃ£o arterial e insuficiÃªncia cardÃ­aca.
-19,Salmeterol,35,22.0,Broncodilatador de longa duraÃ§Ã£o utilizado no tratamento da asma e doenÃ§a pulmonar obstrutiva crÃ´nica (DPOC).
-20,Fluticasona,40,18.5,Corticosteroide inalatÃ³rio utilizado no tratamento da asma e rinite alÃ©rgica.
-21,Levotiroxina,80,9.99,"HormÃ´nio sintÃ©tico utilizado no tratamento de distÃºrbios da tireoide, como hipotireoidismo."
-22,Carvedilol,55,15.25,Bloqueador beta utilizado no tratamento da insuficiÃªncia cardÃ­aca e hipertensÃ£o arterial.
-23,Montelucaste,70,21.5,Antagonista do receptor de leucotrienos utilizado no tratamento da asma e rinite alÃ©rgica.
-24,Naproxeno,50,14.75,AnalgÃ©sico e anti-inflamatÃ³rio nÃ£o esteroide (AINE) utilizado no tratamento da dor e inflamaÃ§Ã£o.
-25,Ondansetrona,45,32.0,AntiemÃ©tico utilizado no tratamento de nÃ¡useas e vÃ´mitos associados a quimioterapia e cirurgia.
-26,Pantoprazol,60,16.5,Inibidor da bomba de prÃ³tons utilizado no tratamento de Ãºlceras gÃ¡stricas e refluxo gastroesofÃ¡gico.
-27,Rosuvastatina,55,27.8,Estatina utilizada para diminuir o colesterol LDL e prevenir doenÃ§as cardiovasculares.
-28,Cloridrato de Ciprofloxacino,30,19.99,AntibiÃ³tico fluoroquinolona utilizado no tratamento de infecÃ§Ãµes bacterianas.
-29,Salbutamol,90,13.5,Broncodilatador utilizado no tratamento da asma e doenÃ§a pulmonar obstrutiva crÃ´nica (DPOC).
-30,Gliclazida,40,20.25,AntidiabÃ©tico oral utilizado no tratamento do diabetes tipo 2.
-31,CocaÃ­na,100,100.0,"Estimulante do sistema nervoso central, altamente viciante e ilegal em muitos paÃ­ses."
-32,HeroÃ­na,50,200.0,"OpiÃ³ide altamente viciante, ilegal e associado a sÃ©rios riscos Ã  saÃºde e Ã  dependÃªncia."
-33,Crack,75,50.0,"Derivado da cocaÃ­na, altamente viciante e produzido como uma forma cristalina para fumar."
-34,LSD,30,150.0,"AlucinÃ³geno poderoso que altera a percepÃ§Ã£o, causando experiÃªncias sensoriais intensas e ilusÃµes."
-35,Anfetamina,80,75.0,"Estimulante sintÃ©tico, conhecido por aumentar o estado de alerta e a energia, mas altamente viciante e ilegal."
-36,MDMA (Ecstasy),40,120.0,"EntactÃ³geno e estimulante psicoativo, popular em festas de mÃºsica eletrÃ´nica, mas ilegal e perigoso."
-37,Metanfetamina,60,100.0,"Estimulante altamente viciante, semelhante Ã  anfetamina, mas com efeitos mais potentes e perigosos."
-38,Maconha,120,80.0,"Cannabis, uma das drogas ilÃ­citas mais comuns, com efeitos psicoativos e recreativos."
-39,Mescalina,25,200.0,"AlucinÃ³geno natural encontrado em certos cactos, conhecido por produzir visÃµes coloridas e experiÃªncias espirituais."
-40,Psilocibina (Cogumelos MÃ¡gicos),35,180.0,"AlucinÃ³geno natural encontrado em certos cogumelos, conhecido por produzir viagens psicodÃ©licas e estados alterados de consciÃªncia."
+1,Paracetamol,100,12.99,Analgésico e antipirético utilizado para aliviar a dor e reduzir a febre.
+2,Dipirona,80,8.5,Analgésico e antipirético eficaz no alívio da dor e febre.
+3,Omeprazol,60,18.75,Inibidor da bomba de prótons utilizado no tratamento de úlceras gástricas e refluxo gastroesofágico.
+4,Amoxicilina,50,25.0,Antibiótico amplamente utilizado no tratamento de infecções bacterianas.
+5,Ibuprofeno,120,9.99,"Analgésico, antipirético e anti-inflamatório não esteroide (AINE) utilizado no tratamento da dor e inflamação."
+6,Cetoprofeno,40,15.5,Anti-inflamatório não esteroide (AINE) utilizado no tratamento de processos inflamatórios e dores musculares.
+7,Loratadina,90,7.25,Antialérgico utilizado no alívio dos sintomas de alergias sazonais e urticária.
+8,Dexametasona,30,35.75,"Corticoide com ação anti-inflamatória, imunossupressora e utilizada em diversas condições médicas."
+9,Sinvastatina,70,22.5,Estatina utilizada para diminuir o colesterol LDL e prevenir doenças cardiovasculares.
+10,Metformina,60,14.99,Antidiabético oral utilizado no tratamento do diabetes tipo 2.
+11,Ranitidina,40,10.25,Antagonista dos receptores H2 utilizado no tratamento de úlceras gástricas e refluxo ácido.
+12,Dipiridamol,25,30.0,Vasodilatador utilizado no tratamento de angina e prevenção de coágulos sanguíneos.
+13,Clonazepam,55,19.5,Benzodiazepínico utilizado no tratamento de transtornos de ansiedade e convulsões.
+14,Atorvastatina,65,28.75,Estatina utilizada para diminuir o colesterol LDL e prevenir doenças cardiovasculares.
+15,Hidroclorotiazida,75,17.8,Diurético utilizado no tratamento da hipertensão arterial e retenção de líquidos.
+16,Furosemida,45,12.3,Diurético de alça utilizado no tratamento da insuficiência cardíaca e edema.
+17,Escitalopram,85,24.99,Antidepressivo utilizado no tratamento da depressão e transtornos de ansiedade.
+18,Lisinopril,60,11.75,Inibidor da enzima conversora de angiotensina (IECA) utilizado no tratamento da hipertensão arterial e insuficiência cardíaca.
+19,Salmeterol,35,22.0,Broncodilatador de longa duração utilizado no tratamento da asma e doença pulmonar obstrutiva crônica (DPOC).
+20,Fluticasona,40,18.5,Corticosteroide inalatório utilizado no tratamento da asma e rinite alérgica.
+21,Levotiroxina,80,9.99,"Hormônio sintético utilizado no tratamento de distúrbios da tireoide, como hipotireoidismo."
+22,Carvedilol,55,15.25,Bloqueador beta utilizado no tratamento da insuficiência cardíaca e hipertensão arterial.
+23,Montelucaste,70,21.5,Antagonista do receptor de leucotrienos utilizado no tratamento da asma e rinite alérgica.
+24,Naproxeno,50,14.75,Analgésico e anti-inflamatório não esteroide (AINE) utilizado no tratamento da dor e inflamação.
+25,Ondansetrona,45,32.0,Antiemético utilizado no tratamento de náuseas e vômitos associados a quimioterapia e cirurgia.
+26,Pantoprazol,60,16.5,Inibidor da bomba de prótons utilizado no tratamento de úlceras gástricas e refluxo gastroesofágico.
+27,Rosuvastatina,55,27.8,Estatina utilizada para diminuir o colesterol LDL e prevenir doenças cardiovasculares.
+28,Cloridrato de Ciprofloxacino,30,19.99,Antibiótico fluoroquinolona utilizado no tratamento de infecções bacterianas.
+29,Salbutamol,90,13.5,Broncodilatador utilizado no tratamento da asma e doença pulmonar obstrutiva crônica (DPOC).
+30,Gliclazida,40,20.25,Antidiabético oral utilizado no tratamento do diabetes tipo 2.
+31,Cocaína,100,100.0,"Estimulante do sistema nervoso central, altamente viciante e ilegal em muitos países."
+32,Heroína,50,200.0,"Opióide altamente viciante, ilegal e associado a sérios riscos à saúde e à dependência."
+33,Crack,75,50.0,"Derivado da cocaína, altamente viciante e produzido como uma forma cristalina para fumar."
+34,LSD,30,150.0,"Alucinógeno poderoso que altera a percepção, causando experiências sensoriais intensas e ilusões."
+35,Anfetamina,80,75.0,"Estimulante sintético, conhecido por aumentar o estado de alerta e a energia, mas altamente viciante e ilegal."
+36,MDMA (Ecstasy),40,120.0,"Entactógeno e estimulante psicoativo, popular em festas de música eletrônica, mas ilegal e perigoso."
+37,Metanfetamina,60,100.0,"Estimulante altamente viciante, semelhante à anfetamina, mas com efeitos mais potentes e perigosos."
+38,Maconha,120,80.0,"Cannabis, uma das drogas ilícitas mais comuns, com efeitos psicoativos e recreativos."
+39,Mescalina,25,200.0,"Alucinógeno natural encontrado em certos cactos, conhecido por produzir visões coloridas e experiências espirituais."
+40,Psilocibina (Cogumelos Mágicos),35,180.0,"Alucinógeno natural encontrado em certos cogumelos, conhecido por produzir viagens psicodélicas e estados alterados de consciência."
 41,Caiana,19,23,Cara trol
 42,Alysson,20,2,O melhor
+43,Cotonete,12,2,awdwadaw
+44,nemsei,1,10,"nao sei o que, mas e"

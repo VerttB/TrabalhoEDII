@@ -42,7 +42,7 @@ def modificarProduto(dict, id_alterar, nome, quant, valor):
 
 def atualizarArquivo(dicts):
     with open('arquivos/catalogo.json', 'w') as arquivo:
-        arquivo.write(json.dumps(dicts)) 
+        arquivo.write(json.dumps(dicts, indent='\t')) 
     dicts = dict(sorted(dicts.items()))
 
 def lerArquivo():
