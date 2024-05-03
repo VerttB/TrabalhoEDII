@@ -135,73 +135,8 @@ function addValues(prompt) {
   comunicaPython(listaTratada, '/adiciona');
   prompt.style.display = 'none';
   input.style.display = 'none';
-  //window.location.reload();
+  window.location.reload();
 }
-
-
-// function modifyOnPy() {
-//   const button = document.getElementById('modificar');
-//   const prompt = document.getElementById('prompt_box');
-//   button.addEventListener('click', function() {
-//       prompt.style.display = 'flex';
-//       setNomeProdutoPrompt();
-//       // document.getElementById('prompt_button').style.display = 'inline-block';
-//       // document.getElementById('prompt_adicionar_button').style.display = 'none';
-//   });
-
-//   const prompt_button = document.getElementById('prompt_button');
-//   prompt_button.removeEventListener('click',addValues);
-//   prompt_button.addEventListener('click', modValues());
-  
-// }
- function modValues(){
-       var lista = document.querySelectorAll('#prompt_input');
-       listaTratada = [];
-       if (itens !== undefined && itens.length > 1) listaTratada.push(itens[0].innerText);
-       lista.forEach(function(elemento) {
-           listaTratada.push(elemento.value);
-       });
-       console.log('oi do modificar' + listaTratada);
-       comunicaPython(listaTratada, '/modifica');
-       prompt.style.display = 'none'
-      
-       window.location.reload()
- }
-
-// function AddOnPy() {
-//   const button = document.getElementById('adicionar');
-//   const prompt = document.getElementById('prompt_box');
-//   const input = document.getElementById('prompt_descricao');
-//   const titulo = document.getElementById('prompt_titulo');
-//   button.addEventListener('click', function() {
-//       titulo.value = 'Adicionando Produtos';
-//       prompt.style.display = 'flex';
-//       input.style.display = 'inline-block';
-//       // document.getElementById('prompt_adicionar_button').style.display = 'inline-block';
-//       // document.getElementById('prompt_button').style.display = 'none';
-//   });
-
-//   // const prompt_adicionar_button = document.getElementById('prompt_adicionar_button');
-//   prompt_button = document.getElementById('prompt_button')
-//   prompt_button.removeEventListener('click', modValues);
-//   prompt_button.addEventListener('click', addValues(prompt));
-// }
-
-// function addValues(prompt){
-//     let lista = document.querySelectorAll('#prompt_input');
-//     let descricao = document.querySelector('#prompt_descricao');
-//     listaTratada = [];
-//     lista.forEach(function(elemento) {
-//           listaTratada.push(elemento.value);
-//       });
-//     listaTratada.push(descricao.value);
-//     console.log('eae do adicionar:' + listaTratada);
-//     comunicaPython(listaTratada, '/adiciona');
-//     prompt.style.display = 'none';
-//     input.style.display = 'none';
-//     window.location.reload()
-// }
-
 
 
 function comunicaPython(mensagem, rota){

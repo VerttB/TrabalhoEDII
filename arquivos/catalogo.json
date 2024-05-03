@@ -262,5 +262,11 @@
 		"quantidade": 1,
 		"preco": 10,
 		"descricao": "nao sei o que, mas e"
+	},
+	"45": {
+		"nome": "a",
+		"quantidade": 2,
+		"preco": 2,
+		"descricao": "a"
 	}
 }
