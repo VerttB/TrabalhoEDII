@@ -11,7 +11,7 @@
 </head>
 <header class="cabecalho">
     <div class="cabecalho__empresa">
-        <h1 class="cabecalho__empresa__titulo">LetStore</h1>
+        <h1 style="display: flex; flex-direction: row;"  class="cabecalho__empresa__titulo"><i class="fa-solid fa-capsules"></i>LetStore</h1>
 
     </div>
     <ul class="cabecalho__lista">
@@ -26,7 +26,6 @@
         <button id="changeTheme" class="cabecalho__extras__Cor button">Mudar Tema</button>
     </div>
     
-  <script src="{{ url_for('static', filename='main.js') }}"></script>
     
 
 </header>
@@ -38,5 +37,8 @@
     <footer class="rodape">
         <p class="rodade__texto">©️By ConglomeradoLet</p>
     </footer>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+
 </body>
 </html>
