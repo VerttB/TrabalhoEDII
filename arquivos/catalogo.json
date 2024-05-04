@@ -1,8 +1,8 @@
 {
 	"1": {
-		"nome": "Ruim",
-		"quantidade": 5,
-		"preco": 5,
+		"nome": "Paracetamol",
+		"quantidade": 100,
+		"preco": 12.99,
 		"descricao": "Analg\u00e9sico e antipir\u00e9tico utilizado para aliviar a dor e reduzir a febre."
 	},
 	"2": {
@@ -268,35 +268,5 @@
 		"quantidade": 2,
 		"preco": 2,
 		"descricao": "a"
-	},
-	"46": {
-		"nome": "Banana",
-		"quantidade": 23,
-		"preco": 5,
-		"descricao": "Mt bom"
-	},
-	"47": {
-		"nome": "Ma\u00e7\u00e3",
-		"quantidade": 5,
-		"preco": 2,
-		"descricao": "legal"
-	},
-	"48": {
-		"nome": "transporte",
-		"quantidade": 2,
-		"preco": 3,
-		"descricao": "4"
-	},
-	"49": {
-		"nome": "Laranjas",
-		"quantidade": 5,
-		"preco": 23,
-		"descricao": "Laranja"
-	},
-	"50": {
-		"nome": "Laranja",
-		"quantidade": 6,
-		"preco": 2,
-		"descricao": "Laranjada"
 	}
 }
