@@ -268,5 +268,23 @@
 		"quantidade": 2,
 		"preco": 2,
 		"descricao": "a"
+	},
+	"46": {
+		"nome": "Paracetamal",
+		"quantidade": 17,
+		"preco": 8.81,
+		"descricao": "Muito \u00fatil"
+	},
+	"47": {
+		"nome": "Que estranho esse preco",
+		"quantidade": 200,
+		"preco": 30.33,
+		"descricao": "teste do pre\u00e7o"
+	},
+	"48": {
+		"nome": "Novo rem\u00e9dio",
+		"quantidade": 32,
+		"preco": 6.04,
+		"descricao": "Remedio teste"
 	}
 }
