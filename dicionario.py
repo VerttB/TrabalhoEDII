@@ -8,8 +8,6 @@ def adicionarProdutoatalogo(dict, nome, quantidade, preco, descricao):
         for i in dict:
             id = int(i)
     id+=1
-    preco = float(preco)
-    quantidade = int(quantidade)
     
     print(f"O id é o seguinte {id}" )
     novo_produto = {
@@ -29,8 +27,6 @@ def removerProduto(dict, id_delete):
         atualizarArquivo(dict)
 
 def modificarProduto(dict, id_alterar, nome, quant, valor):
-    valor = float(valor)
-    quant = int(quant)
     for id, produto in dict.items():
         if id == id_alterar:
             produto['nome'] = nome

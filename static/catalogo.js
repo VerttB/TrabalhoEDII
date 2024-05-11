@@ -72,9 +72,9 @@ function modValues() {
   lista.forEach(function(elemento) {
     listaTratada.push(elemento.value);
   });
-
+  console.log(listaTratada);
   comunicaPython(listaTratada, '/modifica');
-  window.location.reload();
+  //window.location.reload();
 }
 
 function AddOnPy() {
@@ -101,7 +101,7 @@ function addValues() {
   });
   listaTratada.push(descricao.value);
   comunicaPython(listaTratada, '/adiciona');
-  window.location.reload();
+  //window.location.reload();
  
 }
 

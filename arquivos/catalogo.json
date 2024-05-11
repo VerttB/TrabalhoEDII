@@ -1,8 +1,8 @@
 {
 	"1": {
 		"nome": "Paracetamol",
-		"quantidade": 100,
-		"preco": 12.99,
+		"quantidade": 9,
+		"preco": 0.29,
 		"descricao": "Analg\u00e9sico e antipir\u00e9tico utilizado para aliviar a dor e reduzir a febre."
 	},
 	"2": {
@@ -418,6 +418,11 @@
 		"quantidade": 1,
 		"preco": 13.25,
 		"descricao": "Desodorante \u00edntimo em spray, formulado para neutralizar odores e proporcionar sensa\u00e7\u00e3o de frescor e conforto."
+	},
+	"71": {
+		"nome": "Nicotina",
+		"quantidade": 10,
+		"preco": 4.55,
+		"descricao": "Bacana"
 	}
-
 }

@@ -17,33 +17,35 @@ app.secret_key = 'chave'
 def principal():
     return render_template('index.html')
 
-@app.route('/adiciona', methods=['POST'])
+@app.route('/adiciona', methods=['GET', 'POST'])
 def adiciona_produto():
     dados = request.json
     mensagem = dados['mensagem']
     dados = dicionario.lerArquivo()
-    dicionario.adicionarProdutoatalogo(dados, mensagem[0], mensagem[1], mensagem[2], mensagem[3])
+    print(f"Comunicação com uscesso da mensagem {mensagem}")
+    dicionario.adicionarProdutoatalogo(dados, mensagem[0], int(mensagem[1]), float(mensagem[2]), mensagem[3])
     return jsonify('Mensagem recebida')
 
-@app.route('/delete',  methods=['POST'])
+@app.route('/delete',  methods=['GET' ,'POST'])
 def delete_produto():
     dados = request.json
     mensagem = dados['mensagem']
     print("Dados recebidos pelo Request JSON:", dados)
     print("Mensagem recebida do JavaScript:", mensagem)
     print(f'Tipo do dado {type(mensagem)}')
-    dados = dicionario.lerArquivo()
-    dicionario.removerProduto(dados, str(mensagem))
+    dados_dict = dicionario.lerArquivo()
+    dicionario.removerProduto(dados_dict, str(mensagem))
     return jsonify('Mensagem recebida')
 
 
-@app.route('/modifica', methods=['POST'])
+@app.route('/modifica', methods=['GET', 'POST'])
 def modifica_produto():
     dados = request.json
+    print(f"dados:{dados}")
     mensagem = dados['mensagem']
-    
-    dados = dicionario.lerArquivo()
-    dicionario.modificarProduto(dados, mensagem[0], mensagem[1], mensagem[2], mensagem[3])
+    print(f"Comunicação com uscesso da mensagem {mensagem}")
+    dados_dict = dicionario.lerArquivo()
+    dicionario.modificarProduto(dados_dict, mensagem[0], mensagem[1], int(mensagem[2]), float(mensagem[3]))
     return jsonify('Mensagem recebida')
 
 
@@ -52,14 +54,9 @@ def catalogo():
     catalogo = dicionario.lerArquivo()
     
 
-    if(request.method == 'POST'):
-        nomeAprocurar = request.form.get('texto', '')
-        textoRecebido = request.form.get('texto_recebido', '')
-        
-        session['nomeAprocurar'] = nomeAprocurar
-    else:
-         nomeAprocurar = request.args.get('texto', '')
-         nomeAprocurar = session.get('nomeAprocurar', '')
+    nomeAprocurar = request.form.get('texto', '')
+    session['nomeAprocurar'] = nomeAprocurar
+ 
 
     if(nomeAprocurar is not None and nomeAprocurar != ''):
         catalogo = funcoesSite.filtrarDicionario(catalogo, nomeAprocurar)
