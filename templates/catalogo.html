@@ -21,7 +21,7 @@
             <div class="conteudo__catalogo__tabela bloco">
               <form action="{{ url_for('catalogo')}}" method="POST">
               <div class="tabela_pesquisa">
-              <input class="pesquisa__input" type="text" id="texto" name="texto" placeholder="Nome do produto">
+              <input class="pesquisa__input" value="{{nomeAprocurar}}" type="text" id="texto" name="texto" placeholder="Nome do produto">
               <input style="display: none;" id="texto_recebido" name="texto_recebido">
             <button class="fa-solid fa-magnifying-glass pesquisa__botao" type="submit" onclick="armazenaTexto()"></button>
           </div>
@@ -44,7 +44,7 @@
                 <div class="inputs__prompt">
                 <input name="nome" id="prompt_input" placeholder="Insira o nome" class="prompt__nome prompt__entrada" type="text">
                 <input name="quantidade" id="prompt_input" placeholder="Insira a quantidade" class="prompt__quantidade prompt__entrada" type="number" min="0">
-                <input id="prompt_input" placeholder="Insira o preço" class="prompt__preco prompt__entrada" type="number" min="0" step="0.01">
+                <input id="prompt_input" placeholder="Insira o preço" class="prompt__preco prompt__entrada" type="number" min="0" step='0.01'>
                 <input id="prompt_descricao" placeholder="Insira a descrição" type="text" class="prompt__descricao prompt__entrada">
               </div>
               

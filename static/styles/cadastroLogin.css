@@ -1,0 +1,40 @@
+@import url(variaveis.css);
+
+
+.login__block{
+    color: var(--cor-texto);
+    background-color: var(--cor-de-fundo);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    align-items: content;
+    width: 80%;
+    height: 1200px;
+    font-size: 14px;
+    border: 1px solid black;
+    
+}
+
+.login__form{
+    margin-top: 15%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.form__email, .form__senha{
+    border-radius: 6px;
+    padding: 4px;
+    width: 200px;
+}
+
+.form__login{
+    padding: 4px;
+    width: 60px;
+    border-radius: 12px;
+    background-color: var(--cor-barra);
+    cursor: pointer;
+}

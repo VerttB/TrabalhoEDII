@@ -72,9 +72,8 @@ function modValues() {
   lista.forEach(function(elemento) {
     listaTratada.push(elemento.value);
   });
-
+  console.log(listaTratada);
   comunicaPython(listaTratada, '/modifica');
-  window.location.reload();
 }
 
 function AddOnPy() {
@@ -100,13 +99,12 @@ function addValues() {
     listaTratada.push(elemento.value);
   });
   listaTratada.push(descricao.value);
-  comunicaPython(listaTratada, '/adiciona');
-  window.location.reload();
- 
+  comunicaPython(listaTratada, '/adiciona'); 
 }
 
 
 function comunicaPython(mensagem, rota){
+  mensagem.forEach((elemento) => console.log(`Elemento: ${elemento}, tipo do elemento: ${typeof(elemento)}`));
   var xhr = new XMLHttpRequest();
   xhr.open("POST", rota, true); 
   xhr.setRequestHeader("Content-Type", "application/json"); 
@@ -115,6 +113,7 @@ function comunicaPython(mensagem, rota){
           if (xhr.status === 200) {
              
               console.log("Resposta do Python:", xhr.responseText);
+              window.location.reload();
           } else {
               console.error("Erro ao enviar mensagem para o Python");
           }
