@@ -1,3 +1,6 @@
+import zipfile
+import csv
+import json
 
 def Organizar_Dados_Dentro_Da_Pagina(dados, inicio, qtd_por_pagina, pagina):
     novo_dicionario = {}
@@ -22,8 +25,37 @@ def Organizar_Dados_Dentro_Da_Pagina(dados, inicio, qtd_por_pagina, pagina):
 def filtrarDicionario(dados,texto=None):
     novo_dicionario = {}
     for item_id,item in dados.items():
-        nome = item['nome'].upper()
-        if texto is not None and texto.upper() in nome:
+       #nome = item['nome'].upper()
+        if texto is not None and texto.upper() in item['nome'].upper():
             novo_dicionario[item_id] = item
-    # print(novo_dicionario)
+            
     return novo_dicionario
+
+
+def gerarDownload():
+    path = 'arquivos/catalogo.json'
+    csv_path = 'arquivos/catalogo_csv.csv'
+
+    #Abre o arquivo JSON
+    with open(path, 'r') as file:
+        Arqui_JSON = json.load(file)
+
+    #Transforma JSON em CSV
+
+    with open(csv_path, 'w', newline='') as csvfile:
+        fieldnames = ['id', 'nome', 'quantidade', 'preco', 'descricao']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        
+        writer.writeheader()
+        for key, value in Arqui_JSON.items():
+            writer.writerow({'id': key, 'nome': value['nome'], 'quantidade': value['quantidade'], 'preco': value['preco'], 'descricao': value['descricao']})
+
+    #Gera arquivo ZIP
+    zip_path = 'arquivos/catalogo.zip'
+    
+    with zipfile.ZipFile(zip_path, 'w') as zipf:
+        zipf.write(path, 'catalogo.json')
+        zipf.write(csv_path, 'catalogo_csv.csv')
+
+    return zip_path
+    

@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/reset.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/indexStyle.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/cadastroLogin.css')}}">
+    <title>Document</title>
+</head>
+
+<body>
+{% extends "header.html" %}
+
+{%block content%}
+    <main class="bloco">
+        
+        <div class="login__block">
+            <div class="login__form">
+            <h1>Login</h1>
+            <input class="form__email" type="text" value="" id="inputEmail" placeholder="Insira o email" required>
+         
+            <input class="form__senha" type="password" value="" id="inputSenha" placeholder="Insira a senha" required>
+            <div>
+            <input type="checkbox" name="" id="mostrarSenha" onclick="mostrarSenha()"> Mostrar Senha </div>
+
+            <button class="form__login" id="loginButton">Entrar</button>
+            <a href="cadastro.html">Não possui conta ainda? Crie uma aqui</a>
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='cadastroLogin.js') }}"></script>
+
+{%endblock%}
+
+</body>
+</html>

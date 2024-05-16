@@ -3,9 +3,7 @@ from flask_paginate import Pagination, get_page_parameter
 import funcoesSite
 import os
 import dicionario
-import zipfile
-import csv
-import json
+
 
 # inicializaçaõ
 catalogo = dicionario.lerArquivo()
@@ -52,11 +50,10 @@ def modifica_produto():
 @app.route('/catalogo', methods=['GET', 'POST'])
 def catalogo():
     catalogo = dicionario.lerArquivo()
-    
-
-    nomeAprocurar = request.form.get('texto', '')
-    session['nomeAprocurar'] = nomeAprocurar
- 
+    nomeAprocurar = ''
+    if(request.method == 'POST'):
+        nomeAprocurar = request.form.get('texto', '')
+        session['nomeAprocurar'] = nomeAprocurar
 
     if(nomeAprocurar is not None and nomeAprocurar != ''):
         catalogo = funcoesSite.filtrarDicionario(catalogo, nomeAprocurar)
@@ -69,38 +66,22 @@ def catalogo():
     paginacao = Pagination(page=pagina, total=total, qtd_per_page=qtd_por_pagina, per_page = qtd_por_pagina,search =False, format_number=True)  
     return render_template('catalogo.html', paginacao = paginacao, catalogo = pagination_data, nomeAprocurar = nomeAprocurar)
 
+
+
 @app.route('/about')
 def about():
     return render_template('about.html')
 
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
 @app.route('/download')
-def download():
-    path = 'arquivos/catalogo.json'
-    csv_path = 'arquivos/catalogo_csv.csv'
-
-    #Abre o arquivo JSON
-    with open(path, 'r') as file:
-        Arqui_JSON = json.load(file)
-
-    #Transforma JSON em CSV
-
-    with open(csv_path, 'w', newline='') as csvfile:
-        fieldnames = ['id', 'nome', 'quantidade', 'preco', 'descricao']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        
-        writer.writeheader()
-        for key, value in Arqui_JSON.items():
-            writer.writerow({'id': key, 'nome': value['nome'], 'quantidade': value['quantidade'], 'preco': value['preco'], 'descricao': value['descricao']})
-
-    #Gera arquivo ZIP
-
-    zip_path = 'arquivos/catalogo.zip'
+def download():    
+   
     
-    with zipfile.ZipFile(zip_path, 'w') as zipf:
-        zipf.write(path, 'catalogo.json')
-        zipf.write(csv_path, 'catalogo_csv.csv')
-    
-    return send_file(zip_path, as_attachment=True)
+    return send_file(funcoesSite.gerarDownload(), as_attachment=True)
 
 
 
