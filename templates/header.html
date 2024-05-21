@@ -18,10 +18,12 @@
         <li><a class="cabecalho__lista__link" href="{{url_for('principal')}}">Home</a></li>
         <li><a class="cabecalho__lista__link" href="{{url_for('catalogo')}}">Catalogo</a></li>
         <li><a class="cabecalho__lista__link" href="{{url_for('about')}}">Redes</a></li> 
+        <li><a class="cabecalho__lista__link" href="{{url_for('produtos')}}">Produtos</a></li>
     </ul>
     <div class="cabecalho__extras">
         <a href="{{url_for('login')}}">Login</a>
-        <a href="{{url_for('download')}}" download>
+        <a href="{{url_for('cadastro') }}" >Cadastrar</a>
+        <a href="{{url_for('download')}}"download>
         <button class="cabecalho__extras__Download button">Download</button>
     </a>
         <button id="changeTheme" class="cabecalho__extras__Cor button">Mudar Tema</button>

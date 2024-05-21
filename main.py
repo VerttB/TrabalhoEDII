@@ -6,7 +6,6 @@ import dicionario
 
 
 # inicializaçaõ
-catalogo = dicionario.lerArquivo()
 textoRecebido = ''
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.secret_key = 'chave'
@@ -19,9 +18,9 @@ def principal():
 def adiciona_produto():
     dados = request.json
     mensagem = dados['mensagem']
-    dados = dicionario.lerArquivo()
+    dados_dict = dicionario.lerArquivo()
     print(f"Comunicação com uscesso da mensagem {mensagem}")
-    dicionario.adicionarProdutoatalogo(dados, mensagem[0], int(mensagem[1]), float(mensagem[2]), mensagem[3])
+    dicionario.adicionarProdutoatalogo(dados_dict, mensagem[0], int(mensagem[1]), float(mensagem[2]), mensagem[3])
     return jsonify('Mensagem recebida')
 
 @app.route('/delete',  methods=['GET' ,'POST'])
@@ -49,21 +48,21 @@ def modifica_produto():
 
 @app.route('/catalogo', methods=['GET', 'POST'])
 def catalogo():
-    catalogo = dicionario.lerArquivo()
+    # catalogo = dicionario.lerArquivo()
     nomeAprocurar = ''
     if(request.method == 'POST'):
         nomeAprocurar = request.form.get('texto', '')
         session['nomeAprocurar'] = nomeAprocurar
 
-    if(nomeAprocurar is not None and nomeAprocurar != ''):
-        catalogo = funcoesSite.filtrarDicionario(catalogo, nomeAprocurar)
+    # if(nomeAprocurar is not None and nomeAprocurar != ''):
+    #     catalogo = funcoesSite.filtrarDicionario(catalogo, nomeAprocurar)
     
-    total = len(catalogo)
+    # total = len(catalogo)
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
     qtd_por_pagina = 15
-    pagination_data = funcoesSite.Organizar_Dados_Dentro_Da_Pagina(catalogo, (pagina - 1) * qtd_por_pagina, qtd_por_pagina, pagina-1)
-    
-    paginacao = Pagination(page=pagina, total=total, qtd_per_page=qtd_por_pagina, per_page = qtd_por_pagina,search =False, format_number=True)  
+    # pagination_data = funcoesSite.Organizar_Dados_Dentro_Da_Pagina(catalogo, (pagina - 1) * qtd_por_pagina, qtd_por_pagina, pagina-1)
+    paginacao,pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina)
+    # paginacao = Pagination(page=pagina, total=total, qtd_per_page=qtd_por_pagina, per_page = qtd_por_pagina,search =False, format_number=True)  
     return render_template('catalogo.html', paginacao = paginacao, catalogo = pagination_data, nomeAprocurar = nomeAprocurar)
 
 
@@ -77,12 +76,27 @@ def about():
 def login():
     return render_template('login.html')
 
+@app.route('/cadastro')
+def cadastro():
+    return render_template('cadastro.html')
+
 @app.route('/download')
 def download():    
-   
-    
     return send_file(funcoesSite.gerarDownload(), as_attachment=True)
 
+
+@app.route('/produtos', methods=['GET', 'POST'])
+def produtos():
+    nomeAprocurar = ''
+    if(request.method == 'POST'):
+        nomeAprocurar = request.form.get('texto', '')
+        session['nomeAprocurar'] = nomeAprocurar
+        
+    pagina = request.args.get(get_page_parameter(), type=int, default=1)
+    qtd_por_pagina = 8
+    paginacao,paginacao_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina)
+    
+    return render_template('produtos.html', paginacao=paginacao, catalogo=paginacao_data, nomeAprocurar = nomeAprocurar)
 
 
 app.run(debug = True)

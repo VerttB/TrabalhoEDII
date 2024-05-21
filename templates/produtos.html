@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/produtos.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/paginacao.css')}}">
+    
+    <title>Document</title>
+</head>
+<body>
+    {% extends "header.html" %}
+    {%block content %}
+
+    <main class="bloco">
+        <section class="grid__conteiner" id="gridMain">
+            {% for produto_id,produto_itens in catalogo.items() %}
+            <div id="box" class="grid__box">
+                <div class="box__conteudo">
+                <img src="{{ url_for('static', filename='assets/image.png') }}" alt="">
+                <div class="grid__box__text">
+                <p>{{produto_itens['nome']}}</p>
+                <p><{{produto_itens['preco']}}</p>
+            </div>
+                </div>
+            </div>
+            {% endfor %}
+           <br>
+            {{ paginacao.links }}
+
+          
+        </section>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='produtos.js') }}"></script>
+
+    {% endblock %}
+
+</body>
+</html>

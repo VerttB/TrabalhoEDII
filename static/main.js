@@ -15,16 +15,16 @@ window.addEventListener('DOMContentLoaded', (event) =>{
       localStorage.setItem('theme', tema_atual);
 });
 
-  function armazenaTexto(){
-      let texto = document.querySelector('input').value
-      localStorage.setItem('texto', texto);
-  }
+  // function armazenaTexto(){
+  //     let texto = document.querySelector('input').value
+  //     localStorage.setItem('texto', texto);
+  // }
 
-  window.onload = function(){
-    var texto = localStorage.getItem('texto');
-    document.querySelector('input').setAttribute('value', texto);
+  // window.onload = function(){
+  //   var texto = localStorage.getItem('texto');
+  //   document.querySelector('input').setAttribute('value', texto);
    
-  }
+  // }
 
 // function clicavel(){
 //     var tabela = document.querySelectorAll('tr');

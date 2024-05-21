@@ -2,9 +2,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/cadastroLogin.css')}}">
+
     <title>Document</title>
 </head>
 <body>
+    {% extends "header.html" %}
+    {%block content%}
+        <main class="bloco">
+            <!-- <div class="login__block"> -->
+                <div class="cadastro form">
+                <h1>Cadastrar</h1>
+                <input class="form__email" type="text" value="" id="inputEmail" placeholder="Insira o email" required>
+             
+                <input class="form__senha" type="password" value="" id="inputSenha" placeholder="Insira a senha" required>
+                <div>
+                <input type="checkbox" name="" id="mostrarSenha" onclick="mostrarSenha()"> Mostrar Senha </div>
     
+                <button class="form__btn form__cadastro" id="cadastroButton">Entrar</button>
+                <strong>Já possui conta?<a href='{{url_for("login")}}'> Faça Login</a></strong>
+                <a href="">Esqueceu a senha?</a>
+                </div>
+            <!-- </div> -->
+    </main>
+    {% endblock %}
 </body>
 </html>

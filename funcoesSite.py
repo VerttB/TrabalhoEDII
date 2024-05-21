@@ -1,6 +1,12 @@
 import zipfile
 import csv
 import json
+import funcoesSite
+from flask import Flask,url_for,render_template,send_file,request, session, jsonify, redirect, make_response
+from flask_paginate import Pagination, get_page_parameter
+from dicionario import lerArquivo
+
+
 
 def Organizar_Dados_Dentro_Da_Pagina(dados, inicio, qtd_por_pagina, pagina):
     novo_dicionario = {}
@@ -21,6 +27,20 @@ def Organizar_Dados_Dentro_Da_Pagina(dados, inicio, qtd_por_pagina, pagina):
     return novo_dicionario
 
 
+def criarPagina(nomeAprocurar, pagina, qtd_por_pagina):
+    
+    catalogo = lerArquivo()
+
+    if(nomeAprocurar is not None and nomeAprocurar != ''):
+        catalogo = filtrarDicionario(catalogo, nomeAprocurar)
+
+    total = len(catalogo)
+    pagination_data = Organizar_Dados_Dentro_Da_Pagina(catalogo, (pagina - 1) * qtd_por_pagina, qtd_por_pagina, pagina-1)
+    
+    paginacao = Pagination(page=pagina, total=total, qtd_per_page=qtd_por_pagina, per_page = qtd_por_pagina,search =False, format_number=True)
+    
+    return paginacao, pagination_data
+    
 
 def filtrarDicionario(dados,texto=None):
     novo_dicionario = {}

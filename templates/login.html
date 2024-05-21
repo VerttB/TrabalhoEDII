@@ -14,8 +14,8 @@
 {%block content%}
     <main class="bloco">
         
-        <div class="login__block">
-            <div class="login__form">
+        <!-- <div class="login__block"> -->
+            <div class="login form">
             <h1>Login</h1>
             <input class="form__email" type="text" value="" id="inputEmail" placeholder="Insira o email" required>
          
@@ -23,10 +23,11 @@
             <div>
             <input type="checkbox" name="" id="mostrarSenha" onclick="mostrarSenha()"> Mostrar Senha </div>
 
-            <button class="form__login" id="loginButton">Entrar</button>
-            <a href="cadastro.html">Não possui conta ainda? Crie uma aqui</a>
+            <button class="form__btn form__login" id="loginButton">Entrar</button>
+            <strong>Não possui conta ainda?<a href='{{url_for("cadastro")}}'> Crie uma aqui</a></strong>
+            <a href="">Esqueceu a senha?</a>
             </div>
-        </div>
+        <!-- </div> -->
     </main>
     <script src="{{ url_for('static', filename='cadastroLogin.js') }}"></script>
 

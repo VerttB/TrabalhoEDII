@@ -41,8 +41,6 @@ function pegarInfo() {
      button.addEventListener('click', function(){
         console.log("Poisé: " + itens[0].innerText);
         comunicaPython(itens[0].innerText, '/delete');
-
-        window.location.reload();
      });
  }
 
@@ -104,7 +102,8 @@ function addValues() {
 
 
 function comunicaPython(mensagem, rota){
-  mensagem.forEach((elemento) => console.log(`Elemento: ${elemento}, tipo do elemento: ${typeof(elemento)}`));
+  //mensagem.forEach((elemento) => console.log(`Elemento: ${elemento}, tipo do elemento: ${typeof(elemento)}`));
+
   var xhr = new XMLHttpRequest();
   xhr.open("POST", rota, true); 
   xhr.setRequestHeader("Content-Type", "application/json"); 

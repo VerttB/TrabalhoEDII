@@ -418,29 +418,5 @@
 		"quantidade": 1,
 		"preco": 13.25,
 		"descricao": "Desodorante \u00edntimo em spray, formulado para neutralizar odores e proporcionar sensa\u00e7\u00e3o de frescor e conforto."
-	},
-	"71": {
-		"nome": "Nicotina",
-		"quantidade": 10,
-		"preco": 4.55,
-		"descricao": "Bacana"
-	},
-	"72": {
-		"nome": "Cainan",
-		"quantidade": 4,
-		"preco": 0.01,
-		"descricao": "teste"
-	},
-	"73": {
-		"nome": "Rfael",
-		"quantidade": 23,
-		"preco": 33.24,
-		"descricao": "Rafael blablabalblalbalblabla"
-	},
-	"74": {
-		"nome": "Paracetamols",
-		"quantidade": 231,
-		"preco": 22.33,
-		"descricao": "aaaaaaaaaaaaaaaaa"
 	}
 }
