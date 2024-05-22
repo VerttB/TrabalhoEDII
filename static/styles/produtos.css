@@ -4,7 +4,7 @@
 }
 
 .grid__conteiner{
-    background-color: antiquewhite;
+    background-color: var(--cor-de-fundo);
     width:75%;
     height: auto;
     overflow: scroll;
