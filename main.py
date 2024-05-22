@@ -93,7 +93,8 @@ def produtos():
         session['nomeAprocurar'] = nomeAprocurar
         
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
-    qtd_por_pagina = 8
+    qtd_por_pagina = 20
+    
     paginacao,paginacao_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina)
     
     return render_template('produtos.html', paginacao=paginacao, catalogo=paginacao_data, nomeAprocurar = nomeAprocurar)

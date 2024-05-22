@@ -2,8 +2,7 @@ import zipfile
 import csv
 import json
 import funcoesSite
-from flask import Flask,url_for,render_template,send_file,request, session, jsonify, redirect, make_response
-from flask_paginate import Pagination, get_page_parameter
+from flask_paginate import Pagination
 from dicionario import lerArquivo
 
 
@@ -78,4 +77,5 @@ def gerarDownload():
         zipf.write(csv_path, 'catalogo_csv.csv')
 
     return zip_path
+    
     

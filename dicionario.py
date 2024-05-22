@@ -1,5 +1,15 @@
 import json
 
+
+def geraImagens():
+    catalogo = lerArquivo()
+    for item_id in catalogo.items():
+        rota =  f"https://www.google.com/search?tbm=isch&q={catalogo[item_id]['nome']}"
+        catalogo[item_id]["link"] = rota
+    
+    pass
+
+
 def adicionarProdutoatalogo(dict, nome, quantidade, preco, descricao):
     # Verifica se o dicionário está vazio
     if not dict:
