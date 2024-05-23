@@ -17,15 +17,17 @@
             <div id="box" class="grid__box">
                 <div class="box__conteudo">
                 <img src="{{produto_itens['link']}}" alt="">
-                <div class="grid__box__text">
-                <p>{{produto_itens['nome']}}</p>
-                <p>R$ {{produto_itens['preco']}}</p>
+                <div class="box__text">
+                <p id="nome">{{produto_itens['nome']}}</p>
+                <p id="preco">R$ {{produto_itens['preco']}}</p>
             </div>
                 </div>
             </div>
             {% endfor %}
-          
+            
         </section>
+        {{ paginacao.links }}
+
 
     </main>
 

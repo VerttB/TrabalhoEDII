@@ -1,19 +1,6 @@
 @import url(variaveis.css);
 @import url(fontes.css);
 
-/* .login__block{
-    color: var(--cor-texto);
-    background-color: var(--cor-de-fundo);
-    display: flex;
-    margin-top: 15%;
-    justify-content: center;
-    width: 50%;
-    height: auto;
-    font-size: 14px;
-    border: 1px solid black;
-    border-radius: 6px;
-    
-} */
 
 .form{
     color: var(--cor-texto);

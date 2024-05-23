@@ -7,30 +7,45 @@
 
 .grid__conteiner{
     background-color: var(--cor-de-fundo-bloco);
-    width:90%;
-    height: 100%;
+    width:100%;
+    height: auto;
     overflow: scroll;
     display: grid;
     align-items: center;
     justify-content: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 12px;
-    padding: 0 30px;
+    gap: 24px;
     overflow: hidden;
+    margin-top: 10px;
+    
 }
+
+
 
 .grid__box{
-    margin: 20px 0;
+    transition: transform 0.3s;
 }
 
+.grid__box:hover, .grid__box:focus{
+    transform: translateX(3px) scale(1.1);
+
+}
 .box__conteudo{
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: rgb(255, 255, 255);
+
 }
 
 .box__conteudo > img{
     width: 50%;
     height: 90%;
     aspect-ratio: 4/4;
+
+}
+
+.box__text{
+    margin: 0 20px;
+    font-weight: 600;
 }

@@ -5,7 +5,7 @@ import urllib.request
 
 
 def getLink(nome):
-    text = requests.get(f'https://www.google.com/search?q=medicamento:{nome}&tbm=isch').text
+    text = requests.get(f'https://www.google.com/search?q=medicamento:{nome}&tbm=isch&tbs=isz:lt,islt:2mp').text
     html = BeautifulSoup(text, 'html.parser')
     print(nome)
     try:
@@ -20,11 +20,7 @@ def getLink(nome):
         print("Html n encontrado")
         return ""
     
-        
-
-
 dados = dicionario.lerArquivo()
-#try:
 for itens in dados:
     path = f"static/assets/imagensRemedios/{dados[itens]['nome']}.jpeg"
     try:
