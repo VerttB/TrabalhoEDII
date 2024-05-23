@@ -1,12 +1,14 @@
+@import url(variaveis.css);
+
 .bloco{
     height: auto;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .grid__conteiner{
-    background-color: var(--cor-de-fundo);
-    width:75%;
-    height: auto;
+    background-color: var(--cor-de-fundo-bloco);
+    width:90%;
+    height: 100%;
     overflow: scroll;
     display: grid;
     align-items: center;
@@ -14,6 +16,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 12px;
     padding: 0 30px;
+    overflow: hidden;
 }
 
 .grid__box{
@@ -27,7 +30,7 @@
 }
 
 .box__conteudo > img{
-    width: 40%;
-    height: 60%;
-    aspect-ratio: 3/4;
+    width: 50%;
+    height: 90%;
+    aspect-ratio: 4/4;
 }
