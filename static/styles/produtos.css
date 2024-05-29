@@ -1,51 +1,69 @@
 @import url(variaveis.css);
 
 .bloco{
-    height: auto;
+    height: 1500px;
     overflow: hidden;
 }
 
 .grid__conteiner{
     background-color: var(--cor-de-fundo-bloco);
     width:100%;
-    height: auto;
+    height: 1500px;
     overflow: scroll;
     display: grid;
     align-items: center;
     justify-content: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 24px;
-    overflow: hidden;
+    grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
+    gap: 14px;
     margin-top: 10px;
-    
+    overflow: hidden;
 }
 
 
 
 .grid__box{
-    transition: transform 0.3s;
+    transition: transform 0.4s;
 }
 
 .grid__box:hover, .grid__box:focus{
     transform: translateX(3px) scale(1.1);
+    cursor: pointer;
 
 }
 .box__conteudo{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     background-color: rgb(255, 255, 255);
+    height: 300px;
+    width: 270px;
 
 }
-
-.box__conteudo > img{
-    width: 50%;
-    height: 90%;
-    aspect-ratio: 4/4;
-
-}
-
 .box__text{
+    width: 100%;
+    text-align: center;
+    border-top: solid 2px black;
     margin: 0 20px;
     font-weight: 600;
+}
+
+.remedio__imagem{
+    margin-top: 30px;
+    width: 50%;
+    height:50%;
+}
+
+.barra{
+    width: 1vw;
+}
+
+#preco{
+    color: red;
+}
+
+#carrinho{
+    position: absolute;
+    margin-top: 130px;
+    margin-left: 150px;
 }

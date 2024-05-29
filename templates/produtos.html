@@ -16,7 +16,9 @@
             {% for produto_id,produto_itens in catalogo.items() %}
             <div id="box" class="grid__box">
                 <div class="box__conteudo">
-                <img src="{{produto_itens['link']}}" alt="">
+                <img class="remedio__imagem" src="{{produto_itens['link']}}" alt="">
+                <i id="carrinho" class="fa-solid fa-cart-shopping " style="color: #74C0FC;"></i>
+
                 <div class="box__text">
                 <p id="nome">{{produto_itens['nome']}}</p>
                 <p id="preco">R$ {{produto_itens['preco']}}</p>

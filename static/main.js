@@ -1,9 +1,14 @@
 
 window.addEventListener('DOMContentLoaded', (event) =>{
     var tema = localStorage.getItem('theme')
-    if(tema != null){
-      document.body.classList.add(tema)
+    try{
+    if(tema != null && tema != ''){
+      document.body.classList.add(tema);
     }
+  }
+  catch(error){
+    console.error(error);
+  }
     
   });
 
