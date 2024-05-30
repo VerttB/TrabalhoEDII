@@ -1,3 +1,6 @@
+import { comunicaPython } from "./comunicacao.js";
+
+
 var itens = []
 var elementoSelecionado = null
 var listaTratada = []
@@ -29,7 +32,7 @@ function pegarInfo() {
     lista.forEach(function(elemento) {
         elemento.addEventListener('click', function() {
             console.log(this.innerText);
-            filhos = this.getElementsByTagName('td');
+            const filhos = this.getElementsByTagName('td');
             itens = filhos
         });
     });
@@ -99,28 +102,6 @@ function addValues() {
   listaTratada.push(descricao.value);
   comunicaPython(listaTratada, '/adiciona'); 
 }
-
-
-function comunicaPython(mensagem, rota){
-  //mensagem.forEach((elemento) => console.log(`Elemento: ${elemento}, tipo do elemento: ${typeof(elemento)}`));
-
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", rota, true); 
-  xhr.setRequestHeader("Content-Type", "application/json"); 
-  xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-          if (xhr.status === 200) {
-             
-              console.log("Resposta do Python:", xhr.responseText);
-              window.location.reload();
-          } else {
-              console.error("Erro ao enviar mensagem para o Python");
-          }
-      }
-  };
-  xhr.send(JSON.stringify({ mensagem: mensagem }));
-}
-
 
 function setNomeProdutoPrompt(){
   const produto = document.getElementById('produto_prompt')

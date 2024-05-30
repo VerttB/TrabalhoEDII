@@ -1,20 +1,21 @@
+import { comunicaPython } from "./comunicacao.js";
+
 const gridBoxes = document.querySelectorAll('#box');
 const compras = document.getElementById('compras');
 const qtdCompras = document.getElementById('qtdCompras')
+const finalizarCompra = document.getElementById('finalizarCompra')
 const listaProdutos = []
 
-const produto = {
-    nome: "",
-    preco: "",
-    imagemSrc: "",
-    quantidade: "",
-}
+
+finalizarCompra.addEventListener('click', () => {
+    comunicaPython(listaProdutos, '/comprar')
+})
 
 gridBoxes.forEach( (gridBox) =>{
     gridBox.addEventListener('click', () => {
-        nome = gridBox.querySelector('#nome');
-        preco = gridBox.querySelector('#preco');
-        imagemSrc = gridBox.querySelector('img');
+        const nome = gridBox.querySelector('#nome');
+        const preco = gridBox.querySelector('#preco');
+        const imagemSrc = gridBox.querySelector('img');
         adicionaProdutos(nome,preco,imagemSrc);
         qtdCompras.textContent = Number(qtdCompras.textContent) + 1;
         
@@ -23,6 +24,13 @@ gridBoxes.forEach( (gridBox) =>{
 
 
 function adicionaProdutos(nome,preco,imagemSrc){
+    
+const produto = {
+        nome: "",
+        preco: "",
+        imagemSrc: "",
+        quantidade: "",
+    }
     
 
 if(!listaProdutos.some(p => p['nome'] === nome.textContent)){
@@ -37,5 +45,6 @@ if(!listaProdutos.some(p => p['nome'] === nome.textContent)){
 else{
   const produtoAchado = listaProdutos.find(p => p.nome === nome.textContent);
   produtoAchado.quantidade +=1;
+  console.log("Quantidade ")
 }
 }

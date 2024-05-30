@@ -14,6 +14,13 @@ app.secret_key = 'chave'
 def principal():
     return render_template('index.html')
 
+@app.route('/comprar' , methods=['GET', 'POST'])
+def comprar():
+    dados = request.json
+    mensagem = dados['mensagem']
+    print(mensagem)
+    return jsonify("Compra feita com sucesso")
+
 @app.route('/adiciona', methods=['GET', 'POST'])
 def adiciona_produto():
     dados = request.json
@@ -21,7 +28,7 @@ def adiciona_produto():
     dados_dict = dicionario.lerArquivo()
     print(f"Comunicação com uscesso da mensagem {mensagem}")
     dicionario.adicionarProdutoatalogo(dados_dict, mensagem[0], int(mensagem[1]), float(mensagem[2]), mensagem[3])
-    return jsonify('Mensagem recebida')
+    return jsonify('Produto adicionado com sucesso')
 
 @app.route('/delete',  methods=['GET' ,'POST'])
 def delete_produto():
@@ -32,7 +39,7 @@ def delete_produto():
     print(f'Tipo do dado {type(mensagem)}')
     dados_dict = dicionario.lerArquivo()
     dicionario.removerProduto(dados_dict, str(mensagem))
-    return jsonify('Mensagem recebida')
+    return jsonify('Produto deletado com sucesso')
 
 
 @app.route('/modifica', methods=['GET', 'POST'])
@@ -98,6 +105,7 @@ def produtos():
     paginacao,paginacao_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina)
     
     return render_template('produtos.html', paginacao=paginacao, catalogo=paginacao_data, nomeAprocurar = nomeAprocurar)
+
 
 
 app.run(debug = True)

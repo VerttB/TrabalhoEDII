@@ -1,8 +1,8 @@
 {
 	"1": {
-		"nome": "Paracetamols",
-		"quantidade": 231,
-		"preco": 22.6,
+		"nome": "Paracetamol",
+		"quantidade": 220,
+		"preco": 40.0,
 		"descricao": "Analg\u00e9sico e antipir\u00e9tico utilizado para aliviar a dor e reduzir a febre.",
 		"link": "static/assets/imagensRemedios/Paracetamols.jpeg"
 	},

@@ -9,9 +9,7 @@ window.addEventListener('DOMContentLoaded', (event) =>{
   catch(error){
     console.error(error);
   }
-    
   });
-
       document.querySelector("#changeTheme").addEventListener("click", () => {
       document.body.classList.toggle("mudar-tema");
       tema_atual = document.body.classList.contains('mudar-tema') ? 'mudar-tema' : ''

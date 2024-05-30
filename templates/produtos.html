@@ -15,6 +15,7 @@
         <div id="compras">
         <i id="carrinhoCompras" class="fa-solid fa-cart-shopping" style="color: #B197FC;"></i>
         <p id="qtdCompras">0</p>
+        <button id="finalizarCompra">Comprar</button>
         </div>
         <section class="grid__conteiner" id="gridMain">
             {% for produto_id,produto_itens in catalogo.items() %}
@@ -38,7 +39,7 @@
     </main>
 
 
-    <script src="{{ url_for('static', filename='produtos.js') }}"></script>
+    <script  type="module" src="{{ url_for('static', filename='produtos.js') }}"></script>
 
     {% endblock %}
 
