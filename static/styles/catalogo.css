@@ -17,15 +17,13 @@
 
 
 .tabela__button{
-    display: flex;
-    text-align: left;
     gap: 16px;
-    padding-bottom: 20px;
+    padding: 15px;    
+    
 }
 
-.tabela__button > button{
-    height: 3em;
-    width: 5em;
+.tabela__button > .button{
+    width: 6rem;
 }
 th{
     background-color: var(--cor-tabela-head);

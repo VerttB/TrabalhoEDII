@@ -7,17 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-   <!-- <header class="cabecalho">
-        <ul class="cabecalho__lista">
-            <li><a class="cabecalho__lista__link" href={{url_for('principal')}}>Home</a></li>
-            <li><a class="cabecalho__lista__link" href={{url_for('about')}}>About us</a></li>
-            <li><a class="cabecalho__lista__link" href={{url_for('catalogo')}}>Catalogo</a></li>
-        </ul>
-    <div class="cabecalho__extras">
-        <button class="cabecalho__extras__Download button" onclick="">Download</button>
-        <button  id="changeTheme" class="cabecalho__extras__Cor button">Mudar Tema</button>
-    </div>
-    </header> -->
+
     {% extends "header.html" %}
     {% block content %}
     
@@ -39,8 +29,8 @@
                 um sistema de entrega de produtos, que seja capaz de calcular as rotas, informando ao cliente o preço do frete
             e tempo estimado de entrega </p>
         </div>
-        <div class="contudo__imageem">
-        <img class="conteudo__imagem__img" src="{{ url_for('static', filename='assets/imagem-remedios.png') }}" alt="imagem">
+        <div class="conteudo__imagem">
+        <img class="conteudo__imagem__img" src="{{ url_for('static', filename='assets/remedioImagem1.png') }}" alt="imagem">
         
     </div>
 </div>
