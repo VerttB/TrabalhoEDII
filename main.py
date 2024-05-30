@@ -19,6 +19,10 @@ def comprar():
     dados = request.json
     mensagem = dados['mensagem']
     print(mensagem)
+    print(type(mensagem))
+    dados_dict = dicionario.lerArquivo()
+    print(type(dados_dict))
+    dicionario.retirar_itens_comp(dados_dict, mensagem)
     return jsonify("Compra feita com sucesso")
 
 @app.route('/adiciona', methods=['GET', 'POST'])

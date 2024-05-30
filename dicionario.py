@@ -45,7 +45,15 @@ def modificarProduto(dict, id_alterar, nome, quant, valor):
     
     atualizarArquivo(dict)
 
-
+def retirar_itens_comp(dicio, lista_carrinho):
+    dicio_compra = {item['nome']: item for item in lista_carrinho}
+    
+    for nomeCarrinho, itemCarrinho in dicio_compra.items():
+        for id, produto in dicio.items():
+            if nomeCarrinho == produto['nome']:
+                produto['quantidade'] -= itemCarrinho['quantidade']
+    atualizarArquivo(dicio)
+    
 def atualizarArquivo(dicts):
     with open('arquivos/catalogo.json', 'w') as arquivo:
         arquivo.write(json.dumps(dicts, indent='\t')) 

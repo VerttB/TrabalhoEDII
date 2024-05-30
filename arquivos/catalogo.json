@@ -407,14 +407,14 @@
 	},
 	"69": {
 		"nome": "Kit Manicure e Pedicure",
-		"quantidade": 1,
+		"quantidade": 5,
 		"preco": 29.99,
 		"descricao": "Kit completo de manicure e pedicure, com alicates, cortadores e outros acess\u00f3rios essenciais para cuidados com as unhas.",
 		"link": "static/assets/imagensRemedios/Kit Manicure e Pedicure.jpeg"
 	},
 	"70": {
 		"nome": "Desodorante \u00cdntimo",
-		"quantidade": 1,
+		"quantidade": 5,
 		"preco": 13.25,
 		"descricao": "Desodorante \u00edntimo em spray, formulado para neutralizar odores e proporcionar sensa\u00e7\u00e3o de frescor e conforto.",
 		"link": "static/assets/imagensRemedios/Desodorante \u00cdntimo.jpeg"
