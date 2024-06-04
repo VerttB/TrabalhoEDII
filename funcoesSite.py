@@ -4,7 +4,7 @@ import json
 import funcoesSite
 from flask_paginate import Pagination
 from dicionario import lerArquivo
-from BTree import precoOrdem
+from BTree import nomeOrdem, quantidadeOrdem,precoOrdem
 
 
 
@@ -103,7 +103,17 @@ def gerarDownload():
     return zip_path
     
     
-def verificaOrdenacao(mensagem):
-    print(mensagem)
-    catalogo = precoOrdem(mensagem)
+def verificaOrdenacao(chave, tipo):
+    catalogo = {}
+    print("A chave é ", chave)
+    if chave == "Nome " :
+        print("Entrei no nome")
+        catalogo = nomeOrdem(tipo)
+    elif chave == "Quantidade ":
+        print("Entrei na uantidade")
+        catalogo = quantidadeOrdem(tipo)
+    elif chave == "Preço":
+        print("Entrei no preco")
+        catalogo = precoOrdem(tipo)
     return catalogo
+

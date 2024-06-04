@@ -126,23 +126,42 @@ class BTree:
     
     
     
-arvoreQtd = BTree(3, "nome")
-catalogo = lerArquivo()
+arvoreQtd = BTree(3, "quantidade")
+arvoreNome = BTree(3, "nome")
+arvorePreco = BTree(3, "preco")
 
+catalogo = lerArquivo()
+ 
 for id, item in catalogo.items():
     arvoreQtd.inserir(item[arvoreQtd.tipo])
+    arvoreNome.inserir(item[arvoreNome.tipo])
+    arvorePreco.inserir(item[arvorePreco.tipo])
+
+def quantidadeOrdem(tipo):
+    catalogoNovo = {}
+    if(tipo == "crescente"):
+        resultado = arvoreQtd.dicioOrdemCrescente(arvoreQtd.raiz, catalogo, catalogoNovo)
+    else:  
+        resultado = arvoreQtd.dicioOrdemDecrescente(arvoreQtd.raiz, catalogo, catalogoNovo)
+    return resultado
+
+def nomeOrdem(tipo):
+    catalogoNovo = {}
+    if(tipo == "crescente"):
+        resultado = arvoreNome.dicioOrdemCrescente(arvoreNome.raiz, catalogo, catalogoNovo)
+    else:  
+        resultado = arvoreNome.dicioOrdemDecrescente(arvoreNome.raiz, catalogo, catalogoNovo)
+    print("Resiltadp", resultado)
+    
+    return resultado
 
 def precoOrdem(tipo):
     catalogoNovo = {}
     if(tipo == "crescente"):
-        resultado = arvoreQtd.dicioOrdemCrescente(arvoreQtd.raiz, catalogo, catalogoNovo)
-        print("Cresci")
-        for id, item in resultado.items():
-            print(item[arvoreQtd.tipo])
+        resultado = arvorePreco.dicioOrdemCrescente(arvorePreco.raiz, catalogo, catalogoNovo)
     else:  
-        resultado = arvoreQtd.dicioOrdemDecrescente(arvoreQtd.raiz, catalogo, catalogoNovo)
-        print("Encolhi")
-        for id, item in resultado.items():
-            print(item[arvoreQtd.tipo])
+        resultado = arvorePreco.dicioOrdemDecrescente(arvorePreco.raiz, catalogo, catalogoNovo)
+    print("Resiltadp", resultado)
     
     return resultado
+    

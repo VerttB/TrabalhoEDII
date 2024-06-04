@@ -17,12 +17,12 @@ headsTabela.forEach(head => {
     const elemento = event.target
     let lista = []
     if(headWasClicked === elemento.id){
-      lista = ['decrescente']
+      lista = [elemento.textContent, 'decrescente']
       headWasClicked = null
       localStorage.removeItem('headWasClicked')
     }
     else{
-        lista = ['crescente']
+        lista = [elemento.textContent,'crescente']
         headWasClicked = elemento.id
         localStorage.setItem('headWasClicked', headWasClicked)
 

@@ -71,13 +71,14 @@ def catalogo():
         
         mensagem = dados.get('mensagem', None)
         session['mensagem'] = mensagem
+        print("Mensagem:" ,mensagem)
 
     else:
         nomeAprocurar = session.get('nomeAprocurar', '')
         mensagem = session.get('mensagem', None)
 
     if mensagem:
-        catalogoNovo = funcoesSite.verificaOrdenacao(mensagem[0])
+        catalogoNovo = funcoesSite.verificaOrdenacao(mensagem[0], mensagem[1])
         print("Entrei")
         print("Mensagem:", mensagem)
         
