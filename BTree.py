@@ -151,7 +151,7 @@ def nomeOrdem(tipo):
         resultado = arvoreNome.dicioOrdemCrescente(arvoreNome.raiz, catalogo, catalogoNovo)
     else:  
         resultado = arvoreNome.dicioOrdemDecrescente(arvoreNome.raiz, catalogo, catalogoNovo)
-    print("Resiltadp", resultado)
+    #print("Resiltadp", resultado)
     
     return resultado
 
@@ -161,9 +161,9 @@ def precoOrdem(tipo):
         resultado = arvorePreco.dicioOrdemCrescente(arvorePreco.raiz, catalogo, catalogoNovo)
     else:  
         resultado = arvorePreco.dicioOrdemDecrescente(arvorePreco.raiz, catalogo, catalogoNovo)
-    print("Resiltadp", resultado)
+    #print("Resiltadp", resultado)
     
     return resultado
 
-catalogoNovo = {}
-print(arvoreNome.pesquisaArvore(arvoreNome.raiz, catalogo, catalogoNovo, "Ca"))
+# catalogoNovo = {}
+# print(arvoreNome.pesquisaArvore(arvoreNome.raiz, catalogo, catalogoNovo, "Ca"))

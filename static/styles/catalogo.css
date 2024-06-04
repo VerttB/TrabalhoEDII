@@ -134,7 +134,7 @@ td{
     background-color: rgb(255, 0, 0);
 }
 
-.pesquisa{
+/* .pesquisa{
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -169,4 +169,4 @@ td{
 @keyframes altura {
     from { max-height: 0; }
     to { max-height: 200px; }
-}
+} */

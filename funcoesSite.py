@@ -47,17 +47,17 @@ def Organizar_Dados_Dentro_Da_Pagina(dados, inicio, qtd_por_pagina, pagina):
 def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo):
     if catalogo is None:
         catalogo = lerArquivo()
-        print("Entrei onde não devia. Catalogo lido:")
+        #print("Entrei onde não devia. Catalogo lido:")
 
     if nomeAprocurar:
         catalogo = filtrarDicionario(catalogo, nomeAprocurar)
-        print("Filtrando catalogo. Resultado:")
+       # print("Filtrando catalogo. Resultado:")
 
     total = len(catalogo)
-    print("Total de itens no catalogo:", total)
+    #cprint("Total de itens no catalogo:", total)
 
     pagination_data = Organizar_Dados_Dentro_Da_Pagina(catalogo, (pagina - 1) * qtd_por_pagina, qtd_por_pagina, pagina - 1)
-    print("Dados da paginação:", pagination_data)
+    #print("Dados da paginação:", pagination_data)
 
     paginacao = Pagination(page=pagina, total=total, per_page=qtd_por_pagina, search=False, format_number=True)
     

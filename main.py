@@ -61,17 +61,17 @@ def catalogo():
     catalogoNovo = None
     mensagem = None
     nomeAprocurar = ''
-
     if request.method == 'POST':
         nomeAprocurar = request.form.get('texto', '')
         session['nomeAprocurar'] = nomeAprocurar
+        print(f"Nome a procurar {nomeAprocurar}")
         
         dados = request.get_json()
         print(dados)
-        
         mensagem = dados.get('mensagem', None)
         session['mensagem'] = mensagem
         print("Mensagem:" ,mensagem)
+        
 
     else:
         nomeAprocurar = session.get('nomeAprocurar', '')
@@ -87,6 +87,7 @@ def catalogo():
     paginacao, pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogoNovo)
 
     return render_template('catalogo.html', paginacao=paginacao, catalogo=pagination_data, nomeAprocurar=nomeAprocurar)
+
 # @app.route('/catalogo', methods=['GET', 'POST'])
 # def catalogo():
 #     catalogoNovo = None
@@ -150,7 +151,6 @@ def produtos():
         
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
     qtd_por_pagina = 18
-    
     paginacao,paginacao_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina)
     
     return render_template('produtos.html', paginacao=paginacao, catalogo=paginacao_data, nomeAprocurar = nomeAprocurar)

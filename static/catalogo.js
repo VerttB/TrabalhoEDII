@@ -5,8 +5,6 @@ var itens = []
 var elementoSelecionado = null
 var listaTratada = []
 
-const nomeTabela = document.getElementById('thead__nome');
-const dropdown = document.getElementById('myDropdown');
 const headsTabela = document.querySelectorAll('th');
 let headWasClicked = localStorage.getItem('headWasClicked')
 
