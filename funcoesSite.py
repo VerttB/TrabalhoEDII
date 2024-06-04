@@ -112,7 +112,7 @@ def verificaOrdenacao(chave, tipo):
     elif chave == "Quantidade ":
         print("Entrei na uantidade")
         catalogo = quantidadeOrdem(tipo)
-    elif chave == "Preço":
+    elif chave == "Preço ":
         print("Entrei no preco")
         catalogo = precoOrdem(tipo)
     return catalogo
