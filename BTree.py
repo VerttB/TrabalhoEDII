@@ -1,5 +1,5 @@
 from BTreeNode import BTreeNode
-import dicionario
+
 class BTree:
 
     def __init__(self, grau, tipo):
@@ -17,24 +17,37 @@ class BTree:
             temp.inserir_no(valor)
         else:
             raiz.inserir_no(valor)
-            
+    
     #--------------------------------------------------------
     
     def monta_dicio(self, dicio, dicio_atual, dado):
         for item_id, produto in dicio.items():
-            if str(produto[self.tipo]) == dado:
+            if produto[self.tipo] == dado:
                 dicio_atual[item_id] = produto
         return dicio_atual
     
     def monta_dicio_range(self, dicio, dicio_atual, dado):
         for item_id, produto in dicio.items():
-            if str(produto[self.tipo]) == dado:
+            if produto[self.tipo] == dado:
                 dicio_atual[item_id] = produto
                 return dicio_atual
         return dicio_atual
     
-    #--------------------------------------------------------
-        
+    def monta_dicio_range2(self, dicio, dicio_atual, dado):
+        if self.tipo == "id":
+            for item_id, produto in dicio.items():
+                if item_id == dado:
+                    dicio_atual[item_id] = produto
+                    return dicio_atual
+        else:
+            for item_id, produto in dicio.items():
+                if produto[self.tipo] == dado:
+                    dicio_atual[item_id] = produto
+                    return dicio_atual
+        return dicio_atual
+    
+    # #--------------------------------------------------------
+    
     def dicioOrdemCrescente(self, node, dicio, dicio_atual):
         if node is not None:  
             for i in range(len(node.key)):
@@ -78,26 +91,35 @@ class BTree:
             if not node.folha:
                 dicio_atual, cont = self.dicio_In_Range(node.filho[len(node.key)], dicio, dicio_atual, cont, min, max)
         return dicio_atual, cont
+    
+    
+    
+    # def monta_dicio(self, dicio, dicio_atual, dado):
+    #     for item_id, produto in dicio.items():
+    #         if produto[self.tipo] == dado:
+    #             dicio_atual[item_id] = produto
+    #     return dicio_atual
+    
+    def gerar_dicionario_ordenado(self, dicio):
+        chaves_ordenadas = self.percorrer_em_ordem(self.raiz, [])
+        dicio_atual = {}
+        for chave in chaves_ordenadas:
+            dicio_atual = self.monta_dicio(dicio, dicio_atual, chave)
+        return dicio_atual
+
+    def percorrer_em_ordem(self, node, resultado):
+        if node is not None:
+            for i in range(len(node.key)):
+                if not node.folha:
+                    self.percorrer_em_ordem(node.filho[i], resultado)
+                resultado.append(node.key[i])
+            if not node.folha:
+                self.percorrer_em_ordem(node.filho[len(node.key)], resultado)
+        return resultado
 
 
-
-
-
-arvoreNome = BTree(grau=5, tipo='nome')
-arvoreId = BTree(grau=5, tipo='id')
-
-
-
-catalogo = dicionario.lerArquivo()
-
-for id, item in catalogo.items():
-    arvoreNome.inserir(item['nome'])
-
-#print(catalogo)
-dicionarioAtual = {}
-
-def precoOrdem():
-    resultado = arvoreNome.dicioOrdemCrescente(arvoreNome.raiz,catalogo,dicionarioAtual)
-   
-    return resultado
-
+    # def imprimir_arvore(self, node, nivel=0):
+    #     if node is not None:
+    #         print("Nível", nivel, "Chaves:", node.key)
+    #         for i in range(len(node.filho)):
+    #             self.imprimir_arvore(node.filho[i], nivel + 1)
