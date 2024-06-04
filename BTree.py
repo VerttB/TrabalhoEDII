@@ -1,5 +1,5 @@
 from BTreeNode import BTreeNode
-
+from dicionario import lerArquivo
 class BTree:
 
     def __init__(self, grau, tipo):
@@ -123,3 +123,22 @@ class BTree:
     #         print("Nível", nivel, "Chaves:", node.key)
     #         for i in range(len(node.filho)):
     #             self.imprimir_arvore(node.filho[i], nivel + 1)
+    
+    
+    
+arvoreQtd = BTree(3, "quantidade")
+catalogo = lerArquivo()
+
+for id, item in catalogo.items():
+    arvoreQtd.inserir(item['quantidade'])
+catalogoNovo = {}
+def precoOrdem(tipo):
+    if(tipo == "crescente"):
+        resultado = arvoreQtd.dicioOrdemCrescente(arvoreQtd.raiz, catalogo, catalogoNovo)
+        print("Cresci")
+    else:
+        resultado = arvoreQtd.dicioOrdemDecrescente(arvoreQtd.raiz, catalogo, catalogoNovo)
+        print("Encolhi")
+    
+    
+    return resultado

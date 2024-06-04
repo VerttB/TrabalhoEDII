@@ -6,8 +6,9 @@ export function comunicaPython(mensagem, rota){
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                
-                // console.log("Resposta do Python:", xhr.responseText);
-                // window.location.reload();
+               // console.log("Resposta do Python:", xhr.responseText);
+               window.location.reload()
+
             } else {
                 console.error("Erro ao enviar mensagem para o Python");
             }

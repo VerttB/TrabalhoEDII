@@ -59,21 +59,31 @@ def modifica_produto():
 
 @app.route('/catalogo', methods=['GET', 'POST'])
 def catalogo():
-    
-   # mensagem = dados['mensagem']
+    catalogoNovo = None
+    mensagem = None
     nomeAprocurar = ''
     if(request.method == 'POST'):
         nomeAprocurar = request.form.get('texto', '')
         session['nomeAprocurar'] = nomeAprocurar
         dados = request.json
         print(dados)
+        mensagem = dados['mensagem']
+        session['mensagem'] = mensagem
     else:
-        nomeAprocurar = session.get(nomeAprocurar)
-    catalogoNovo = None
+        nomeAprocurar = session.get('nomeAprocurar')
+        mensagem = session.get('mensagem')
+        
+    if mensagem is not None:
+        catalogoNovo = funcoesSite.verificaOrdenacao(mensagem[0])
+        print("entrei")
+        
+    
+    
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
     qtd_por_pagina = 15
     paginacao,pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogoNovo)
 
+    #print(pagination_data)
     return render_template('catalogo.html', paginacao = paginacao, catalogo = pagination_data, nomeAprocurar = nomeAprocurar)
 
 

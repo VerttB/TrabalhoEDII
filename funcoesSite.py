@@ -27,10 +27,11 @@ def Organizar_Dados_Dentro_Da_Pagina(dados, inicio, qtd_por_pagina, pagina):
     return novo_dicionario
 
 
-def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo = None):
+def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo):
     
     if catalogo is None:
         catalogo = lerArquivo()
+        print("Entrei onde n devia")
 
     if(nomeAprocurar is not None and nomeAprocurar != ''):
         catalogo = filtrarDicionario(catalogo, nomeAprocurar)
@@ -84,5 +85,5 @@ def gerarDownload():
     
 def verificaOrdenacao(mensagem):
     print(mensagem)
-    catalogo = precoOrdem()
+    catalogo = precoOrdem(mensagem)
     return catalogo

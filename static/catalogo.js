@@ -8,23 +8,27 @@ var listaTratada = []
 const nomeTabela = document.getElementById('thead__nome');
 const dropdown = document.getElementById('myDropdown');
 const headsTabela = document.querySelectorAll('th');
-let headWasClicked = null
+let headWasClicked = localStorage.getItem('headWasClicked')
 
 
-
+console.log(headWasClicked)
 headsTabela.forEach(head => {
-  head.addEventListener('click', (event, index) =>{
+  head.addEventListener('click', (event) =>{
     const elemento = event.target
     let lista = []
-    if(headWasClicked == event.target){
-      lista = [elemento.textContent, 'crescente']
+    if(headWasClicked === elemento.id){
+      lista = ['decrescente']
       headWasClicked = null
+      localStorage.removeItem('headWasClicked')
     }
     else{
-        lista = [elemento.textContent, 'decrescente']
-        headWasClicked = event.target
+        lista = ['crescente']
+        headWasClicked = elemento.id
+        localStorage.setItem('headWasClicked', headWasClicked)
+
     }
 
+    console.log(lista)
     comunicaPython(lista, '/catalogo')
 
   })
