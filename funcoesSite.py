@@ -27,22 +27,42 @@ def Organizar_Dados_Dentro_Da_Pagina(dados, inicio, qtd_por_pagina, pagina):
     return novo_dicionario
 
 
-def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo):
+# def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo):
     
+#     if catalogo is None:
+#         catalogo = lerArquivo()
+#         print("Entrei onde n devia")
+
+#     if(nomeAprocurar is not None and nomeAprocurar != ''):
+#         catalogo = filtrarDicionario(catalogo, nomeAprocurar)
+
+#     total = len(catalogo)
+#     pagination_data = Organizar_Dados_Dentro_Da_Pagina(catalogo, (pagina - 1) * qtd_por_pagina, qtd_por_pagina, pagina-1)
+    
+#     paginacao = Pagination(page=pagina, total=total, qtd_per_page=qtd_por_pagina, per_page = qtd_por_pagina,search =False, format_number=True)
+    
+#     return paginacao, pagination_data
+    
+
+def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo):
     if catalogo is None:
         catalogo = lerArquivo()
-        print("Entrei onde n devia")
+        print("Entrei onde não devia. Catalogo lido:")
 
-    if(nomeAprocurar is not None and nomeAprocurar != ''):
+    if nomeAprocurar:
         catalogo = filtrarDicionario(catalogo, nomeAprocurar)
+        print("Filtrando catalogo. Resultado:")
 
     total = len(catalogo)
-    pagination_data = Organizar_Dados_Dentro_Da_Pagina(catalogo, (pagina - 1) * qtd_por_pagina, qtd_por_pagina, pagina-1)
-    
-    paginacao = Pagination(page=pagina, total=total, qtd_per_page=qtd_por_pagina, per_page = qtd_por_pagina,search =False, format_number=True)
+    print("Total de itens no catalogo:", total)
+
+    pagination_data = Organizar_Dados_Dentro_Da_Pagina(catalogo, (pagina - 1) * qtd_por_pagina, qtd_por_pagina, pagina - 1)
+    print("Dados da paginação:", pagination_data)
+
+    paginacao = Pagination(page=pagina, total=total, per_page=qtd_por_pagina, search=False, format_number=True)
     
     return paginacao, pagination_data
-    
+
 
 
 def filtrarDicionario(dados,texto=None):

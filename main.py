@@ -56,35 +56,67 @@ def modifica_produto():
     dicionario.modificarProduto(dados_dict, mensagem[0], mensagem[1], int(mensagem[2]), float(mensagem[3]))
     return jsonify('Mensagem recebida')
 
-
 @app.route('/catalogo', methods=['GET', 'POST'])
 def catalogo():
     catalogoNovo = None
     mensagem = None
     nomeAprocurar = ''
-    if(request.method == 'POST'):
+
+    if request.method == 'POST':
         nomeAprocurar = request.form.get('texto', '')
         session['nomeAprocurar'] = nomeAprocurar
-        dados = request.json
+        
+        dados = request.get_json()
         print(dados)
-        mensagem = dados['mensagem']
+        
+        mensagem = dados.get('mensagem', None)
         session['mensagem'] = mensagem
+
     else:
-        nomeAprocurar = session.get('nomeAprocurar')
-        mensagem = session.get('mensagem')
-        
-    if mensagem is not None:
+        nomeAprocurar = session.get('nomeAprocurar', '')
+        mensagem = session.get('mensagem', None)
+
+    if mensagem:
         catalogoNovo = funcoesSite.verificaOrdenacao(mensagem[0])
-        print("entrei")
+        print("Entrei")
+        print("Mensagem:", mensagem)
         
-    
-    
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
     qtd_por_pagina = 15
-    paginacao,pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogoNovo)
+    paginacao, pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogoNovo)
 
-    #print(pagination_data)
-    return render_template('catalogo.html', paginacao = paginacao, catalogo = pagination_data, nomeAprocurar = nomeAprocurar)
+    return render_template('catalogo.html', paginacao=paginacao, catalogo=pagination_data, nomeAprocurar=nomeAprocurar)
+# @app.route('/catalogo', methods=['GET', 'POST'])
+# def catalogo():
+#     catalogoNovo = None
+#     mensagem = None
+#     nomeAprocurar = ''
+#     if(request.method == 'POST'):
+#         nomeAprocurar = request.form.get('texto', '')
+#         session['nomeAprocurar'] = nomeAprocurar
+#         dados = request.json
+#         print(dados)
+#         mensagem = dados['mensagem']
+#         session['mensagem'] = mensagem
+#         catalogoNovo = None
+
+#     else:
+#         nomeAprocurar = session.get('nomeAprocurar')
+#         mensagem = session.get('mensagem')
+        
+#     if mensagem is not None:
+#         catalogoNovo = funcoesSite.verificaOrdenacao(mensagem[0])
+#         print("entrei")
+#         print("Mensagem" , mensagem)
+        
+    
+#    # print(catalogoNovo)
+#     pagina = request.args.get(get_page_parameter(), type=int, default=1)
+#     qtd_por_pagina = 15
+#     paginacao,pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogoNovo)
+
+#    # print(pagination_data)
+#     return render_template('catalogo.html', paginacao = paginacao, catalogo = pagination_data, nomeAprocurar = nomeAprocurar)
 
 
 
