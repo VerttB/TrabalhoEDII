@@ -73,7 +73,7 @@ class BTree:
             if not node.folha:
                 dicio_atual = self.pesquisaArvore(node.filho[len(node.key)], dicio, dicio_atual, texto)
             for i in range(len(node.key)):
-                if node.key[i] == texto:
+                if node.key[i] == texto or texto in node.key[i] or texto.lower() in node.key[i]:
                     dicio_atual = self.monta_dicio(dicio, dicio_atual, node.key[i])
                     return dicio_atual
                 if not node.folha:
@@ -164,4 +164,6 @@ def precoOrdem(tipo):
     print("Resiltadp", resultado)
     
     return resultado
-    
+
+catalogoNovo = {}
+print(arvoreNome.pesquisaArvore(arvoreNome.raiz, catalogo, catalogoNovo, "Ca"))
