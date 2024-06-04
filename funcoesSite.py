@@ -4,6 +4,7 @@ import json
 import funcoesSite
 from flask_paginate import Pagination
 from dicionario import lerArquivo
+from BTree import precoOrdem
 
 
 
@@ -26,9 +27,10 @@ def Organizar_Dados_Dentro_Da_Pagina(dados, inicio, qtd_por_pagina, pagina):
     return novo_dicionario
 
 
-def criarPagina(nomeAprocurar, pagina, qtd_por_pagina):
+def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo = None):
     
-    catalogo = lerArquivo()
+    if catalogo is None:
+        catalogo = lerArquivo()
 
     if(nomeAprocurar is not None and nomeAprocurar != ''):
         catalogo = filtrarDicionario(catalogo, nomeAprocurar)
@@ -40,6 +42,7 @@ def criarPagina(nomeAprocurar, pagina, qtd_por_pagina):
     
     return paginacao, pagination_data
     
+
 
 def filtrarDicionario(dados,texto=None):
     novo_dicionario = {}
@@ -79,3 +82,7 @@ def gerarDownload():
     return zip_path
     
     
+def verificaOrdenacao(mensagem):
+    print(mensagem)
+    catalogo = precoOrdem()
+    return catalogo

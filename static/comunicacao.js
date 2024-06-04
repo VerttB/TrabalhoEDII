@@ -1,6 +1,4 @@
 export function comunicaPython(mensagem, rota){
-    //mensagem.forEach((elemento) => console.log(`Elemento: ${elemento}, tipo do elemento: ${typeof(elemento)}`));
-  
     var xhr = new XMLHttpRequest();
     xhr.open("POST", rota, true); 
     xhr.setRequestHeader("Content-Type", "application/json"); 
@@ -8,8 +6,8 @@ export function comunicaPython(mensagem, rota){
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                
-                console.log("Resposta do Python:", xhr.responseText);
-                window.location.reload();
+                // console.log("Resposta do Python:", xhr.responseText);
+                // window.location.reload();
             } else {
                 console.error("Erro ao enviar mensagem para o Python");
             }
@@ -17,3 +15,5 @@ export function comunicaPython(mensagem, rota){
     };
     xhr.send(JSON.stringify({ mensagem: mensagem }));
   }
+
+  

@@ -1,5 +1,4 @@
 @media (max-width: 1920px){
-    
     .bloco{
         width: 100%;
         margin: 0px;
@@ -7,5 +6,10 @@
 
     .table{
         width: 80%;
+    }
+
+    .grid__conteiner{
+        grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+
     }
 }

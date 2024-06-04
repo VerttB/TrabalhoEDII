@@ -36,7 +36,7 @@
 	},
 	"6": {
 		"nome": "Cetoprofeno",
-		"quantidade": 40,
+		"quantidade": 27,
 		"preco": 15.5,
 		"descricao": "Anti-inflamat\u00f3rio n\u00e3o esteroide (AINE) utilizado no tratamento de processos inflamat\u00f3rios e dores musculares.",
 		"link": "static/assets/imagensRemedios/Cetoprofeno.jpeg"
@@ -209,70 +209,70 @@
 		"descricao": "Antidiab\u00e9tico oral utilizado no tratamento do diabetes tipo 2.",
 		"link": "static/assets/imagensRemedios/Gliclazida.jpeg"
 	},
-	"41": {
+	"31": {
 		"nome": "Protetor Solar FPS 50",
 		"quantidade": 1,
 		"preco": 29.99,
 		"descricao": "Protetor solar de amplo espectro com fator de prote\u00e7\u00e3o solar 50. Protege contra os raios UVA e UVB.",
 		"link": "static/assets/imagensRemedios/Protetor Solar FPS 50.jpeg"
 	},
-	"42": {
+	"32": {
 		"nome": "Shampoo Anticaspa",
 		"quantidade": 1,
 		"preco": 12.5,
 		"descricao": "Shampoo anticaspa que ajuda a controlar a caspa e manter o couro cabeludo saud\u00e1vel.",
 		"link": "static/assets/imagensRemedios/Shampoo Anticaspa.jpeg"
 	},
-	"43": {
+	"33": {
 		"nome": "Condicionador Hidratante",
 		"quantidade": 1,
 		"preco": 15.99,
 		"descricao": "Condicionador hidratante que proporciona maciez e brilho aos cabelos, ajudando a desembara\u00e7ar os fios.",
 		"link": "static/assets/imagensRemedios/Condicionador Hidratante.jpeg"
 	},
-	"44": {
+	"34": {
 		"nome": "Creme Dental Branqueador",
 		"quantidade": 1,
 		"preco": 7.99,
 		"descricao": "Creme dental com f\u00f3rmula branqueadora que ajuda a remover manchas superficiais dos dentes e promove um sorriso mais branco.",
 		"link": "static/assets/imagensRemedios/Creme Dental Branqueador.jpeg"
 	},
-	"45": {
+	"35": {
 		"nome": "Fio Dental",
 		"quantidade": 1,
 		"preco": 3.5,
 		"descricao": "Fio dental para uma limpeza completa entre os dentes, removendo placa bacteriana e prevenindo c\u00e1ries.",
 		"link": "static/assets/imagensRemedios/Fio Dental.jpeg"
 	},
-	"46": {
+	"36": {
 		"nome": "Desodorante Roll-On",
 		"quantidade": 1,
 		"preco": 8.99,
 		"descricao": "Desodorante roll-on com fragr\u00e2ncia suave e prote\u00e7\u00e3o de longa dura\u00e7\u00e3o contra o odor e a transpira\u00e7\u00e3o.",
 		"link": "static/assets/imagensRemedios/Desodorante Roll-On.jpeg"
 	},
-	"47": {
+	"37": {
 		"nome": "Gel de Limpeza Facial",
 		"quantidade": 1,
 		"preco": 19.99,
 		"descricao": "Gel de limpeza facial que remove impurezas e oleosidade da pele, deixando-a fresca e revitalizada.",
 		"link": "static/assets/imagensRemedios/Gel de Limpeza Facial.jpeg"
 	},
-	"48": {
+	"38": {
 		"nome": "Sabonete L\u00edquido \u00cdntimo",
 		"quantidade": 1,
 		"preco": 11.5,
 		"descricao": "Sabonete l\u00edquido \u00edntimo de uso di\u00e1rio, formulado para higiene delicada e prote\u00e7\u00e3o da regi\u00e3o \u00edntima.",
 		"link": "static/assets/imagensRemedios/Sabonete L\u00edquido \u00cdntimo.jpeg"
 	},
-	"49": {
+	"39": {
 		"nome": "Analg\u00e9sico em Gel",
 		"quantidade": 1,
 		"preco": 16.75,
 		"descricao": "Analg\u00e9sico em gel para al\u00edvio r\u00e1pido de dores musculares e articulares. Ideal para massagem terap\u00eautica.",
 		"link": "static/assets/imagensRemedios/Analg\u00e9sico em Gel.jpeg"
 	},
-	"50": {
+	"40": {
 		"nome": "\u00c1gua Micelar",
 		"quantidade": 1,
 		"preco": 25.0,

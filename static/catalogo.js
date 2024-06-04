@@ -5,6 +5,32 @@ var itens = []
 var elementoSelecionado = null
 var listaTratada = []
 
+const nomeTabela = document.getElementById('thead__nome');
+const dropdown = document.getElementById('myDropdown');
+const headsTabela = document.querySelectorAll('th');
+let headWasClicked = null
+
+
+
+headsTabela.forEach(head => {
+  head.addEventListener('click', (event, index) =>{
+    const elemento = event.target
+    let lista = []
+    if(headWasClicked == event.target){
+      lista = [elemento.textContent, 'crescente']
+      headWasClicked = null
+    }
+    else{
+        lista = [elemento.textContent, 'decrescente']
+        headWasClicked = event.target
+    }
+
+    comunicaPython(lista, '/catalogo')
+
+  })
+})
+  
+
 function clicavel(){
     var tabela = document.querySelectorAll('tr');
     tabela.forEach(function(elemento){
@@ -59,11 +85,8 @@ function pegarInfo() {
     prompt_button.removeEventListener('click', addValues);
     prompt_button.addEventListener('click', modValues);
   });
- 
- 
 
 }
-
 
 
 function modValues() {
@@ -127,3 +150,6 @@ deleteOnPy();
 modifyOnPy();
 AddOnPy();
 fecharPrompt();
+
+
+

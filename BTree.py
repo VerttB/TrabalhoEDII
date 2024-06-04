@@ -1,5 +1,5 @@
 from BTreeNode import BTreeNode
-
+import dicionario
 class BTree:
 
     def __init__(self, grau, tipo):
@@ -45,3 +45,23 @@ class BTree:
         return dicio_atual
     
     # def dicio_In_Range():
+
+
+arvoreNome = BTree(grau=5, tipo='nome')
+arvoreId = BTree(grau=5, tipo='id')
+
+
+
+catalogo = dicionario.lerArquivo()
+
+for id, item in catalogo.items():
+    arvoreNome.inserir(item['nome'])
+
+#print(catalogo)
+dicionarioAtual = {}
+
+def precoOrdem():
+    resultado = arvoreNome.dicioOrdemCrescente(arvoreNome.raiz,catalogo,dicionarioAtual)
+   
+    return resultado
+

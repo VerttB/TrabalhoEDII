@@ -59,21 +59,21 @@ def modifica_produto():
 
 @app.route('/catalogo', methods=['GET', 'POST'])
 def catalogo():
-    # catalogo = dicionario.lerArquivo()
+    
+   # mensagem = dados['mensagem']
     nomeAprocurar = ''
     if(request.method == 'POST'):
         nomeAprocurar = request.form.get('texto', '')
         session['nomeAprocurar'] = nomeAprocurar
-
-    # if(nomeAprocurar is not None and nomeAprocurar != ''):
-    #     catalogo = funcoesSite.filtrarDicionario(catalogo, nomeAprocurar)
-    
-    # total = len(catalogo)
+        dados = request.json
+        print(dados)
+    else:
+        nomeAprocurar = session.get(nomeAprocurar)
+    catalogoNovo = None
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
     qtd_por_pagina = 15
-    # pagination_data = funcoesSite.Organizar_Dados_Dentro_Da_Pagina(catalogo, (pagina - 1) * qtd_por_pagina, qtd_por_pagina, pagina-1)
-    paginacao,pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina)
-    # paginacao = Pagination(page=pagina, total=total, qtd_per_page=qtd_por_pagina, per_page = qtd_por_pagina,search =False, format_number=True)  
+    paginacao,pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogoNovo)
+
     return render_template('catalogo.html', paginacao = paginacao, catalogo = pagination_data, nomeAprocurar = nomeAprocurar)
 
 
@@ -102,6 +102,8 @@ def produtos():
     if(request.method == 'POST'):
         nomeAprocurar = request.form.get('texto', '')
         session['nomeAprocurar'] = nomeAprocurar
+    else:
+        nomeAprocurar = session.get(nomeAprocurar)
         
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
     qtd_por_pagina = 18
@@ -109,7 +111,6 @@ def produtos():
     paginacao,paginacao_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina)
     
     return render_template('produtos.html', paginacao=paginacao, catalogo=paginacao_data, nomeAprocurar = nomeAprocurar)
-
 
 
 app.run(debug = True)

@@ -19,6 +19,25 @@
         <section class="conteudo__catalogo">
           
             <div class="conteudo__catalogo__tabela bloco">
+              <div class="pesquisa">
+              <div class="dropdown">
+                  <button id="dropdownBtn" class="dropbtn">Ordenação <i class="fa-solid fa-caret-down" style="color: #000000;"></i></button>
+                  <div id="myDropdown" class="dropdown-content">
+
+                    <label for="nome">
+                    <input name="nome" class="inputFiltro" type="radio">Nome
+                  </label>
+
+                  <label for="id">
+                    <input name="id" class="inputFiltro" type="radio">Id
+                  </label>
+
+                  <label for="preco">
+                    <input name="preco" class="inputFiltro" type="radio">Preço
+                  </label>
+                    
+                  </div>
+                </div>
               <form action="{{ url_for('catalogo')}}" method="POST">
               <div class="tabela_pesquisa">
               <input class="pesquisa__input" value="{{nomeAprocurar}}" type="text" id="texto" name="texto" placeholder="Nome do produto">
@@ -26,6 +45,7 @@
             <button class="fa-solid fa-magnifying-glass pesquisa__botao" type="submit"></button>
           </div>
             </form>
+          </div>
            
               <!-- <button class="fa-solid fa-magnifying-glass pesquisa__botao" onclick="enviarMensagemParaPython()"></button> -->
               <div class="tabela__button">
@@ -57,10 +77,10 @@
                   
                   <thead>
                     <tr>
-                      <th id="thead__Id" >Id</th>
-                      <th id="thead__nome">Nome</th>
-                      <th id="thead__quantidade">Quantidade</th>
-                      <th id="thread__preco">Preço</th>
+                      <th  id="thead__Id" >Id<i class="fa-solid fa-sort"></i></th>
+                      <th  id="thead__nome">Nome <i class="fa-solid fa-sort"></i></th>
+                      <th  id="thead__quantidade">Quantidade <i class="fa-solid fa-sort"></i></th>
+                      <th id="thead__preco">Preço <i class="fa-solid fa-sort"></i></th>
                       <th id="thead__descricao">Descrição</th>
                       </tr>
                   </thead>

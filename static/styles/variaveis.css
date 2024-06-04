@@ -26,4 +26,6 @@
     --cor-tabela-itens-secundario: rgb(34, 40, 49); 
     --cor-tabela-head: rgb(35, 45, 63);
     --cor-tabela-itens-hover: rgb(214, 90, 49); 
+    --cor-tabela-head-escuro: HSL(218.76, 28.6%, 45.2%)
+    
 }
