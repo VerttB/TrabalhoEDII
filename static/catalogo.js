@@ -7,7 +7,7 @@ var listaTratada = []
 
 const headsTabela = document.querySelectorAll('th');
 let headWasClicked = localStorage.getItem('headWasClicked')
-
+const comunicacao = document.getElementById('comunicacao')
 
 console.log(headWasClicked)
 headsTabela.forEach(head => {
@@ -27,7 +27,11 @@ headsTabela.forEach(head => {
     }
 
     console.log(lista)
-    comunicaPython(lista, '/catalogo')
+    comunicacao.textContent = `${lista[0]}|${lista[1]}`
+    comunicacao.value = `${lista[0]}|${lista[1]}`
+
+    console.log(comunicacao.textContent)
+    //comunicaPython(lista, '/catalogo')
 
   })
 })

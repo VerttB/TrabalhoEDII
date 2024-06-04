@@ -65,23 +65,21 @@ def catalogo():
         nomeAprocurar = request.form.get('texto', '')
         session['nomeAprocurar'] = nomeAprocurar
         print(f"Nome a procurar {nomeAprocurar}")
-        
-        dados = request.get_json()
-        print(dados)
-        mensagem = dados.get('mensagem', None)
+        mensagem = request.form.get('comunicacao', None)
         session['mensagem'] = mensagem
         print("Mensagem:" ,mensagem)
-        
-
     else:
         nomeAprocurar = session.get('nomeAprocurar', '')
         mensagem = session.get('mensagem', None)
 
-    if mensagem:
-        catalogoNovo = funcoesSite.verificaOrdenacao(mensagem[0], mensagem[1])
+    if mensagem is not None and mensagem != "":
+        mensagens = mensagem.split("|")
+        print(mensagens)
+        catalogoNovo = funcoesSite.verificaOrdenacao(mensagens[0], mensagens[1])
         print("Entrei")
         print("Mensagem:", mensagem)
         
+    print("Nome a procurar:" , nomeAprocurar)
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
     qtd_por_pagina = 15
     paginacao, pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogoNovo)
