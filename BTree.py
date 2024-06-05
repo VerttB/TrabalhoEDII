@@ -141,10 +141,18 @@ for id, item in catalogo.items():
 
 def quantidadeOrdem(tipo, novoDicionario):
     catalogoNovo = {}
+    arvoreQtd2 = BTree(3,"quantidade")
+    if novoDicionario is None:
+        novoDicionario = lerArquivo()
+
+    for id, item in novoDicionario.items():
+        arvoreQtd.inserir(item[arvoreQtd.tipo])
+
     if(tipo == "crescente"):
-        resultado = arvoreQtd.dicioOrdemCrescente(arvoreQtd.raiz, catalogo, catalogoNovo)
+        resultado = arvoreQtd.dicioOrdemCrescente(arvoreQtd.raiz, novoDicionario, catalogoNovo)
     else:  
-        resultado = arvoreQtd.dicioOrdemDecrescente(arvoreQtd.raiz, catalogo, catalogoNovo)
+        resultado = arvoreQtd.dicioOrdemDecrescente(arvoreQtd.raiz, novoDicionario, catalogoNovo)
+
     return resultado
 
 def nomeOrdem(tipo, novoDicionario):
@@ -161,14 +169,21 @@ def nomeOrdem(tipo, novoDicionario):
     else:  
         resultado = arvoreNome2.dicioOrdemDecrescente(arvoreNome2.raiz, novoDicionario, catalogoNovo)
     
+
     return resultado
 
 def precoOrdem(tipo, novoDicionario):
     catalogoNovo = {}
+    arvorePreco2 = BTree(3, 'preco')
+    if novoDicionario is None:
+        novoDicionario = lerArquivo()
+
+    for id, item in novoDicionario.items():
+        arvorePreco2.inserir(item[arvorePreco2.tipo])
     if(tipo == "crescente"):
-        resultado = arvorePreco.dicioOrdemCrescente(arvorePreco.raiz, catalogo, catalogoNovo)
+        resultado = arvorePreco.dicioOrdemCrescente(arvorePreco2.raiz, novoDicionario, catalogoNovo)
     else:  
-        resultado = arvorePreco.dicioOrdemDecrescente(arvorePreco.raiz, catalogo, catalogoNovo)
+        resultado = arvorePreco.dicioOrdemDecrescente(arvorePreco2.raiz, novoDicionario, catalogoNovo)
     #print("Resiltadp", resultado)
     
     return resultado
