@@ -146,6 +146,7 @@ for id, item in catalogo.items():
 def quantidadeOrdem(tipo, novoDicionario):
     catalogoNovo = {}
     arvoreQtd2 = BTree(3,"quantidade")
+    print("Dicionario", novoDicionario)
     if novoDicionario is None:
         novoDicionario = lerArquivo()
 
@@ -199,8 +200,33 @@ def pesquisarArvore(nome, dados):
 
 
 
-def ordenarNoRange(dicionario, valorMin, valorMax):
-    valorMax = 0 if valorMax == '' else int(valorMax)
+def ordenarNoRange(dicionario, valorMin, valorMax, chave):
+    dicionario_atual = {}
+    print(f"valorMin:{type(valorMin)}:{valorMin}")
+    print(f"valorMin:{type(valorMax)}:{valorMax}")
+    arvorePrecoRange = BTree(3, 'preco')
+    arvoreQtdRange = BTree(3,'quantidade')
+    if dicionario is None:
+        dicionario = lerArquivo()
+
+    for id, item in dicionario.items():
+        arvorePrecoRange.inserir(item[arvorePrecoRange.tipo])
+        arvoreQtdRange.inserir(item[arvoreQtdRange.tipo])
+
+    valorMax = 1000 if valorMax == '' else int(valorMax)
     valorMin = 0 if valorMin == '' else int(valorMin)
     print(valorMin)
     print(valorMax)
+    if(chave == 'Quantidade '):
+        resultado = arvoreQtdRange.dicio_In_Range(arvoreQtdRange.raiz, dicionario,dicionario_atual,valorMin,valorMax )
+    elif( chave == 'Preço '):
+        resultado = arvorePrecoRange.dicio_In_Range(arvorePrecoRange.raiz, dicionario,dicionario_atual,valorMin,valorMax )
+
+
+    print(resultado)
+    return resultado
+
+
+
+
+

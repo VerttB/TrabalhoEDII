@@ -49,12 +49,11 @@ def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo,  chave, tipo, v
 def filtrarDicionario(dados,texto, chave, tipo, valorMin, valorMax):
     texto = texto.strip()
     novo_dicionario = pesquisarArvore(texto, dados)
-    novo_dicionario_Ordenado = verificaOrdenacao(chave,tipo, novo_dicionario)
-
-    if (chave == "Quantidade " or chave == "Preço ") and (valorMin != '' or valorMax != ''):
-         print("Entrei na condição")
-         ordenarNoRange(novo_dicionario_Ordenado, valorMin, valorMax)
-
+    novo_dicionario_Ordenado = verificaOrdenacao(chave,tipo, novo_dicionario, valorMin, valorMax)
+    print('Entrei no filtro')
+    # if (chave == "Quantidade " or chave == "Preço ") and (valorMin != '' or valorMax != ''):
+    #      print("Entrei na condição")
+    #      novo_dicionario_Ordenado = ordenarNoRange(novo_dicionario_Ordenado, valorMin, valorMax, chave)
     return novo_dicionario_Ordenado
 
 
@@ -86,7 +85,7 @@ def gerarDownload():
     return zip_path
     
     
-def verificaOrdenacao(chave, tipo, novoDicionario = None):
+def verificaOrdenacao(chave, tipo, novoDicionario = None, valorMin = '', valorMax = ''):
     catalogo = {}
     print("A chave é ", chave)
     if chave == "Nome " :
@@ -94,9 +93,13 @@ def verificaOrdenacao(chave, tipo, novoDicionario = None):
         catalogo = nomeOrdem(tipo, novoDicionario)
     elif chave == "Quantidade ":
         print("Entrei na uantidade")
-        catalogo = quantidadeOrdem(tipo, novoDicionario)
+        catalogo = ordenarNoRange(novoDicionario, valorMin, valorMax, chave)
+        catalogo = quantidadeOrdem(tipo, catalogo)
     elif chave == "Preço ":
         print("Entrei no preco")
-        catalogo = precoOrdem(tipo, novoDicionario)
+        catalogo = ordenarNoRange(novoDicionario, valorMin, valorMax, chave)
+        catalogo = precoOrdem(tipo, catalogo)
+        
+
     return catalogo
 
