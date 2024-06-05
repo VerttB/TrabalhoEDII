@@ -75,57 +75,16 @@ def catalogo():
     if mensagem is not None and mensagem != "":
         print(type(mensagem))
         mensagens = mensagem.split("|")
-        
-        # try:
-        #     mensagens = mensagem.split("|")
-        # except:
-        #     dado = "".join(mensagem)
-        #     print(type(dado))
-        #     print(dado)
-        #     mensagens = dado.split(" ")
-            
+    
         print(mensagens)
         catalogoNovo = funcoesSite.verificaOrdenacao(mensagens[0], mensagens[1])
         
     print("Nome a procurar:",nomeAprocurar)
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
     qtd_por_pagina = 15
-    paginacao, pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogoNovo)
+    paginacao, pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogoNovo, mensagens[0], mensagens[1])
 
     return render_template('catalogo.html', paginacao=paginacao, catalogo=pagination_data, nomeAprocurar=nomeAprocurar, mensagem = mensagem)
-
-# @app.route('/catalogo', methods=['GET', 'POST'])
-# def catalogo():
-#     catalogoNovo = None
-#     mensagem = None
-#     nomeAprocurar = ''
-#     if(request.method == 'POST'):
-#         nomeAprocurar = request.form.get('texto', '')
-#         session['nomeAprocurar'] = nomeAprocurar
-#         dados = request.json
-#         print(dados)
-#         mensagem = dados['mensagem']
-#         session['mensagem'] = mensagem
-#         catalogoNovo = None
-
-#     else:
-#         nomeAprocurar = session.get('nomeAprocurar')
-#         mensagem = session.get('mensagem')
-        
-#     if mensagem is not None:
-#         catalogoNovo = funcoesSite.verificaOrdenacao(mensagem[0])
-#         print("entrei")
-#         print("Mensagem" , mensagem)
-        
-    
-#    # print(catalogoNovo)
-#     pagina = request.args.get(get_page_parameter(), type=int, default=1)
-#     qtd_por_pagina = 15
-#     paginacao,pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogoNovo)
-
-#    # print(pagination_data)
-#     return render_template('catalogo.html', paginacao = paginacao, catalogo = pagination_data, nomeAprocurar = nomeAprocurar)
-
 
 
 @app.route('/about')
@@ -158,7 +117,6 @@ def produtos():
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
     qtd_por_pagina = 18
     paginacao,paginacao_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina)
-    
     return render_template('produtos.html', paginacao=paginacao, catalogo=paginacao_data, nomeAprocurar = nomeAprocurar)
 
 

@@ -27,31 +27,12 @@ def Organizar_Dados_Dentro_Da_Pagina(dados, inicio, qtd_por_pagina, pagina):
     return novo_dicionario
 
 
-# def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo):
-    
-#     if catalogo is None:
-#         catalogo = lerArquivo()
-#         print("Entrei onde n devia")
-
-#     if(nomeAprocurar is not None and nomeAprocurar != ''):
-#         catalogo = filtrarDicionario(catalogo, nomeAprocurar)
-
-#     total = len(catalogo)
-#     pagination_data = Organizar_Dados_Dentro_Da_Pagina(catalogo, (pagina - 1) * qtd_por_pagina, qtd_por_pagina, pagina-1)
-    
-#     paginacao = Pagination(page=pagina, total=total, qtd_per_page=qtd_por_pagina, per_page = qtd_por_pagina,search =False, format_number=True)
-    
-#     return paginacao, pagination_data
-    
-
-def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo):
-    if catalogo is None:
-        catalogo = lerArquivo()
-        #print("Entrei onde não devia. Catalogo lido:")
+def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo,  chave, tipo):
 
     if nomeAprocurar:
-        catalogo = filtrarDicionario(catalogo, nomeAprocurar)
+        catalogo = filtrarDicionario(catalogo, nomeAprocurar,  chave, tipo)
        # print("Filtrando catalogo. Resultado:")
+
 
     total = len(catalogo)
     #cprint("Total de itens no catalogo:", total)
@@ -65,15 +46,11 @@ def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo):
 
 
 
-def filtrarDicionario(dados,texto=None):
-    # novo_dicionario = {}
-    # for item_id,item in dados.items():
-    #    #nome = item['nome'].upper()
-    #     if texto is not None and texto.upper() in item['nome'].upper():
-    #         novo_dicionario[item_id] = item
+def filtrarDicionario(dados,texto, chave, tipo):
     texto = texto.strip()
     novo_dicionario = pesquisarArvore(texto, dados)
-    return novo_dicionario
+    novo_dicionario_Ordenado = verificaOrdenacao(chave,tipo, novo_dicionario)
+    return novo_dicionario_Ordenado
 
 
 def gerarDownload():
@@ -84,7 +61,7 @@ def gerarDownload():
     with open(path, 'r') as file:
         Arqui_JSON = json.load(file)
 
-    #Transforma JSON em CSV
+    # transforma json em csv
 
     with open(csv_path, 'w', newline='') as csvfile:
         fieldnames = ['id', 'nome', 'quantidade', 'preco', 'descricao']
@@ -104,17 +81,17 @@ def gerarDownload():
     return zip_path
     
     
-def verificaOrdenacao(chave, tipo):
+def verificaOrdenacao(chave, tipo, novoDicionario = None):
     catalogo = {}
     print("A chave é ", chave)
     if chave == "Nome " :
         print("Entrei no nome")
-        catalogo = nomeOrdem(tipo)
+        catalogo = nomeOrdem(tipo, novoDicionario)
     elif chave == "Quantidade ":
         print("Entrei na uantidade")
-        catalogo = quantidadeOrdem(tipo)
+        catalogo = quantidadeOrdem(tipo, novoDicionario)
     elif chave == "Preço ":
         print("Entrei no preco")
-        catalogo = precoOrdem(tipo)
+        catalogo = precoOrdem(tipo, novoDicionario)
     return catalogo
 

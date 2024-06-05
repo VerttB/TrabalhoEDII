@@ -130,7 +130,6 @@ class BTree:
 arvoreQtd = BTree(3, "quantidade")
 arvoreNome = BTree(3, "nome")
 arvorePreco = BTree(3, "preco")
-arvorePesquisa = BTree(3, "nome")
 
 catalogo = lerArquivo()
  
@@ -138,10 +137,9 @@ for id, item in catalogo.items():
     arvoreQtd.inserir(item[arvoreQtd.tipo])
     arvoreNome.inserir(item[arvoreNome.tipo])
     arvorePreco.inserir(item[arvorePreco.tipo])
-    arvorePesquisa.inserir(item[arvorePesquisa.tipo])
 
 
-def quantidadeOrdem(tipo):
+def quantidadeOrdem(tipo, novoDicionario):
     catalogoNovo = {}
     if(tipo == "crescente"):
         resultado = arvoreQtd.dicioOrdemCrescente(arvoreQtd.raiz, catalogo, catalogoNovo)
@@ -149,17 +147,23 @@ def quantidadeOrdem(tipo):
         resultado = arvoreQtd.dicioOrdemDecrescente(arvoreQtd.raiz, catalogo, catalogoNovo)
     return resultado
 
-def nomeOrdem(tipo):
+def nomeOrdem(tipo, novoDicionario):
     catalogoNovo = {}
+    arvoreNome2 = BTree(3, 'nome')
+    if novoDicionario is None:
+        novoDicionario = lerArquivo()
+
+    for id, item in novoDicionario.items():
+        arvoreNome2.inserir(item[arvoreNome2.tipo])
+
     if(tipo == "crescente"):
-        resultado = arvoreNome.dicioOrdemCrescente(arvoreNome.raiz, catalogo, catalogoNovo)
+        resultado = arvoreNome2.dicioOrdemCrescente(arvoreNome2.raiz, novoDicionario, catalogoNovo)
     else:  
-        resultado = arvoreNome.dicioOrdemDecrescente(arvoreNome.raiz, catalogo, catalogoNovo)
-    #print("Resiltadp", resultado)
+        resultado = arvoreNome2.dicioOrdemDecrescente(arvoreNome2.raiz, novoDicionario, catalogoNovo)
     
     return resultado
 
-def precoOrdem(tipo):
+def precoOrdem(tipo, novoDicionario):
     catalogoNovo = {}
     if(tipo == "crescente"):
         resultado = arvorePreco.dicioOrdemCrescente(arvorePreco.raiz, catalogo, catalogoNovo)
@@ -173,5 +177,4 @@ def precoOrdem(tipo):
 def pesquisarArvore(nome, dados):
     catalogoNovo = {}
     filtro = arvoreNome.pesquisaArvore(arvoreNome.raiz, dados, catalogoNovo, nome)
-    print(filtro)
     return filtro

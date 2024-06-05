@@ -9,23 +9,6 @@ class BTreeNode:
           self.filho = []
           self.key = []
 
-    # def inserir_no(self, key):
-    #     i = len(self.key)-1 # i recebe a quantidade de valores que tem no nó
-    #     if self.folha:
-    #         self.key.append(0)
-    #         while i >= 0 and self.key[i] > key:
-    #             self.key[i+1] = self.key[i]
-    #             i -= 1
-    #         self.key[i+1] = key
-
-    #     else:
-    #         while i >= 0 and self.key[i] > key:
-    #             i -= 1
-    #         if len(self.filho[i+1].key) == 2 * self.ordem - 1:
-    #             self.separaFilhos(i + 1, self.filho[i + 1])
-    #             if self.key[i + 1] < key:
-    #                 i += 1
-    #         self.filho[i + 1].inserir_no(key)
     
     def inserir_no(self, key):
         i = len(self.key) - 1
