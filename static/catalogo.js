@@ -1,28 +1,29 @@
 import { comunicaPython } from "./comunicacao.js";
 
 
-var itens = []
-var elementoSelecionado = null
-var listaTratada = []
+var itens = [];
+var elementoSelecionado = null;
+var listaTratada = [];
 
 const headsTabela = document.querySelectorAll('th');
-let headWasClicked = localStorage.getItem('headWasClicked')
-const comunicacao = document.getElementById('comunicacao')
+let headWasClicked = localStorage.getItem('headWasClicked');
+const comunicacao = document.getElementById('comunicacao');
+const enviarPython = document.getElementById('enviarPython');
 
 console.log(headWasClicked)
 headsTabela.forEach(head => {
   head.addEventListener('click', (event) =>{
-    const elemento = event.target
-    let lista = []
+    const elemento = event.target;
+    let lista = [];
     if(headWasClicked === elemento.id){
-      lista = [elemento.textContent, 'decrescente']
-      headWasClicked = null
-      localStorage.removeItem('headWasClicked')
+      lista = [elemento.textContent, 'decrescente'];
+      headWasClicked = null;
+      localStorage.removeItem('headWasClicked');
     }
     else{
-        lista = [elemento.textContent,'crescente']
-        headWasClicked = elemento.id
-        localStorage.setItem('headWasClicked', headWasClicked)
+        lista = [elemento.textContent,'crescente'];
+        headWasClicked = elemento.id;
+        localStorage.setItem('headWasClicked', headWasClicked);
 
     }
 
@@ -34,6 +35,7 @@ headsTabela.forEach(head => {
 
     
     console.log(comunicacao.textContent)
+    enviarPython.click()
     //comunicaPython(lista, '/catalogo')
 
   })
