@@ -50,18 +50,28 @@
                 <input id="prompt_input" placeholder="Insira o preço" class="prompt__preco prompt__entrada" type="number" min="0" step='0.01'>
                 <input id="prompt_descricao" placeholder="Insira a descrição" type="text" class="prompt__descricao prompt__entrada">
               </div>
-              
-
                 <button id="prompt_button" class="prompt__button">Enviar</button>
               </div>
-                <!-- <button id="prompt_adicionar_button" class="prompt__button">Enviar</button> -->
+
+              
             </div>
+
+            <div class="prompt__ordenacao">
+              <div class="ordenacao__titulo">
+              <h3>Valores para ordenação da quantidade e do preço</h3>
+            </div>
+            <div class="ordenacao__inputs">
+              <form action="{{ url_for('catalogo')}}" method="POST">
+              <input class="input__ordenacao" id="inputMin" type="number" value="{{valorMin}}" placeholder="Diga o Valor mínimo">
+              <input class="input__ordenacao" id="inputMax" type="number" value="{{valorMax}}" min="0" step="1" placeholder="Diga o Valor máximo">
+              </form>
+            </div>
+        </div>
                 <table class="table table-bordered">
-                  
                   <thead>
                     <tr>
                       <form action="{{ url_for('catalogo') }}" method="POST">
-                      <th id="thead__Id" >Id<i class="fa-solid fa-sort"></i></th>
+                      <th id="thead__Id" >Id <i class="fa-solid fa-sort"></i></th>
                       <th id="thead__nome">Nome <i class="fa-solid fa-sort"></i></th>
                       <th id="thead__quantidade">Quantidade <i class="fa-solid fa-sort"></i></th>
                       <th id="thead__preco">Preço <i class="fa-solid fa-sort"></i></th>
@@ -77,7 +87,6 @@
                             <td>{{produto_itens['quantidade']}}</td>
                             <td>{{produto_itens['preco']}}</td>
                             <td>{{produto_itens['descricao']}}</td>  
-                            <!-- <td onclick="enviarMensagemParaPython()" class="adicionar_carrinho"><button class="adicionar_carrinho__button fa-solid fa-cart-shopping"></button></td> -->
                        </tr>
                   {%endfor%}          
                 </tbody>

@@ -9,37 +9,43 @@ const headsTabela = document.querySelectorAll('th');
 let headWasClicked = localStorage.getItem('headWasClicked');
 const comunicacao = document.getElementById('comunicacao');
 const enviarPython = document.getElementById('enviarPython');
+const ordenacaoInputs = document.querySelectorAll('.input__ordenacao')
+
 
 console.log(headWasClicked)
 headsTabela.forEach(head => {
   head.addEventListener('click', (event) =>{
     const elemento = event.target;
-    let lista = [];
-    if(headWasClicked === elemento.id){
-      lista = [elemento.textContent, 'decrescente'];
-      headWasClicked = null;
-      localStorage.removeItem('headWasClicked');
-    }
-    else{
-        lista = [elemento.textContent,'crescente'];
-        headWasClicked = elemento.id;
-        localStorage.setItem('headWasClicked', headWasClicked);
-
-    }
-
-    console.log(lista)
-    // comunicacao.value = `${lista[0]}|${lista[1]}`
-    comunicacao.value = lista[0]
-    comunicacao.value += "|"
-    comunicacao.value += lista[1]
-
-    
-    console.log(comunicacao.textContent)
-    enviarPython.click()
-    //comunicaPython(lista, '/catalogo')
-
+    processaOrdenacao(elemento);
   })
 })
+
+
+
+function processaOrdenacao(elemento){
+  let lista = [];
+  if(headWasClicked === elemento.id){
+    lista = [elemento.textContent, 'decrescente'];
+    headWasClicked = null;
+    localStorage.removeItem('headWasClicked');
+  }
+  else{
+      lista = [elemento.textContent,'crescente'];
+      headWasClicked = elemento.id;
+      localStorage.setItem('headWasClicked', headWasClicked);
+
+  }
+
+  console.log(lista)
+  comunicacao.value = lista[0]
+  comunicacao.value += "|"
+  comunicacao.value += lista[1]
+  comunicacao.value += `|${ordenacaoInputs[0].value}|${ordenacaoInputs[1].value}`
+
+  
+  console.log(comunicacao.textContent)
+  enviarPython.click()
+}
   
 
 function clicavel(){

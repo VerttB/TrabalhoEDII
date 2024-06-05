@@ -20,30 +20,30 @@ class BTree:
     
     #--------------------------------------------------------
     
+    # def monta_dicio(self, dicio, dicio_atual, dado):
+    #     for item_id, produto in dicio.items():
+    #         if produto[self.tipo] == dado:
+    #             dicio_atual[item_id] = produto
+    #     return dicio_atual
+    
+    def monta_dicio_range(self, dicio, dicio_atual, dado, min, max):
+        if min < dado < max:
+            for item_id, produto in dicio.items():
+                if produto[self.tipo] == dado:
+                    dicio_atual[item_id] = produto
+            
+        return dicio_atual
+    
     def monta_dicio(self, dicio, dicio_atual, dado):
-        for item_id, produto in dicio.items():
-            if produto[self.tipo] == dado:
-                dicio_atual[item_id] = produto
-        return dicio_atual
-    
-    def monta_dicio_range(self, dicio, dicio_atual, dado):
-        for item_id, produto in dicio.items():
-            if produto[self.tipo] == dado:
-                dicio_atual[item_id] = produto
-                return dicio_atual
-        return dicio_atual
-    
-    def monta_dicio_range2(self, dicio, dicio_atual, dado):
         if self.tipo == "id":
             for item_id, produto in dicio.items():
-                if item_id == dado:
+                if int(item_id) == dado:
                     dicio_atual[item_id] = produto
                     return dicio_atual
         else:
             for item_id, produto in dicio.items():
                 if produto[self.tipo] == dado:
                     dicio_atual[item_id] = produto
-                    return dicio_atual
         return dicio_atual
     
     # #--------------------------------------------------------
@@ -81,17 +81,21 @@ class BTree:
                     
         return dicio_atual
     
-    def dicio_In_Range(self, node, dicio, dicio_atual, cont, min, max):
+    def dicio_In_Range(self, node, dicio, dicio_atual, min, max):
         if node is not None:
             for i in range(len(node.key)):
+                # Se o nó não é folha, percorre o filho correspondente
                 if not node.folha:
-                    dicio_atual, cont = self.dicio_In_Range(node.filho[i], dicio, dicio_atual, cont, min, max)
-                if min <= cont <= max:
-                    dicio_atual = self.monta_dicio_range(dicio, dicio_atual, node.key[i])
-                cont += 1
+                    dicio_atual = self.dicio_In_Range(node.filho[i], dicio, dicio_atual, min, max)
+                
+                # Adiciona a chave ao dicionário se estiver no intervalo
+                dicio_atual = self.monta_dicio_range(dicio, dicio_atual, node.key[i], min, max)
+            
+            # Verifica o último filho se o nó não é folha
             if not node.folha:
-                dicio_atual, cont = self.dicio_In_Range(node.filho[len(node.key)], dicio, dicio_atual, cont, min, max)
-        return dicio_atual, cont
+                dicio_atual = self.dicio_In_Range(node.filho[len(node.key)], dicio, dicio_atual, min, max)
+        
+        return dicio_atual
     
     
     
@@ -184,7 +188,6 @@ def precoOrdem(tipo, novoDicionario):
         resultado = arvorePreco.dicioOrdemCrescente(arvorePreco2.raiz, novoDicionario, catalogoNovo)
     else:  
         resultado = arvorePreco.dicioOrdemDecrescente(arvorePreco2.raiz, novoDicionario, catalogoNovo)
-    #print("Resiltadp", resultado)
     
     return resultado
 
@@ -193,3 +196,11 @@ def pesquisarArvore(nome, dados):
     catalogoNovo = {}
     filtro = arvoreNome.pesquisaArvore(arvoreNome.raiz, dados, catalogoNovo, nome)
     return filtro
+
+
+
+def ordenarNoRange(dicionario, valorMin, valorMax):
+    valorMax = 0 if valorMax == '' else int(valorMax)
+    valorMin = 0 if valorMin == '' else int(valorMin)
+    print(valorMin)
+    print(valorMax)

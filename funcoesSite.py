@@ -4,7 +4,7 @@ import json
 import funcoesSite
 from flask_paginate import Pagination
 from dicionario import lerArquivo
-from BTree import nomeOrdem, quantidadeOrdem,precoOrdem, pesquisarArvore
+from BTree import nomeOrdem, quantidadeOrdem,precoOrdem, pesquisarArvore, ordenarNoRange
 
 
 
@@ -27,10 +27,10 @@ def Organizar_Dados_Dentro_Da_Pagina(dados, inicio, qtd_por_pagina, pagina):
     return novo_dicionario
 
 
-def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo,  chave, tipo):
+def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo,  chave, tipo, valorMin, valorMax):
 
     if nomeAprocurar:
-        catalogo = filtrarDicionario(catalogo, nomeAprocurar,  chave, tipo)
+        catalogo = filtrarDicionario(catalogo, nomeAprocurar,  chave, tipo, valorMin, valorMax)
        # print("Filtrando catalogo. Resultado:")
 
 
@@ -46,10 +46,15 @@ def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo,  chave, tipo):
 
 
 
-def filtrarDicionario(dados,texto, chave, tipo):
+def filtrarDicionario(dados,texto, chave, tipo, valorMin, valorMax):
     texto = texto.strip()
     novo_dicionario = pesquisarArvore(texto, dados)
     novo_dicionario_Ordenado = verificaOrdenacao(chave,tipo, novo_dicionario)
+
+    if (chave == "Quantidade " or chave == "Preço ") and (valorMin != '' or valorMax != ''):
+         print("Entrei na condição")
+         ordenarNoRange(novo_dicionario_Ordenado, valorMin, valorMax)
+
     return novo_dicionario_Ordenado
 
 
