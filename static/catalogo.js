@@ -27,9 +27,9 @@ headsTabela.forEach(head => {
     }
 
     console.log(lista)
-    comunicacao.textContent = `${lista[0]}|${lista[1]}`
     comunicacao.value = `${lista[0]}|${lista[1]}`
 
+    
     console.log(comunicacao.textContent)
     //comunicaPython(lista, '/catalogo')
 

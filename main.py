@@ -73,6 +73,7 @@ def catalogo():
         mensagem = session.get('mensagem', None)
 
     if mensagem is not None and mensagem != "":
+        print(type(mensagem))
         mensagens = mensagem.split("|")
         print(mensagens)
         catalogoNovo = funcoesSite.verificaOrdenacao(mensagens[0], mensagens[1])
@@ -84,7 +85,7 @@ def catalogo():
     qtd_por_pagina = 15
     paginacao, pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogoNovo)
 
-    return render_template('catalogo.html', paginacao=paginacao, catalogo=pagination_data, nomeAprocurar=nomeAprocurar)
+    return render_template('catalogo.html', paginacao=paginacao, catalogo=pagination_data, nomeAprocurar=nomeAprocurar, mensagem = mensagem)
 
 # @app.route('/catalogo', methods=['GET', 'POST'])
 # def catalogo():
