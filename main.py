@@ -87,7 +87,7 @@ def catalogo():
         print(mensagens)
         catalogoNovo = funcoesSite.verificaOrdenacao(mensagens[0], mensagens[1])
         
-    print("Nome a procurar:" , nomeAprocurar)
+    print("Nome a procurar:",nomeAprocurar)
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
     qtd_por_pagina = 15
     paginacao, pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogoNovo)

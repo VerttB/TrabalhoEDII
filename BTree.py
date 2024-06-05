@@ -73,11 +73,12 @@ class BTree:
             if not node.folha:
                 dicio_atual = self.pesquisaArvore(node.filho[len(node.key)], dicio, dicio_atual, texto)
             for i in range(len(node.key)):
-                if node.key[i] == texto or texto in node.key[i] or texto.lower() in node.key[i]:
+                #print(node.key[i])
+                if texto.upper() in node.key[i].upper():
                     dicio_atual = self.monta_dicio(dicio, dicio_atual, node.key[i])
-                    return dicio_atual
                 if not node.folha:
                     dicio_atual = self.pesquisaArvore(node.filho[i], dicio, dicio_atual, texto)
+                    
         return dicio_atual
     
     def dicio_In_Range(self, node, dicio, dicio_atual, cont, min, max):
@@ -129,6 +130,7 @@ class BTree:
 arvoreQtd = BTree(3, "quantidade")
 arvoreNome = BTree(3, "nome")
 arvorePreco = BTree(3, "preco")
+arvorePesquisa = BTree(3, "nome")
 
 catalogo = lerArquivo()
  
@@ -136,6 +138,8 @@ for id, item in catalogo.items():
     arvoreQtd.inserir(item[arvoreQtd.tipo])
     arvoreNome.inserir(item[arvoreNome.tipo])
     arvorePreco.inserir(item[arvorePreco.tipo])
+    arvorePesquisa.inserir(item[arvorePesquisa.tipo])
+
 
 def quantidadeOrdem(tipo):
     catalogoNovo = {}
@@ -165,5 +169,9 @@ def precoOrdem(tipo):
     
     return resultado
 
-# catalogoNovo = {}
-# print(arvoreNome.pesquisaArvore(arvoreNome.raiz, catalogo, catalogoNovo, "Ca"))
+
+def pesquisarArvore(nome, dados):
+    catalogoNovo = {}
+    filtro = arvoreNome.pesquisaArvore(arvoreNome.raiz, dados, catalogoNovo, nome)
+    print(filtro)
+    return filtro

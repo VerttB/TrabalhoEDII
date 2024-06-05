@@ -4,7 +4,7 @@ import json
 import funcoesSite
 from flask_paginate import Pagination
 from dicionario import lerArquivo
-from BTree import nomeOrdem, quantidadeOrdem,precoOrdem
+from BTree import nomeOrdem, quantidadeOrdem,precoOrdem, pesquisarArvore
 
 
 
@@ -66,12 +66,13 @@ def criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogo):
 
 
 def filtrarDicionario(dados,texto=None):
-    novo_dicionario = {}
-    for item_id,item in dados.items():
-       #nome = item['nome'].upper()
-        if texto is not None and texto.upper() in item['nome'].upper():
-            novo_dicionario[item_id] = item
-            
+    # novo_dicionario = {}
+    # for item_id,item in dados.items():
+    #    #nome = item['nome'].upper()
+    #     if texto is not None and texto.upper() in item['nome'].upper():
+    #         novo_dicionario[item_id] = item
+    texto = texto.strip()
+    novo_dicionario = pesquisarArvore(texto, dados)
     return novo_dicionario
 
 
