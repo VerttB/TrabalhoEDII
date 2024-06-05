@@ -27,7 +27,10 @@ headsTabela.forEach(head => {
     }
 
     console.log(lista)
-    comunicacao.value = `${lista[0]}|${lista[1]}`
+    // comunicacao.value = `${lista[0]}|${lista[1]}`
+    comunicacao.value = lista[0]
+    comunicacao.value += "|"
+    comunicacao.value += lista[1]
 
     
     console.log(comunicacao.textContent)

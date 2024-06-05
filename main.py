@@ -65,20 +65,27 @@ def catalogo():
         nomeAprocurar = request.form.get('texto', '')
         session['nomeAprocurar'] = nomeAprocurar
         print(f"Nome a procurar {nomeAprocurar}")
-        mensagem = request.form.get('comunicacao', None)
+        mensagem = request.form.get('comunicacao', '')
         session['mensagem'] = mensagem
         print("Mensagem:" ,mensagem)
     else:
         nomeAprocurar = session.get('nomeAprocurar', '')
-        mensagem = session.get('mensagem', None)
-
+        mensagem = session.get('mensagem', '')
+        
     if mensagem is not None and mensagem != "":
         print(type(mensagem))
         mensagens = mensagem.split("|")
+        
+        # try:
+        #     mensagens = mensagem.split("|")
+        # except:
+        #     dado = "".join(mensagem)
+        #     print(type(dado))
+        #     print(dado)
+        #     mensagens = dado.split(" ")
+            
         print(mensagens)
         catalogoNovo = funcoesSite.verificaOrdenacao(mensagens[0], mensagens[1])
-        print("Entrei")
-        print("Mensagem:", mensagem)
         
     print("Nome a procurar:" , nomeAprocurar)
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
