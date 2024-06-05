@@ -77,6 +77,11 @@ def catalogo():
         mensagens = mensagem.split("|")
         print(mensagens)
         catalogoNovo = funcoesSite.verificaOrdenacao(mensagens[0], mensagens[1])
+        print(len(mensagens))
+        #Isso aqui lida com a primeira execução do código que é quando a lista só tem 2 valores, pois nós usamos 4
+        if len(mensagens) == 2:
+            if len(mensagens) < 4:
+                mensagens.extend([''] * (4 - len(mensagens)))
         
     print("Nome a procurar:",nomeAprocurar)
     pagina = request.args.get(get_page_parameter(), type=int, default=1)
