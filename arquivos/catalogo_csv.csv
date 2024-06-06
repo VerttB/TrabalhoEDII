@@ -1,10 +1,10 @@
 id,nome,quantidade,preco,descricao
-1,Paracetamol,100,12.99,Analgésico e antipirético utilizado para aliviar a dor e reduzir a febre.
+1,Paracetamol,220,40.0,Analgésico e antipirético utilizado para aliviar a dor e reduzir a febre.
 2,Dipirona,80,8.5,Analgésico e antipirético eficaz no alívio da dor e febre.
 3,Omeprazol,60,18.75,Inibidor da bomba de prótons utilizado no tratamento de úlceras gástricas e refluxo gastroesofágico.
 4,Amoxicilina,50,25.0,Antibiótico amplamente utilizado no tratamento de infecções bacterianas.
 5,Ibuprofeno,120,9.99,"Analgésico, antipirético e anti-inflamatório não esteroide (AINE) utilizado no tratamento da dor e inflamação."
-6,Cetoprofeno,40,15.5,Anti-inflamatório não esteroide (AINE) utilizado no tratamento de processos inflamatórios e dores musculares.
+6,Cetoprofeno,27,15.5,Anti-inflamatório não esteroide (AINE) utilizado no tratamento de processos inflamatórios e dores musculares.
 7,Loratadina,90,7.25,Antialérgico utilizado no alívio dos sintomas de alergias sazonais e urticária.
 8,Dexametasona,30,35.75,"Corticoide com ação anti-inflamatória, imunossupressora e utilizada em diversas condições médicas."
 9,Sinvastatina,70,22.5,Estatina utilizada para diminuir o colesterol LDL e prevenir doenças cardiovasculares.
@@ -29,17 +29,33 @@ id,nome,quantidade,preco,descricao
 28,Cloridrato de Ciprofloxacino,30,19.99,Antibiótico fluoroquinolona utilizado no tratamento de infecções bacterianas.
 29,Salbutamol,90,13.5,Broncodilatador utilizado no tratamento da asma e doença pulmonar obstrutiva crônica (DPOC).
 30,Gliclazida,40,20.25,Antidiabético oral utilizado no tratamento do diabetes tipo 2.
-31,Cocaína,100,100.0,"Estimulante do sistema nervoso central, altamente viciante e ilegal em muitos países."
-32,Heroína,50,200.0,"Opióide altamente viciante, ilegal e associado a sérios riscos à saúde e à dependência."
-33,Crack,75,50.0,"Derivado da cocaína, altamente viciante e produzido como uma forma cristalina para fumar."
-34,LSD,30,150.0,"Alucinógeno poderoso que altera a percepção, causando experiências sensoriais intensas e ilusões."
-35,Anfetamina,80,75.0,"Estimulante sintético, conhecido por aumentar o estado de alerta e a energia, mas altamente viciante e ilegal."
-36,MDMA (Ecstasy),40,120.0,"Entactógeno e estimulante psicoativo, popular em festas de música eletrônica, mas ilegal e perigoso."
-37,Metanfetamina,60,100.0,"Estimulante altamente viciante, semelhante à anfetamina, mas com efeitos mais potentes e perigosos."
-38,Maconha,120,80.0,"Cannabis, uma das drogas ilícitas mais comuns, com efeitos psicoativos e recreativos."
-39,Mescalina,25,200.0,"Alucinógeno natural encontrado em certos cactos, conhecido por produzir visões coloridas e experiências espirituais."
-40,Psilocibina (Cogumelos Mágicos),35,180.0,"Alucinógeno natural encontrado em certos cogumelos, conhecido por produzir viagens psicodélicas e estados alterados de consciência."
-41,Caiana,19,23,Cara trol
-42,Alysson,20,2,O melhor
-43,Cotonete,12,2,awdwadaw
-44,nemsei,1,10,"nao sei o que, mas e"
+31,Protetor Solar FPS 50,1,29.99,Protetor solar de amplo espectro com fator de proteção solar 50. Protege contra os raios UVA e UVB.
+32,Shampoo Anticaspa,1,12.5,Shampoo anticaspa que ajuda a controlar a caspa e manter o couro cabeludo saudável.
+33,Condicionador Hidratante,1,15.99,"Condicionador hidratante que proporciona maciez e brilho aos cabelos, ajudando a desembaraçar os fios."
+34,Creme Dental Branqueador,1,7.99,Creme dental com fórmula branqueadora que ajuda a remover manchas superficiais dos dentes e promove um sorriso mais branco.
+35,Fio Dental,1,3.5,"Fio dental para uma limpeza completa entre os dentes, removendo placa bacteriana e prevenindo cáries."
+36,Desodorante Roll-On,1,8.99,Desodorante roll-on com fragrância suave e proteção de longa duração contra o odor e a transpiração.
+37,Gel de Limpeza Facial,1,19.99,"Gel de limpeza facial que remove impurezas e oleosidade da pele, deixando-a fresca e revitalizada."
+38,Sabonete Líquido Íntimo,1,11.5,"Sabonete líquido íntimo de uso diário, formulado para higiene delicada e proteção da região íntima."
+39,Analgésico em Gel,1,16.75,Analgésico em gel para alívio rápido de dores musculares e articulares. Ideal para massagem terapêutica.
+40,Agua Micelar,1,25.0,"Água micelar de limpeza facial que remove maquiagem, impurezas e oleosidade sem irritar a pele."
+51,Hidratante Labial,1,4.5,Hidratante labial enriquecido com vitaminas que previne o ressecamento e mantém os lábios macios e protegidos.
+52,Cotonetes,100,2.99,"Pacote com 100 unidades de cotonetes de algodão, ideais para higiene auricular e aplicação de produtos cosméticos."
+53,Esponja de Banho,1,6.25,"Esponja de banho macia e delicada, ideal para limpeza da pele e estimulação da circulação sanguínea."
+54,Lenços Removedores de Maquiagem,25,9.99,"Pacote com 25 lenços removedores de maquiagem, formulados para remover eficazmente maquiagem à prova d'água."
+55,Pomada para Assaduras,1,13.5,"Pomada para assaduras com óxido de zinco, que forma uma barreira protetora contra umidade e irritações na pele do bebê."
+56,Repelente de Insetos,1,18.99,"Repelente de insetos em spray, com fórmula de longa duração que protege contra mosquitos, pernilongos e outros insetos."
+57,Loção Pós-Sol,1,14.75,"Loção pós-sol refrescante e hidratante, formulada para acalmar e suavizar a pele após a exposição solar."
+58,Suplemento de Colágeno,60,35.5,"Suplemento de colágeno em cápsulas que auxilia na manutenção da saúde da pele, cabelos e unhas."
+59,Curativo Adesivo,20,6.99,"Pacote com 20 curativos adesivos de tamanhos variados, ideais para proteção de pequenos cortes e arranhões."
+60,Gel Dental Clareador,1,18.25,Gel dental clareador com fórmula suave que remove manchas e promove um sorriso mais branco e brilhante.
+61,Sabonete Líquido Antibacteriano,1,10.99,"Sabonete líquido antibacteriano que limpa profundamente as mãos, protegendo contra germes e bactérias."
+62,Creme para Mãos Hidratante,1,8.5,"Creme para mãos hidratante enriquecido com manteiga de karité, que nutre e protege a pele contra ressecamento."
+63,Escova de Dentes Infantil,1,5.25,"Escova de dentes infantil com cerdas macias e cabo ergonômico, ideal para a higiene bucal das crianças."
+64,Termômetro Digital,1,19.99,"Termômetro digital de precisão, indicado para medição de temperatura corporal de forma rápida e precisa."
+65,Algodão Hidrófilo,200,4.5,"Pacote com 200 gramas de algodão hidrófilo, macio e absorvente, ideal para uso em higiene pessoal e cuidados com a pele."
+66,Hidratante Corporal,1,21.5,"Hidratante corporal de rápida absorção, enriquecido com óleos naturais que deixam a pele macia e perfumada."
+67,Loção Removedora de Cutículas,1,11.99,"Loção removedora de cutículas com fórmula suave que amolece e facilita a remoção das cutículas, deixando as unhas com aspecto saudável."
+68,Creme Depilatório Corporal,1,16.99,"Creme depilatório para o corpo com fórmula suave e eficaz, que remove os pelos de forma rápida e indolor."
+69,Kit Manicure e Pedicure,5,29.99,"Kit completo de manicure e pedicure, com alicates, cortadores e outros acessórios essenciais para cuidados com as unhas."
+70,Desodorante Íntimo,3,13.25,"Desodorante íntimo em spray, formulado para neutralizar odores e proporcionar sensação de frescor e conforto."

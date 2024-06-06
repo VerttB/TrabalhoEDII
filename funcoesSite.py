@@ -4,7 +4,7 @@ import json
 import funcoesSite
 from flask_paginate import Pagination
 from dicionario import lerArquivo
-from BTree import nomeOrdem, quantidadeOrdem,precoOrdem, pesquisarArvore, ordenarNoRange
+from BTree import idOrdem, nomeOrdem, quantidadeOrdem,precoOrdem, pesquisarArvore, ordenarNoRange
 
 
 
@@ -99,7 +99,9 @@ def verificaOrdenacao(chave, tipo, novoDicionario = None, valorMin = '', valorMa
         print("Entrei no preco")
         catalogo = ordenarNoRange(novoDicionario, valorMin, valorMax, chave)
         catalogo = precoOrdem(tipo, catalogo)
-        
+    elif chave == "Id ":
+        print("Entrei no preco")
+        catalogo = idOrdem(tipo, novoDicionario)
 
     return catalogo
 

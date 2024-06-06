@@ -418,5 +418,11 @@
 		"preco": 13.25,
 		"descricao": "Desodorante \u00edntimo em spray, formulado para neutralizar odores e proporcionar sensa\u00e7\u00e3o de frescor e conforto.",
 		"link": "static/assets/imagensRemedios/Desodorante \u00cdntimo.jpeg"
+	},
+	"71": {
+		"nome": "Brazil",
+		"quantidade": 1,
+		"preco": 9999.0,
+		"descricao": "Faz o L"
 	}
 }
