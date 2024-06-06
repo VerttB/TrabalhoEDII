@@ -103,7 +103,7 @@ for id, item in catalogo.items():
 def idOrdem(tipo, novoDicionario):
     catalogoNovo = {}
     arvoreid2 = BTree(3,"id")
-    print("Dicionario", novoDicionario)
+    #print("Dicionario", novoDicionario)
     if novoDicionario is None:
         novoDicionario = lerArquivo()
 
@@ -121,7 +121,7 @@ def idOrdem(tipo, novoDicionario):
 def quantidadeOrdem(tipo, novoDicionario):
     catalogoNovo = {}
     arvoreQtd2 = BTree(3,"quantidade")
-    print("Dicionario", novoDicionario)
+   # print("Dicionario", novoDicionario)
     if novoDicionario is None:
         novoDicionario = lerArquivo()
 
@@ -198,5 +198,5 @@ def ordenarNoRange(dicionario, valorMin, valorMax, chave):
         resultado = arvorePrecoRange.dicio_In_Range(arvorePrecoRange.raiz, dicionario,dicionario_atual,valorMin,valorMax )
 
 
-    print(resultado)
+    #print(resultado)
     return resultado
