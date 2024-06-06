@@ -89,10 +89,7 @@ td{
     cursor: pointer;
 }
 
-#thead__nome:hover, #thead__quantidade:hover , #thead__preco:hover {
-   background-color: var(--cor-tabela-head-escuro);
-   cursor: pointer
-}
+
 #thead__quantidade{
     width: 10em;
 }
@@ -104,6 +101,11 @@ td{
     width: 60em;
    
 }
+
+#thead__nome:hover, #thead__quantidade:hover , #thead__preco:hover, #thead__id:hover {
+    background-color: var(--cor-tabela-head-escuro);
+    cursor: pointer
+ }
 
 .tabela_pesquisa{
     display: flex;
@@ -134,39 +136,3 @@ td{
     background-color: rgb(255, 0, 0);
 }
 
-/* .pesquisa{
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    align-items: center;
-}
-
-.dropbtn{
-    cursor: pointer;
-    padding: 10px 15px;
-    background-color: rgb(128, 128, 227);
-    border-top-left-radius: 16px;
-    border-bottom-left-radius: 16px;
-}
-.dropdown{
-    width: auto;
-}
-
-.dropdown-content{
-    display: flex;
-    flex-direction: column;
-    color: white;
-    width: 70px;
-    position: absolute;
-    text-align: left;
-    animation-name: altura;
-    animation-duration: 1.5s;
-}
-
-
-
-
-@keyframes altura {
-    from { max-height: 0; }
-    to { max-height: 200px; }
-} */

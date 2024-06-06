@@ -5,32 +5,48 @@ var itens = [];
 var elementoSelecionado = null;
 var listaTratada = [];
 
-const headsTabela = document.querySelectorAll('th');
+const headsTabela = document.querySelectorAll('.ordenacaoFlask');
 let headWasClicked = localStorage.getItem('headWasClicked');
 const comunicacao = document.getElementById('comunicacao');
 const enviarPython = document.getElementById('enviarPython');
 const ordenacaoInputs = document.querySelectorAll('.input__ordenacao')
+const pegaDadosCertosBtn = document.getElementById('pegaDadosCertos')
+let tipoOrdenacao = 'crescente'
 
+pegaDadosCertosBtn.addEventListener('click', () => {
+  if (headWasClicked === null)
+      comunicacao.value = headWasClicked.textContent;
+  else
+    comunicacao.value = 'Id ';
 
-console.log(headWasClicked)
+    comunicacao.value += "|";
+    comunicacao.value += tipoOrdenacao;
+    comunicacao.value += `|${ordenacaoInputs[0].value}|${ordenacaoInputs[1].value}`;
+    console.log(comunicacao.value);
+
+    enviarPython.click
+})
+
 headsTabela.forEach(head => {
   head.addEventListener('click', (event) =>{
-    const elemento = event.target;
+
+    const elemento = head
     processaOrdenacao(elemento);
   })
 })
 
 
-
 function processaOrdenacao(elemento){
   let lista = [];
   if(headWasClicked === elemento.id){
-    lista = [elemento.textContent, 'decrescente'];
+    tipoOrdenacao = 'decrescente'
+    lista = [elemento.textContent, tipoOrdenacao];
     headWasClicked = null;
     localStorage.removeItem('headWasClicked');
   }
   else{
-      lista = [elemento.textContent,'crescente'];
+    tipoOrdenacao = 'crescente'
+      lista = [elemento.textContent,tipoOrdenacao];
       headWasClicked = elemento.id;
       localStorage.setItem('headWasClicked', headWasClicked);
 
