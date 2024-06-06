@@ -6,6 +6,7 @@ import dicionario
 
 
 # inicializaçaõ
+mensagens = ['nome','crescemte','','']
 textoRecebido = ''
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.secret_key = 'chave'
@@ -68,10 +69,15 @@ def catalogo():
         mensagem = request.form.get('comunicacao', '')
         session['mensagem'] = mensagem
         print("Mensagem:" ,mensagem)
+        
     else:
         nomeAprocurar = session.get('nomeAprocurar', '')
         mensagem = session.get('mensagem', '')
-        
+    print("Tamanho mensagem", len(mensagem))    
+
+    if len(mensagem) == 0: 
+        mensagem = "Nome |crescente| | "
+
     if mensagem is not None and mensagem != "":
         print(type(mensagem))
         mensagens = mensagem.split("|")
