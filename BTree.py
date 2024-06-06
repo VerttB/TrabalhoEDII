@@ -17,7 +17,7 @@ class BTree:
             temp.inserir_no(valor)
         else:
             raiz.inserir_no(valor)
-    
+            
     #--------------------------------------------------------
     
     def monta_dicio_range(self, dicio, dicio_atual, dado, min, max):
@@ -39,8 +39,6 @@ class BTree:
                 if produto[self.tipo] == dado:
                     dicio_atual[item_id] = produto
         return dicio_atual
-    
-    # #--------------------------------------------------------
     
     def dicioOrdemCrescente(self, node, dicio, dicio_atual):
         if node is not None:  
@@ -87,7 +85,7 @@ class BTree:
         
         return dicio_atual
     
-    
+    #--------------------------------------------------------
     
 arvoreQtd = BTree(3, "quantidade")
 arvoreNome = BTree(3, "nome")

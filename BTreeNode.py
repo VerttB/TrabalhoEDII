@@ -27,7 +27,6 @@ class BTreeNode:
                 if self.key[i] < key:
                     i += 1
             self.filho[i].inserir_no(key)
-                  
 
     def separaFilhos(self, i, noFilho):
         noNovo = BTreeNode(noFilho.ordem, noFilho.folha) # Cria um novo nó
