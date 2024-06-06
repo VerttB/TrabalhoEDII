@@ -17,7 +17,7 @@ pegaDadosCertosBtn.addEventListener('click', () => {
   if (headWasClicked === null)
       comunicacao.value = headWasClicked.textContent;
   else
-    comunicacao.value = 'Id ';
+    comunicacao.value = 'Quantidade ';
 
     comunicacao.value += "|";
     comunicacao.value += tipoOrdenacao;
