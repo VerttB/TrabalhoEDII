@@ -118,17 +118,44 @@ def download():
 
 @app.route('/produtos', methods=['GET', 'POST'])
 def produtos():
-    nomeAprocurar = ''
-    if(request.method == 'POST'):
-        nomeAprocurar = request.form.get('texto', '')
-        session['nomeAprocurar'] = nomeAprocurar
-    else:
-        nomeAprocurar = session.get(nomeAprocurar)
-        
-    pagina = request.args.get(get_page_parameter(), type=int, default=1)
-    qtd_por_pagina = 18
-    paginacao,paginacao_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina)
-    return render_template('produtos.html', paginacao=paginacao, catalogo=paginacao_data, nomeAprocurar = nomeAprocurar)
+        catalogoNovo = None
+        mensagem = None
+        nomeAprocurar = ''
+        if request.method == 'POST':
+            nomeAprocurar = request.form.get('texto', '')
+            session['nomeAprocurar'] = nomeAprocurar
+            print(f"Nome a procurar {nomeAprocurar}")
+            mensagem = request.form.get('comunicacao', '')
+            session['mensagem'] = mensagem
+            print("Mensagem:" ,mensagem)
+            
+        else:
+            nomeAprocurar = session.get('nomeAprocurar', '')
+            mensagem = session.get('mensagem', '')
+        print("Tamanho mensagem", len(mensagem))    
+
+        if len(mensagem) == 0: 
+            mensagem = "Nome |crescente| | "
+
+        if mensagem is not None and mensagem != "":
+            print(type(mensagem))
+            mensagens = mensagem.split("|")
+            print(mensagens)
+            if len(mensagens) == 2:
+                if len(mensagens) < 4:
+                    mensagens.extend([''] * (4 - len(mensagens)))
+            catalogoNovo = funcoesSite.verificaOrdenacao(mensagens[0], mensagens[1],catalogoNovo, mensagens[2], mensagens[3])
+            print(len(mensagens))
+            #Isso aqui lida com a primeira execução do código que é quando a lista só tem 2 valores, pois nós usamos 4
+
+            
+        print("Nome a procurar:",nomeAprocurar)
+        pagina = request.args.get(get_page_parameter(), type=int, default=1)
+        qtd_por_pagina = 15
+        paginacao, pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogoNovo, mensagens[0], mensagens[1], mensagens[2], mensagens[3])
+
+        return render_template('produtos.html', paginacao=paginacao, catalogo=pagination_data, nomeAprocurar=nomeAprocurar, mensagem = mensagem, valorMin = mensagens[2], valorMax = mensagens[3])
+    
 
 
 app.run(debug = True)

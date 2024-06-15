@@ -7,18 +7,17 @@
 
 .grid__conteiner{
     background-color: var(--cor-de-fundo-bloco);
-    width:100%;
+    width:80%;
     height: 1500px;
     overflow: scroll;
     display: grid;
     align-items: center;
     justify-content: center;
     grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
-    gap: 14px;
+    align-items:start;
     margin-top: 10px;
     overflow: hidden;
 }
-
 
 
 .grid__box{
@@ -36,8 +35,8 @@
     align-items: center;
     justify-content: space-between;
     background-color: rgb(255, 255, 255);
-    height: 300px;
-    width: 270px;
+    height: 270px;
+    width: 250px;
 
 }
 .box__text{
@@ -50,8 +49,8 @@
 
 .remedio__imagem{
     margin-top: 30px;
-    width: 50%;
-    height:50%;
+    width: 40%;
+    height:40%;
 }
 
 .barra{
@@ -62,39 +61,51 @@
     color: red;
 }
 
-#carrinho{
-    position: absolute;
-    margin-top: 130px;
-    margin-left: 150px;
-}
 
 #compras{
     position: absolute;
-    margin-top: 40px;
-    margin-left: 95vw;
-    border: 3px solid white;
-    background-color: rgb(255, 255, 255);
-    border-radius: 44px;
-    padding: 20px;
+    bottom: 84%;
+    left: 93%;
+    background-color: rgb(247, 229, 229);
+    border-radius: 32px;
+    padding: 10px;
     /* display: none; */
     cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 
 #carrinhoCompras{
-    font-size: 40px;
+    font-size: 25px;
 }
 
 #qtdCompras{
     position: absolute;
-    left: 50%;
-    text-align: center;
-    padding: 5px;
+    left: 70%;
+    top: 50%;
     background-color: red;
-    color: white;
+    color: rgb(187, 181, 181);
     border-radius: 60px;
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
+}
+
+
+.showDialogoCompras{
+    width: 400px;
+    height: 100vh;
+    background-color: var(--cor-de-fundo-bloco);
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    border: none;
+    left: 84%;
+}
+
+.showDialogoCompras::backdrop{
+    background-color: rgb(173, 171, 171,0.5);
 }
 
 
