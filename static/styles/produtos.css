@@ -1,66 +1,78 @@
 @import url(variaveis.css);
 
 .bloco{
-    height: 1500px;
+    height: 1800px;
     overflow: hidden;
 }
 
 .grid__conteiner{
     background-color: var(--cor-de-fundo-bloco);
-    width:80%;
-    height: 1500px;
-    overflow: scroll;
+    width:90%;
+    height: fit-content;
+    overflow: hidden;
     display: grid;
+    column-gap: 10px;
     align-items: center;
     justify-content: center;
-    grid-template-columns: repeat(6, [col-start] 1fr [col-end]);
+    grid-template-columns: repeat(7, [col-start] 1fr [col-end]);
     align-items:start;
     margin-top: 10px;
-    overflow: hidden;
 }
 
 
 .grid__box{
-    transition: transform 0.4s;
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 12px;
+    -webkit-box-shadow: 10px 9px 30px -19px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 9px 30px -19px rgba(0,0,0,0.75);
+    box-shadow: 10px 9px 30px -19px rgba(0,0,0,0.75);
+    display: flex;
+    border: .5px solid grey;
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
+    height: 250px;
+    width: 200px;
+    align-items: center;
+    user-select: none;
 }
 
-.grid__box:hover, .grid__box:focus{
-    transform: translateX(3px) scale(1.1);
-    cursor: pointer;
 
+.box__img{
+    margin-top: 10px;
+    width: 100%;
+    height: 150px;
+   
 }
-.box__conteudo{
+
+.box__img img{
+    height: 100px;
+    object-fit: cover;
+}
+.grid__texto{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgb(255, 255, 255);
-    height: 270px;
-    width: 250px;
+    margin: auto;
 
 }
-.box__text{
-    width: 100%;
-    text-align: center;
-    border-top: solid 2px black;
-    margin: 0 20px;
-    font-weight: 600;
+
+#comprasBotao{
+    max-width: 150px;
+    border-radius: 12px;
+    padding: 0 8px;
+    background-color: hsl(207, 93%, 60%);
+    cursor: pointer;
+    color: var(--cor-texto-barra);
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 10px;
+    font-family: "Andika";
 }
 
-.remedio__imagem{
-    margin-top: 30px;
-    width: 40%;
-    height:40%;
+#comprasBotao:hover{
+    background-color: hsl(207, 93%, 50%);
 }
-
-.barra{
-    width: 1vw;
-}
-
-#preco{
-    color: red;
-}
-
 
 #compras{
     position: absolute;

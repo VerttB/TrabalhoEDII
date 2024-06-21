@@ -151,7 +151,7 @@ def produtos():
             
         print("Nome a procurar:",nomeAprocurar)
         pagina = request.args.get(get_page_parameter(), type=int, default=1)
-        qtd_por_pagina = 15
+        qtd_por_pagina = 21
         paginacao, pagination_data = funcoesSite.criarPagina(nomeAprocurar, pagina, qtd_por_pagina, catalogoNovo, mensagens[0], mensagens[1], mensagens[2], mensagens[3])
 
         return render_template('produtos.html', paginacao=paginacao, catalogo=pagination_data, nomeAprocurar=nomeAprocurar, mensagem = mensagem, valorMin = mensagens[2], valorMax = mensagens[3])

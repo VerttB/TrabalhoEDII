@@ -25,20 +25,21 @@
         <section class="grid__conteiner" id="gridMain">
             {% for produto_id,produto_itens in catalogo.items() %}
             <div id="box" class="grid__box">
-                <div class="box__conteudo">
+                <div class="box__img">
                 <img class="remedio__imagem" src="{{produto_itens['link']}}" alt="">
-
+                </div>
+            
                 <div class="box__text">
                 <p id="nome">{{produto_itens['nome']}}</p>
                 <p id="preco">R$ {{produto_itens['preco']}}</p>
-            </div>
+                </div> 
+                <button id="comprasBotao">Adicionar ao Carrinho</button>
                 </div>
-            </div>
+
             {% endfor %}
             
         </section>
         {{ paginacao.links }}
-
 
     </main>
 

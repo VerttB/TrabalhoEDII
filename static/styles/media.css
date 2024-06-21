@@ -13,14 +13,8 @@
         align-items:start;
     }
 
-    .grid__box:hover, .grid__box:focus{
-        transform: translateX(1px) scale(1.1);
-        cursor: pointer;
-    
-    }
-
     .box__conteudo{
-        width: 200px;
+        max-width: 200px;
         height: 230px;
     }
 
