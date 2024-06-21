@@ -36,7 +36,7 @@
 	},
 	"6": {
 		"nome": "Cetoprofeno",
-		"quantidade": 27,
+		"quantidade": 8,
 		"preco": 15.5,
 		"descricao": "Anti-inflamat\u00f3rio n\u00e3o esteroide (AINE) utilizado no tratamento de processos inflamat\u00f3rios e dores musculares.",
 		"link": "static/assets/imagensRemedios/Cetoprofeno.jpeg"
@@ -50,7 +50,7 @@
 	},
 	"8": {
 		"nome": "Dexametasona",
-		"quantidade": 30,
+		"quantidade": 3,
 		"preco": 35.75,
 		"descricao": "Corticoide com a\u00e7\u00e3o anti-inflamat\u00f3ria, imunossupressora e utilizada em diversas condi\u00e7\u00f5es m\u00e9dicas.",
 		"link": "static/assets/imagensRemedios/Dexametasona.jpeg"
@@ -71,7 +71,7 @@
 	},
 	"11": {
 		"nome": "Ranitidina",
-		"quantidade": 40,
+		"quantidade": 35,
 		"preco": 10.25,
 		"descricao": "Antagonista dos receptores H2 utilizado no tratamento de \u00falceras g\u00e1stricas e refluxo \u00e1cido.",
 		"link": "static/assets/imagensRemedios/Ranitidina.jpeg"
@@ -127,7 +127,7 @@
 	},
 	"19": {
 		"nome": "Salmeterol",
-		"quantidade": 35,
+		"quantidade": 24,
 		"preco": 22.0,
 		"descricao": "Broncodilatador de longa dura\u00e7\u00e3o utilizado no tratamento da asma e doen\u00e7a pulmonar obstrutiva cr\u00f4nica (DPOC).",
 		"link": "static/assets/imagensRemedios/Salmeterol.jpeg"
@@ -176,7 +176,7 @@
 	},
 	"26": {
 		"nome": "Pantoprazol",
-		"quantidade": 60,
+		"quantidade": 54,
 		"preco": 16.5,
 		"descricao": "Inibidor da bomba de pr\u00f3tons utilizado no tratamento de \u00falceras g\u00e1stricas e refluxo gastroesof\u00e1gico.",
 		"link": "static/assets/imagensRemedios/Pantoprazol.jpeg"
@@ -190,7 +190,7 @@
 	},
 	"28": {
 		"nome": "Cloridrato de Ciprofloxacino",
-		"quantidade": 30,
+		"quantidade": 23,
 		"preco": 19.99,
 		"descricao": "Antibi\u00f3tico fluoroquinolona utilizado no tratamento de infec\u00e7\u00f5es bacterianas.",
 		"link": "static/assets/imagensRemedios/Cloridrato de Ciprofloxacino.jpeg"

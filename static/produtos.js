@@ -6,7 +6,8 @@ const finalizarCompra = document.getElementById('finalizarCompra')
 const listaProdutos = []
 const iniciarCompra = document.getElementById("compras")
 const dialogoCompras = document.getElementById("dialogoCompras")
-
+const destino = document.getElementById("destino")
+const destinatario = document.getElementById("destinatario")
 
 function preencherLista() {
     let lista = localStorage.getItem("listaProdutos") || [];
@@ -18,6 +19,8 @@ function preencherLista() {
             qtdCompras.textContent = Number(qtdCompras.textContent) + produto.quantidade;
         })
     }
+
+    console.table(listaProdutos);
 }
 
 preencherLista();
@@ -33,12 +36,15 @@ iniciarCompra.addEventListener("click", () => {
     preencherDialog();
     dialogoCompras.classList.add("showDialogoCompras")
     dialogoCompras.showModal();
-    console.log("eae");
 })
 
 finalizarCompra.addEventListener('click', () => {
     localStorage.removeItem("listaProdutos");
-    //comunicaPython(listaProdutos, '/comprar')
+    let tudo = []
+    tudo.push(listaProdutos)
+    tudo.push(destino.value)
+    tudo.push(destinatario.value)
+    comunicaPython(tudo, '/comprar')
 })
 
 gridBoxes.forEach((gridBox) => {
@@ -54,7 +60,9 @@ gridBoxes.forEach((gridBox) => {
 
 
 function adicionaProdutos(nome, preco, imagemSrc) {
-
+    console.log("destinatario", destinatario.value);
+    console.log("destino",destino.value);
+    console.log(destinatario);
     const produto = {
         nome: "",
         preco: "",

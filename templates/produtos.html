@@ -17,10 +17,30 @@
         <p id="qtdCompras">0</p>
         </div>
         <dialog id=dialogoCompras>
-            <form action="">
-                <div id="produtos"></div>
-            <button id="finalizarCompra" type="submit">Comprar</button>
-        </form>
+            <div class="comprasInformacoes">
+                <div class="listaProdutos">
+                <div class="tabelaHead">
+                    <div id="Tnome">Nome</div>
+                    <div id="Tpreco">Preço</div>
+                    <div id="Tquantidade">Quantidade</div>
+                </div>
+                <div class="tabelaData">
+                    <div class="dataNomes"></div>
+                    <div class="dataPrecos"></div>
+                    <div class=""></div>
+                </div>
+            
+            </div>
+            <hr>
+            <div class="comprasInput">
+                <div class="informarcoesEnvio">
+                <input id="destino" name="destino" type="text" placeholder="Insira o destino">
+                <input id="destinatario" name="destinatario" type="text" placeholder="Insira o nome do destinatário">
+            </div>
+                <input id="finalizarCompra" type="submit">
+            </div>
+            
+        </div>
         </dialog>
         <section class="grid__conteiner" id="gridMain">
             {% for produto_id,produto_itens in catalogo.items() %}

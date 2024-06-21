@@ -11,6 +11,7 @@
     .grid__conteiner{
         grid-template-columns: repeat(5, [col-start] 1fr [col-end]);
         align-items:start;
+        width: fit-content;
     }
 
     .box__conteudo{

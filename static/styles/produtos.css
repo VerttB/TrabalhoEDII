@@ -108,16 +108,61 @@
 .showDialogoCompras{
     width: 400px;
     height: 100vh;
-    background-color: var(--cor-de-fundo-bloco);
-    display: flex;
-    flex-direction: column-reverse;
-    text-align: center;
-    border: none;
     left: 84%;
+    background-color: var(--cor-de-fundo-bloco);
+   
 }
 
 .showDialogoCompras::backdrop{
     background-color: rgb(173, 171, 171,0.5);
 }
+
+.comprasInformacoes{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: none;
+    height: 100%;
+    gap: 10px;
+    
+}
+.listaProdutos{
+    height: 50%;
+    overflow-y: auto;
+}
+
+.tabelaHead{
+    display: flex;
+
+}
+
+.tabelaHead #Tnome,#Tpreco,#Tquantidade{
+    width: 150px;
+    border: 1px outset black
+}
+
+
+
+
+.comprasInformacoes .comprasInput{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.comprasInput input{
+    width: 150px;
+    border-radius: 6px;
+    padding: 4px 0;
+}
+.comprasInput .informacoesEnvio{
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
 
 

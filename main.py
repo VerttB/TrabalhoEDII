@@ -18,12 +18,15 @@ def principal():
 @app.route('/comprar' , methods=['GET', 'POST'])
 def comprar():
     dados = request.json
+    print(dados)
     mensagem = dados['mensagem']
+    print("Comprar-----------------------------")
     print(mensagem)
     print(type(mensagem))
     dados_dict = dicionario.lerArquivo()
     print(type(dados_dict))
-    dicionario.retirar_itens_comp(dados_dict, mensagem)
+    print(mensagem[0])
+    dicionario.retirar_itens_comp(dados_dict, mensagem[0])
     return jsonify("Compra feita com sucesso")
 
 @app.route('/adiciona', methods=['GET', 'POST'])
