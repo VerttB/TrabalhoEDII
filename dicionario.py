@@ -46,8 +46,10 @@ def modificarProduto(dict, id_alterar, nome, quant, valor):
     atualizarArquivo(dict)
 
 def retirar_itens_comp(dicio, lista_carrinho):
+    # Transforma a lista do carrinho em um dicionario
     dicio_compra = {item['nome']: item for item in lista_carrinho}
     
+    # Percorre o catalogo e diminui a quantidade dos itens que tem no carrinho
     for nomeCarrinho, itemCarrinho in dicio_compra.items():
         for id, produto in dicio.items():
             if nomeCarrinho == produto['nome']:
