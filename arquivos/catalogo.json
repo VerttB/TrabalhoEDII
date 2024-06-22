@@ -22,7 +22,7 @@
 	},
 	"4": {
 		"nome": "Amoxicilina",
-		"quantidade": 50,
+		"quantidade": 43,
 		"preco": 25.0,
 		"descricao": "Antibi\u00f3tico amplamente utilizado no tratamento de infec\u00e7\u00f5es bacterianas.",
 		"link": "static/assets/imagensRemedios/Amoxicilina.jpeg"
@@ -36,7 +36,7 @@
 	},
 	"6": {
 		"nome": "Cetoprofeno",
-		"quantidade": 8,
+		"quantidade": 7,
 		"preco": 15.5,
 		"descricao": "Anti-inflamat\u00f3rio n\u00e3o esteroide (AINE) utilizado no tratamento de processos inflamat\u00f3rios e dores musculares.",
 		"link": "static/assets/imagensRemedios/Cetoprofeno.jpeg"
@@ -92,7 +92,7 @@
 	},
 	"14": {
 		"nome": "Atorvastatina",
-		"quantidade": 65,
+		"quantidade": 58,
 		"preco": 28.75,
 		"descricao": "Estatina utilizada para diminuir o colesterol LDL e prevenir doen\u00e7as cardiovasculares.",
 		"link": "static/assets/imagensRemedios/Atorvastatina.jpeg"
@@ -274,7 +274,7 @@
 	},
 	"40": {
 		"nome": "Agua Micelar",
-		"quantidade": 1,
+		"quantidade": -8,
 		"preco": 25.0,
 		"descricao": "\u00c1gua micelar de limpeza facial que remove maquiagem, impurezas e oleosidade sem irritar a pele.",
 		"link": "static/assets/imagensRemedios/\u00c1gua Micelar.jpeg"
@@ -337,7 +337,7 @@
 	},
 	"59": {
 		"nome": "Curativo Adesivo",
-		"quantidade": 20,
+		"quantidade": 19,
 		"preco": 6.99,
 		"descricao": "Pacote com 20 curativos adesivos de tamanhos variados, ideais para prote\u00e7\u00e3o de pequenos cortes e arranh\u00f5es.",
 		"link": "static/assets/imagensRemedios/Curativo Adesivo.jpeg"

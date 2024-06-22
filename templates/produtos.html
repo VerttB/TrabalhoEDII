@@ -34,10 +34,12 @@
             <hr>
             <div class="comprasInput">
                 <div class="informarcoesEnvio">
-                <input id="destino" name="destino" type="text" placeholder="Insira o destino">
+                <input id="destino" list="destinos" name="destino" >
+                <datalist id="destinos">
+                </datalist>
                 <input id="destinatario" name="destinatario" type="text" placeholder="Insira o nome do destinatário">
             </div>
-                <input id="finalizarCompra" type="submit">
+                <input id="finalizarCompra" type="submit" value="Enviar">
             </div>
             
         </div>

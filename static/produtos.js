@@ -8,6 +8,31 @@ const iniciarCompra = document.getElementById("compras")
 const dialogoCompras = document.getElementById("dialogoCompras")
 const destino = document.getElementById("destino")
 const destinatario = document.getElementById("destinatario")
+const dataList = document.getElementById("destinos")
+let listaBairros = []
+ 
+function preencherDatalist(){
+    fetch('static/assets/localizacoes.json')
+    .then(response => response.json())
+    .then(itens => {
+        criarOptions(Object.keys(itens))
+
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+preencherDatalist();
+
+ function criarOptions(bairros){
+     console.log(bairros)
+     bairros.forEach(bairro => {
+        console.log(bairro)
+        const newOption = document.createElement("option");
+        newOption.value = bairro;
+        dataList.appendChild(newOption);
+     })
+}
+
 
 function preencherLista() {
     let lista = localStorage.getItem("listaProdutos") || [];

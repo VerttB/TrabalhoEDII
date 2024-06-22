@@ -165,4 +165,10 @@
 }
 
 
+.destinos{
+    height: 50px;
+    overflow-y: scroll;
+    width: 200px;
+}
+
 
