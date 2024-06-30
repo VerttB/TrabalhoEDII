@@ -1,4 +1,4 @@
-export function comunicaPython(mensagem, rota){
+export function comunicaPython(mensagem, rota, r = true){
     var xhr = new XMLHttpRequest();
     xhr.open("POST", rota, true); 
     xhr.setRequestHeader("Content-Type", "application/json"); 
@@ -7,7 +7,7 @@ export function comunicaPython(mensagem, rota){
             if (xhr.status === 200) {
                
                // console.log("Resposta do Python:", xhr.responseText);
-               window.location.reload()
+               if(r) window.location.reload();
 
             } else {
                 console.error("Erro ao enviar mensagem para o Python");

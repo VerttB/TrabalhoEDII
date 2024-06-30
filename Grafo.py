@@ -93,7 +93,7 @@ def adicionaLinhasGrafo(grafo, map, destino):
             end_coord = listaCoord[len(listaCoord)-1]
             folium.PolyLine(locations=[start_coord, end_coord], color='red').add_to(map)
         
-    map.save('templates/mapa_grafo_salvador.html')
+    map.save('static/assets/mapa/mapa_grafo_salvador.html')
 
 #----------------------------------------------------------------------------------------------------------------------------    
 

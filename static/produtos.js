@@ -10,10 +10,28 @@ const destino = document.getElementById("destino");
 const dataList = document.getElementById("destinos");
 const produtosTabela = document.getElementById("produtosTabela");
 const precoCompra = document.getElementById("precoCompra");
+const frete = document.getElementById("frete");
 
 
 preencherDatalist();
 preencherLista();
+
+function lerFrete(){
+    fetch("static/assets/frete.json")
+    .then(reponse => reponse.json())
+    .then(dado => frete.textContent = dado.valor)
+    .catch(err => console.error(err));
+
+    
+}
+
+destino.addEventListener("change", (event) => {
+    console.log(event.target.value);
+    comunicaPython(event.target.value,"/frete", false);
+    lerFrete();
+    const abrirMapa = () =>  window.open("static/assets/mapa/mapa_grafo_salvador.html", "_blank");
+    abrirMapa();
+})
 
 function criarOptions(bairros){
      bairros.forEach(bairro => {
@@ -24,25 +42,17 @@ function criarOptions(bairros){
 }
 
 function atualizarPreco(preco, quantidade = 0) {
-    const precoAcalcular = preco.slice(3).replace(',', '.'); // Example: "R$ 6,99" => "6.99"
+    const precoAcalcular = preco.slice(3).replace(',', '.'); 
     let precoDaCompra = 0;
 
     if (quantidade !== 0) {
         precoDaCompra = (parseFloat(precoAcalcular) * parseFloat(quantidade)).toFixed(2);
-        console.log("Calculation with quantity:", precoDaCompra);
     } else {
         precoDaCompra = parseFloat(precoAcalcular).toFixed(2);
-        console.log("Base price:", precoDaCompra);
     }
-
-    console.log("Computed price:", precoDaCompra);
-
     const precoCompraAtualTexto = precoCompra.textContent.replace(',', '.');
     const precoCompraAtual = parseFloat(precoCompraAtualTexto) || 0; // Default to 0 if empty or non-numeric
-    console.log("Current purchase value:", precoCompraAtual);
-
     const valorTotal = precoCompraAtual + parseFloat(precoDaCompra);
-    console.log("Total value:", valorTotal);
 
     if (!isNaN(valorTotal)) {
         precoCompra.textContent = valorTotal.toFixed(2); // Format to two decimal places
@@ -50,7 +60,6 @@ function atualizarPreco(preco, quantidade = 0) {
         console.error("Invalid total value computed:", valorTotal);
     }
 
-    console.log("Updated purchase value:", precoCompra.textContent);
 }
 
 
@@ -94,6 +103,7 @@ finalizarCompra.addEventListener('click', () => {
     let tudo = []
     tudo.push(listaProdutos)
     tudo.push(destino.value)
+    
     comunicaPython(tudo, '/comprar')
 })
 
@@ -123,6 +133,7 @@ function adicionaProdutos(nome, preco) {
         produto.preco = precoNovo;
         produto.quantidade = 1;
         listaProdutos.push(produto);
+        adicionarProdutoDialog(produto);
         atualizarPreco(produto.preco);
 
 

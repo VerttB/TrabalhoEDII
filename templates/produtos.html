@@ -35,7 +35,7 @@
                     <h4>Preço(R$):</h4> <p id="precoCompra"></p>
             </div>
             <div class="comprasFrete">
-                <h4>Frete(R$):</h4> <p>00 R$</p>
+                <h4>Frete(R$):</h4> <p id="frete">00 R$</p>
             </div>
                 <div class="informarcoesEnvio">
                 <input id="destino" list="destinos" name="destino" >
@@ -68,7 +68,7 @@
         {{ paginacao.links }}
 
     </main>
-
+    <a id="secreto" href="mapa_grafo_salvador.html" target="_blank" style="display: none;"></a>
 
     <script  type="module" src="{{ url_for('static', filename='produtos.js') }}"></script>
 

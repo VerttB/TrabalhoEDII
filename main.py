@@ -21,19 +21,18 @@ def comprar():
     dados = request.json
     print(dados)
     mensagem = dados['mensagem']
-    print("Comprar-----------------------------")
-    print(mensagem)
-    print(type(mensagem))
-    
     dados_dict = dicionario.lerArquivo()
-    print(mensagem[1])
     dicionario.retirar_itens_comp(dados_dict, mensagem[0])
-    Grafo.criaGrafo(mensagem[1])
-    
     return jsonify("Compra feita com sucesso")
 
-# @app.route('/frete' , methods=['GET', 'POST'])
-# def frete():
+@app.route('/frete' , methods=['GET', 'POST'])
+def frete():
+    dados = request.json
+    print(dados)
+    mensagem = dados['mensagem']
+    print("Dados", mensagem)
+    Grafo.criaGrafo(mensagem)
+    return jsonify("Compra feita com sucesso")
     
 
 @app.route('/adiciona', methods=['GET', 'POST'])
