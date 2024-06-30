@@ -30,72 +30,102 @@ localizacoes = {
     "UNEB - Cabula": {"local": [-12.958299, -38.448005], "id_grafo": 24}
 }
 
-# Criando o grafo
-grafo = Graph(directed=True)
-grafo.add_vertices(len(localizacoes))
+# UNEB - CABULA
+local_inicio = 24 
 
-# Adicionando propriedades aos vértices
-cont = 0
-for id, item in localizacoes.items():
-    grafo.vs[cont]["id"] = cont + 1
-    grafo.vs[cont]["label"] = str(id) 
-    grafo.vs[cont]["coord"] = item["local"]
-    cont += 1
+#----------------------------------------------------------------------------------------------------------------------------
+
+def criaGrafo(destino):
+    # Criando o grafo
+    grafo = Graph(directed=True)
+    grafo.add_vertices(len(localizacoes))
+
+    # Adicionando propriedades aos vértices
+    cont = 0
+    for id, item in localizacoes.items():
+        grafo.vs[cont]["id"] = cont + 1
+        grafo.vs[cont]["label"] = str(id) 
+        grafo.vs[cont]["coord"] = item["local"]
+        cont += 1
 
 
-arestas = [(24, 2), (2, 9), (9, 13),(24, 7), (7, 19), (19, 16), (16, 8), (16, 14), (14, 15), (8, 18), (15, 12), (12, 17),
-           (17, 6), (6, 0), (18, 5), (5, 17), (5, 11), (11, 4), (4, 3), (3, 21), (21, 23), (3, 22), (22, 1), (1, 20), (13, 10), (20, 10)]
+    arestas = [(24, 2), (2, 9), (9, 13),(24, 7), (7, 19), (19, 16), (16, 8), (16, 14), (14, 15), (8, 18), (15, 12), (12, 17),
+            (17, 6), (6, 0), (18, 5), (5, 17), (5, 11), (11, 4), (4, 3), (3, 21), (21, 23), (3, 22), (22, 1), (1, 20), (13, 10), (20, 10)]
 
-pesos = [3, 2, 6, 3, 4, 2, 2, 3, 5, 2, 3, 2, 2, 3, 3, 3, 2, 2, 4, 5, 5, 6, 5, 6, 3, 6]
-# pesos = [3, 2, 6, 3, 4, 2, 2, 3, 5, 2, 3, 2, 2, 2, 3, 3, 2, 2, 4, 5, 5, 6, 5, 6]
+    pesos = [3, 2, 6, 3, 4, 2, 2, 3, 5, 2, 3, 2, 2, 3, 3, 3, 2, 2, 4, 5, 5, 6, 5, 6, 3, 6]
 
-grafo.add_edges(arestas)
-grafo.es['weight'] = pesos
-grafo.es['label'] = pesos
+    grafo.add_edges(arestas)
+    grafo.es['weight'] = pesos
+    grafo.es['label'] = pesos
 
-# Criando o mapa centrado em Salvador
-m = folium.Map(location=[-12.9714, -38.5014], zoom_start=12)
-
-# Adicionando marcadores para cada localização
-cont = 0
-for id, item in localizacoes.items():
-    folium.Marker(location=item["local"], popup=id, tooltip=id + " - " + str(cont)).add_to(m)
-    cont += 1
-
-# Adicionando as arestas ao mapa
-for edge in grafo.es:
-    start_idx = edge.source
-    end_idx = edge.target
-    start_coord = grafo.vs[start_idx]["coord"]
-    end_coord = grafo.vs[end_idx]["coord"]
+    # Criando o mapa centrado em Salvador
+    m = folium.Map(location=[-12.9714, -38.5014], zoom_start=12)
     
-    folium.PolyLine(locations=[start_coord, end_coord], color='blue', weight=edge['weight'], tooltip=f"Peso: {edge['weight']}").add_to(m)
+    adicionaLinhasGrafo(grafo, m, destino)
+    
+    return calcfrete(grafo, pesos, destino)
 
-# Salvando o mapa em um arquivo HTML
-m.save('mapa_grafo_salvador.html')
+#----------------------------------------------------------------------------------------------------------------------------
 
-Dado_front1 = "Ondina"
-Dado_front2 = 12
+def adicionaLinhasGrafo(grafo, map, destino):
+    
+    local_destino = acharIDdestino(destino)
+    
+    rota = grafo.get_shortest_paths(local_inicio, to=local_destino)
+    caminho = geraDicioLocais(rota)
+    
+    cont = 0     
+    for id, item in caminho.items():
+        folium.Marker(location=item["local"], popup=id, tooltip=id + " - " + str(cont)).add_to(map)
+        cont += 1
+    
+        
+    listaCoord = []
+    for id, item in caminho.items():
+        listaCoord.append(item["local"])
+        
+        if len(listaCoord) > 1:
+            start_coord = listaCoord[len(listaCoord)-2]
+            end_coord = listaCoord[len(listaCoord)-1]
+            folium.PolyLine(locations=[start_coord, end_coord], color='red').add_to(map)
+        
+    map.save('mapa_grafo_salvador.html')
 
-# Acha local escolhido
-if type(Dado_front1) == str:
-    for id, item in localizacoes.items():
-        if Dado_front1 == id: 
-            local_destino = item["id_grafo"]
-            break
-elif type(Dado_front2) == int:
-    for id, item in localizacoes.items():
-        if Dado_front2 == item["id_grafo"]: 
-            local_destino = item["id_grafo"]
-            break
+#----------------------------------------------------------------------------------------------------------------------------    
 
-local_inicio = 24 # UNEB - CABULA
-valor_per_peso = 2.5 # Corrigido para ser um número decimal
-print(local_destino)
+def calcfrete(grafo, pesos, destino):
+    
+    local_destino = acharIDdestino(destino)
+    
+    # Corrigido para ser um número decimal
+    valor_per_peso = 2.5 
+    print(local_destino)
 
-caminho = grafo.shortest_paths_dijkstra(source=local_inicio, target=local_destino, weights=pesos, mode="OUT")
-distancia = caminho[0][0]
-valor_pagar = valor_per_peso * distancia
+    caminho = grafo.shortest_paths_dijkstra(source=local_inicio, target=local_destino, weights=pesos, mode="OUT")
+    distancia = caminho[0][0]
+    valor_pagar = valor_per_peso * distancia
 
-print("O comprimento do nó 24 até o 12 é:", distancia)
-print("Valor a pagar:", valor_pagar)
+    # print("O comprimento do nó 24 até o 12 é:", distancia)
+    # print("Valor a pagar:", valor_pagar)
+    
+    return valor_pagar
+
+#----------------------------------------------------------------------------------------------------------------------------
+
+def acharIDdestino(destino):
+    # Acha local escolhido
+    if type(destino) == str:
+        for id, item in localizacoes.items():
+            if destino == id: 
+                local_destino = item["id_grafo"]
+                return local_destino
+
+def geraDicioLocais(rotas):
+    dicio_novo = {}
+    for num in rotas[0]:
+        for id, item in localizacoes.items():
+            if num == item["id_grafo"]:
+                dicio_novo[id] = item
+                break
+    return dicio_novo
+     
