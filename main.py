@@ -3,6 +3,7 @@ from flask_paginate import Pagination, get_page_parameter
 import funcoesSite
 import os
 import dicionario
+import Grafo
 
 
 # inicializaçaõ
@@ -23,11 +24,17 @@ def comprar():
     print("Comprar-----------------------------")
     print(mensagem)
     print(type(mensagem))
+    
     dados_dict = dicionario.lerArquivo()
-    print(type(dados_dict))
-    print(mensagem[0])
+    print(mensagem[1])
     dicionario.retirar_itens_comp(dados_dict, mensagem[0])
+    Grafo.criaGrafo(mensagem[1])
+    
     return jsonify("Compra feita com sucesso")
+
+# @app.route('/frete' , methods=['GET', 'POST'])
+# def frete():
+    
 
 @app.route('/adiciona', methods=['GET', 'POST'])
 def adiciona_produto():

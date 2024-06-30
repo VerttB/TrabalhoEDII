@@ -1,14 +1,14 @@
 {
 	"1": {
 		"nome": "Paracetamol",
-		"quantidade": 220,
+		"quantidade": 219,
 		"preco": 40.0,
 		"descricao": "Analg\u00e9sico e antipir\u00e9tico utilizado para aliviar a dor e reduzir a febre.",
 		"link": "static/assets/imagensRemedios/Paracetamols.jpeg"
 	},
 	"2": {
 		"nome": "Dipirona",
-		"quantidade": 80,
+		"quantidade": 79,
 		"preco": 8.5,
 		"descricao": "Analg\u00e9sico e antipir\u00e9tico eficaz no al\u00edvio da dor e febre.",
 		"link": "static/assets/imagensRemedios/Dipirona.jpeg"
@@ -29,7 +29,7 @@
 	},
 	"5": {
 		"nome": "Ibuprofeno",
-		"quantidade": 120,
+		"quantidade": 113,
 		"preco": 9.99,
 		"descricao": "Analg\u00e9sico, antipir\u00e9tico e anti-inflamat\u00f3rio n\u00e3o esteroide (AINE) utilizado no tratamento da dor e inflama\u00e7\u00e3o.",
 		"link": "static/assets/imagensRemedios/Ibuprofeno.jpeg"

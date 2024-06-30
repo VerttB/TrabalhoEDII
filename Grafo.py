@@ -1,6 +1,7 @@
 import folium
 from igraph import Graph, plot
 from geopy.geocoders import Nominatim
+import json
 
 localizacoes = {
     "Barra": {"local": [-13.010249, -38.532239], "id_grafo": 0},
@@ -63,7 +64,10 @@ def criaGrafo(destino):
     
     adicionaLinhasGrafo(grafo, m, destino)
     
-    return calcfrete(grafo, pesos, destino)
+    
+    frete = {}
+    frete["valor"] = calcfrete(grafo, pesos, destino)
+    criarFrete(frete)
 
 #----------------------------------------------------------------------------------------------------------------------------
 
@@ -128,4 +132,8 @@ def geraDicioLocais(rotas):
                 dicio_novo[id] = item
                 break
     return dicio_novo
-     
+
+def criarFrete(dicts):
+    with open('static/assets/frete.json', 'w') as arquivo:
+        arquivo.write(json.dumps(dicts, indent='\t')) 
+    dicts = dict(sorted(dicts.items()))
