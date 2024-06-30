@@ -1,16 +1,18 @@
 import { comunicaPython } from "./comunicacao.js";
 
 const gridBoxes = document.querySelectorAll('#box');
-const qtdCompras = document.getElementById('qtdCompras')
-const finalizarCompra = document.getElementById('finalizarCompra')
-const listaProdutos = []
-const iniciarCompra = document.getElementById("compras")
-const dialogoCompras = document.getElementById("dialogoCompras")
-const destino = document.getElementById("destino")
-const destinatario = document.getElementById("destinatario")
-const dataList = document.getElementById("destinos")
-const produtosTabela = document.getElementById("produtosTabela")
-let listaBairros = []
+const qtdCompras = document.getElementById('qtdCompras');
+const finalizarCompra = document.getElementById('finalizarCompra');
+const listaProdutos = [];
+const iniciarCompra = document.getElementById("compras");
+const dialogoCompras = document.getElementById("dialogoCompras");
+const destino = document.getElementById("destino");
+const destinatario = document.getElementById("destinatario");
+const dataList = document.getElementById("destinos");
+const produtosTabela = document.getElementById("produtosTabela");
+const precoCompra = document.getElementById("precoCompra");
+let ultimoProdutoAdicionado = "";
+let listaBairros = [];
  
 
 preencherDatalist();
@@ -66,7 +68,6 @@ finalizarCompra.addEventListener('click', () => {
     let tudo = []
     tudo.push(listaProdutos)
     tudo.push(destino.value)
-    tudo.push(destinatario.value)
     comunicaPython(tudo, '/comprar')
 })
 
@@ -74,22 +75,20 @@ gridBoxes.forEach((gridBox) => {
     gridBox.addEventListener('click', () => {
         const nome = gridBox.querySelector('#nome');
         const preco = gridBox.querySelector('#preco');
-        const imagemSrc = gridBox.querySelector('img');
-        adicionaProdutos(nome, preco, imagemSrc);
+        adicionaProdutos(nome, preco);
         qtdCompras.textContent = Number(qtdCompras.textContent) + 1;
 
     })
 })
 
 
-function adicionaProdutos(nome, preco, imagemSrc) {
+function adicionaProdutos(nome, preco) {
     console.log("destinatario", destinatario.value);
     console.log("destino",destino.value);
     console.log(destinatario);
     const produto = {
         nome: "",
         preco: "",
-        imagemSrc: "",
         quantidade: "",
     }
 
@@ -97,26 +96,28 @@ function adicionaProdutos(nome, preco, imagemSrc) {
     if (!listaProdutos.some(p => p['nome'] === nome.textContent)) {
         produto.nome = nome.textContent;
         produto.preco = preco.textContent;
-        produto.imagemSrc = imagemSrc.src;
         produto.quantidade = 1;
         console.log("Entrei aqui");
         listaProdutos.push(produto);
+        adicionarProdutoDialog(produto);
 
     }
     else {
         const produtoAchado = listaProdutos.find(p => p.nome === nome.textContent);
         produtoAchado.quantidade += 1;
         console.log("Quantidade ")
+        adicionarProdutoDialog(produtoAchado);
     }
-    let listaString = JSON.stringify(listaProdutos)
+    let listaString = JSON.stringify(listaProdutos);
+    precoCompra.textContent = parseInt(precoCompra.textContent) + produto.preco
     localStorage.setItem("listaProdutos", listaString);
-    adicionarProdutoDialog();
+    ultimoProdutoAdicionado = produto.nome;
+    console.log(produto);
+    
 }
 
-function adicionarProdutoDialog(){
-listaProdutos.forEach((produto) => {
+function adicionarProdutoDialog(produto){
         if(!verificaAumentoQuantidade(produto)){
-            console.log("produto adicionado");
             const produtoDados = document.createElement("div");
             produtoDados.setAttribute(`produto`, produto.nome);
             const produtoNomeDiv = document.createElement("div");
@@ -140,16 +141,15 @@ listaProdutos.forEach((produto) => {
 
             produtosTabela.appendChild(produtoDados);
         }
-    })
 }
 
 
 function verificaAumentoQuantidade(p){
-    console.log("entrei onde devia");
     const produtosTabelaLista = produtosTabela.querySelectorAll('.produtoDados');
     for (let i = 0; i < produtosTabelaLista.length; i++){
         const div = produtosTabelaLista[i]
-        if(div.getAttribute("produto") === p.nome ){
+        if(div.getAttribute("produto") === p.nome){
+            console.log(`Div: ${div.getAttribute("produto")}, Produto: ${p.nome}`);
             const quantidade = div.querySelectorAll("div")[2];
             quantidade.textContent = parseInt(quantidade.textContent) + 1;
             return true;
