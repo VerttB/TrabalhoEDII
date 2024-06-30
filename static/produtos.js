@@ -9,17 +9,9 @@ const dialogoCompras = document.getElementById("dialogoCompras")
 const destino = document.getElementById("destino")
 const destinatario = document.getElementById("destinatario")
 const dataList = document.getElementById("destinos")
+const produtosTabela = document.getElementById("produtosTabela")
 let listaBairros = []
  
-function preencherDatalist(){
-    fetch('static/assets/localizacoes.json')
-    .then(response => response.json())
-    .then(itens => {
-        criarOptions(Object.keys(itens))
-
-    })
-    .catch(error => console.error('Error:', error));
-}
 
 preencherDatalist();
 
@@ -32,6 +24,7 @@ preencherDatalist();
         dataList.appendChild(newOption);
      })
 }
+
 
 
 function preencherLista() {
@@ -48,17 +41,22 @@ function preencherLista() {
     console.table(listaProdutos);
 }
 
-preencherLista();
-function preencherDialog() {
-    listaProdutos.forEach(produto => {
-        const div = document.createElement("div");
-        div.innerHTML = `${produto.nome}|${produto.preco}|${produto.quantidade}`;
-        dialogoCompras.appendChild(div);
+function preencherDatalist(){
+    fetch('static/assets/localizacoes.json')
+    .then(response => response.json())
+    .then(itens => {
+        criarOptions(Object.keys(itens))
+
     })
+    .catch(error => console.error('Error:', error));
 }
 
+
+
+
+
+
 iniciarCompra.addEventListener("click", () => {
-    preencherDialog();
     dialogoCompras.classList.add("showDialogoCompras")
     dialogoCompras.showModal();
 })
@@ -112,4 +110,53 @@ function adicionaProdutos(nome, preco, imagemSrc) {
     }
     let listaString = JSON.stringify(listaProdutos)
     localStorage.setItem("listaProdutos", listaString);
+    adicionarProdutoDialog();
+}
+
+function adicionarProdutoDialog(){
+listaProdutos.forEach((produto) => {
+        if(!verificaAumentoQuantidade(produto)){
+            console.log("produto adicionado");
+            const produtoDados = document.createElement("div");
+            produtoDados.setAttribute(`produto`, produto.nome);
+            const produtoNomeDiv = document.createElement("div");
+            const produtoPrecoDiv = document.createElement("div");
+            const produtoQuantidadeDiv = document.createElement("div");
+            
+            produtoNomeDiv.setAttribute('name', produto.nome);
+            produtoPrecoDiv.setAttribute('price', produto.preco);
+            produtoQuantidadeDiv.setAttribute("quantidade", produto.quantidade);
+
+            produtoNomeDiv.textContent = produto.nome;
+            produtoPrecoDiv.textContent = produto.preco;
+            produtoQuantidadeDiv.textContent = produto.quantidade;
+
+            produtoDados.appendChild(produtoNomeDiv);
+            produtoDados.appendChild(produtoPrecoDiv);
+            produtoDados.appendChild(produtoQuantidadeDiv);
+
+            produtoDados.classList.add("produtoDados");
+        
+
+            produtosTabela.appendChild(produtoDados);
+        }
+    })
+}
+
+
+function verificaAumentoQuantidade(p){
+    console.log("entrei onde devia");
+    const produtosTabelaLista = produtosTabela.querySelectorAll('.produtoDados');
+    for (let i = 0; i < produtosTabelaLista.length; i++){
+        const div = produtosTabelaLista[i]
+        if(div.getAttribute("produto") === p.nome ){
+            const quantidade = div.querySelectorAll("div")[2];
+            quantidade.textContent = parseInt(quantidade.textContent) + 1;
+            return true;
+        }
+    }
+    
+
+    return false
+   
 }

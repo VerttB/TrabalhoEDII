@@ -161,7 +161,6 @@
     width: 200px;
     display: flex;
     flex-wrap: wrap;
-
 }
 
 
@@ -169,6 +168,23 @@
     height: 50px;
     overflow-y: scroll;
     width: 200px;
+}
+
+.produtoDados{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px inset black;
+    
+}
+
+.produtoDados > div {
+    text-align: center;
+    width:150px;
+}
+
+.produtoDados > div{
+    border: 1px outset black;
 }
 
 
