@@ -93,7 +93,7 @@ def adicionaLinhasGrafo(grafo, map, destino):
             end_coord = listaCoord[len(listaCoord)-1]
             folium.PolyLine(locations=[start_coord, end_coord], color='red').add_to(map)
         
-    map.save('mapa_grafo_salvador.html')
+    map.save('templates/mapa_grafo_salvador.html')
 
 #----------------------------------------------------------------------------------------------------------------------------    
 
@@ -102,15 +102,12 @@ def calcfrete(grafo, pesos, destino):
     local_destino = acharIDdestino(destino)
     
     # Corrigido para ser um número decimal
-    valor_per_peso = 2.5 
+    valor_per_peso = 3 
     print(local_destino)
 
     caminho = grafo.shortest_paths_dijkstra(source=local_inicio, target=local_destino, weights=pesos, mode="OUT")
     distancia = caminho[0][0]
     valor_pagar = valor_per_peso * distancia
-
-    # print("O comprimento do nó 24 até o 12 é:", distancia)
-    # print("Valor a pagar:", valor_pagar)
     
     return valor_pagar
 

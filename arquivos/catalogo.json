@@ -1,21 +1,21 @@
 {
 	"1": {
 		"nome": "Paracetamol",
-		"quantidade": 219,
+		"quantidade": 218,
 		"preco": 40.0,
 		"descricao": "Analg\u00e9sico e antipir\u00e9tico utilizado para aliviar a dor e reduzir a febre.",
 		"link": "static/assets/imagensRemedios/Paracetamols.jpeg"
 	},
 	"2": {
 		"nome": "Dipirona",
-		"quantidade": 79,
+		"quantidade": 78,
 		"preco": 8.5,
 		"descricao": "Analg\u00e9sico e antipir\u00e9tico eficaz no al\u00edvio da dor e febre.",
 		"link": "static/assets/imagensRemedios/Dipirona.jpeg"
 	},
 	"3": {
 		"nome": "Omeprazol",
-		"quantidade": 60,
+		"quantidade": 59,
 		"preco": 18.75,
 		"descricao": "Inibidor da bomba de pr\u00f3tons utilizado no tratamento de \u00falceras g\u00e1stricas e refluxo gastroesof\u00e1gico.",
 		"link": "static/assets/imagensRemedios/Omeprazol.jpeg"
@@ -57,7 +57,7 @@
 	},
 	"9": {
 		"nome": "Sinvastatina",
-		"quantidade": 70,
+		"quantidade": 69,
 		"preco": 22.5,
 		"descricao": "Estatina utilizada para diminuir o colesterol LDL e prevenir doen\u00e7as cardiovasculares.",
 		"link": "static/assets/imagensRemedios/Sinvastatina.jpeg"
