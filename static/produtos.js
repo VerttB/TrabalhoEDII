@@ -7,36 +7,62 @@ const listaProdutos = [];
 const iniciarCompra = document.getElementById("compras");
 const dialogoCompras = document.getElementById("dialogoCompras");
 const destino = document.getElementById("destino");
-const destinatario = document.getElementById("destinatario");
 const dataList = document.getElementById("destinos");
 const produtosTabela = document.getElementById("produtosTabela");
 const precoCompra = document.getElementById("precoCompra");
-let ultimoProdutoAdicionado = "";
-let listaBairros = [];
- 
+
 
 preencherDatalist();
+preencherLista();
 
- function criarOptions(bairros){
-     console.log(bairros)
+function criarOptions(bairros){
      bairros.forEach(bairro => {
-        console.log(bairro)
         const newOption = document.createElement("option");
         newOption.value = bairro;
         dataList.appendChild(newOption);
      })
 }
 
+function atualizarPreco(preco, quantidade = 0) {
+    const precoAcalcular = preco.slice(3).replace(',', '.'); // Example: "R$ 6,99" => "6.99"
+    let precoDaCompra = 0;
+
+    if (quantidade !== 0) {
+        precoDaCompra = (parseFloat(precoAcalcular) * parseFloat(quantidade)).toFixed(2);
+        console.log("Calculation with quantity:", precoDaCompra);
+    } else {
+        precoDaCompra = parseFloat(precoAcalcular).toFixed(2);
+        console.log("Base price:", precoDaCompra);
+    }
+
+    console.log("Computed price:", precoDaCompra);
+
+    const precoCompraAtualTexto = precoCompra.textContent.replace(',', '.');
+    const precoCompraAtual = parseFloat(precoCompraAtualTexto) || 0; // Default to 0 if empty or non-numeric
+    console.log("Current purchase value:", precoCompraAtual);
+
+    const valorTotal = precoCompraAtual + parseFloat(precoDaCompra);
+    console.log("Total value:", valorTotal);
+
+    if (!isNaN(valorTotal)) {
+        precoCompra.textContent = valorTotal.toFixed(2); // Format to two decimal places
+    } else {
+        console.error("Invalid total value computed:", valorTotal);
+    }
+
+    console.log("Updated purchase value:", precoCompra.textContent);
+}
 
 
 function preencherLista() {
     let lista = localStorage.getItem("listaProdutos") || [];
     if (lista.length !== 0) {
     let listaAntiga = JSON.parse(lista);
-        console.log(listaAntiga);
         listaAntiga.forEach(produto => {
             listaProdutos.push(produto);
             qtdCompras.textContent = Number(qtdCompras.textContent) + produto.quantidade;
+            atualizarPreco(produto.preco, produto.quantidade);
+            adicionarProdutoDialog(produto);
         })
     }
 
@@ -83,9 +109,7 @@ gridBoxes.forEach((gridBox) => {
 
 
 function adicionaProdutos(nome, preco) {
-    console.log("destinatario", destinatario.value);
-    console.log("destino",destino.value);
-    console.log(destinatario);
+
     const produto = {
         nome: "",
         preco: "",
@@ -95,24 +119,23 @@ function adicionaProdutos(nome, preco) {
 
     if (!listaProdutos.some(p => p['nome'] === nome.textContent)) {
         produto.nome = nome.textContent;
-        produto.preco = preco.textContent;
+        const precoNovo = preco.textContent.replace(',','.');
+        produto.preco = precoNovo;
         produto.quantidade = 1;
-        console.log("Entrei aqui");
         listaProdutos.push(produto);
-        adicionarProdutoDialog(produto);
+        atualizarPreco(produto.preco);
+
 
     }
     else {
         const produtoAchado = listaProdutos.find(p => p.nome === nome.textContent);
         produtoAchado.quantidade += 1;
-        console.log("Quantidade ")
         adicionarProdutoDialog(produtoAchado);
+        atualizarPreco(produtoAchado.preco);
+
     }
     let listaString = JSON.stringify(listaProdutos);
-    precoCompra.textContent = parseInt(precoCompra.textContent) + produto.preco
     localStorage.setItem("listaProdutos", listaString);
-    ultimoProdutoAdicionado = produto.nome;
-    console.log(produto);
     
 }
 
@@ -149,7 +172,6 @@ function verificaAumentoQuantidade(p){
     for (let i = 0; i < produtosTabelaLista.length; i++){
         const div = produtosTabelaLista[i]
         if(div.getAttribute("produto") === p.nome){
-            console.log(`Div: ${div.getAttribute("produto")}, Produto: ${p.nome}`);
             const quantidade = div.querySelectorAll("div")[2];
             quantidade.textContent = parseInt(quantidade.textContent) + 1;
             return true;
