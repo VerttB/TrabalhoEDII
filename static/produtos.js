@@ -19,7 +19,7 @@ preencherLista();
 function lerFrete(){
     fetch("static/assets/frete.json")
     .then(reponse => reponse.json())
-    .then(dado => frete.textContent = dado.valor)
+    .then(dado => {frete.textContent = dado.valor; console.log(dado)})
     .catch(err => console.error(err));
 
     
@@ -28,9 +28,10 @@ function lerFrete(){
 destino.addEventListener("change", (event) => {
     console.log(event.target.value);
     comunicaPython(event.target.value,"/frete", false);
-    lerFrete();
+    setTimeout( () => lerFrete(), 50);
     const abrirMapa = () =>  window.open("static/assets/mapa/mapa_grafo_salvador.html", "_blank");
-    abrirMapa();
+    setTimeout( () => abrirMapa(), 500);
+    
 })
 
 function criarOptions(bairros){
