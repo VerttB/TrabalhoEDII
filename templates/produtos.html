@@ -38,12 +38,13 @@
                 <h4>Frete(R$):</h4> <p id="frete">00 R$</p>
             </div>
                 <div class="informarcoesEnvio">
-                <input id="destino" list="destinos" name="destino" >
-                <datalist id="destinos">
-                </datalist>
-                <input id="destinatario" name="destinatario" type="text" placeholder="Insira o nome do destinatário">
+                <label for="destino">Escolha seu destino</label>
+                <select name="destino" id="destino">
+                </select>
             </div>
-                <input id="finalizarCompra" type="submit" value="Enviar">
+                <button id="verMapa">Ver Rota de Entrega</button>
+                <input id="finalizarCompra" type="submit" value="Comprar">
+                <p id="warn" style="color: red;display: none;">Coloque ao menos 1 produto no carrinho para prosseguir</p>
             </div>
             
         </div>

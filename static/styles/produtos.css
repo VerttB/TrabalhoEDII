@@ -206,3 +206,41 @@
     font-weight: bolder;
     margin-right: 15px;
 }
+
+#verMapa{
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px blue;
+}
+
+.informarcoesEnvio{
+    display: flex;
+    flex-direction: column;
+}
+
+.informarcoesEnvio > label{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.informarcoesEnvio > select{
+    padding: 8px 0;
+    border-radius: 8px;
+}
+
+.coloridoButao{
+    animation: colorido 1s infinite;
+    cursor: pointer;
+}
+
+@keyframes colorido {
+    10%  {box-shadow: 4px 4px  20px black;}
+    20% {box-shadow: 4px 4px  20px rgb(184, 92, 92);}
+    30% {box-shadow: 4px 4px  20px blue;}
+    40% {box-shadow: 4px 4px  20px rgb(134, 233, 134);}
+    50% {box-shadow: 4px 4px  20px rgb(207, 228, 20);}
+    60% {box-shadow: 4px 4px 20px rgb(255, 1, 221);}
+    70% {box-shadow: 4px 4px  20px rgb(8, 206, 255);}
+    80% {box-shadow: 4px 4px  20px rgb(76, 30, 201);}
+    90% {box-shadow: 4px 4px  20px rgb(189, 91, 12);}
+}

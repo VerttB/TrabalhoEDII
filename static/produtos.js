@@ -7,15 +7,18 @@ const listaProdutos = [];
 const iniciarCompra = document.getElementById("compras");
 const dialogoCompras = document.getElementById("dialogoCompras");
 const destino = document.getElementById("destino");
-const dataList = document.getElementById("destinos");
 const produtosTabela = document.getElementById("produtosTabela");
 const precoCompra = document.getElementById("precoCompra");
 const frete = document.getElementById("frete");
-
+const verMapa = document.getElementById("verMapa");
 
 preencherDatalist();
 preencherLista();
-
+verMapa.setAttribute("disabled", "true");
+finalizarCompra.setAttribute("disabled", "true");
+verMapa.addEventListener("click", () => {
+    window.open("static/assets/mapa/mapa_grafo_salvador.html", "_blank");
+})
 function lerFrete(){
     fetch("static/assets/frete.json")
     .then(reponse => reponse.json())
@@ -26,19 +29,22 @@ function lerFrete(){
 }
 
 destino.addEventListener("change", (event) => {
-    console.log(event.target.value);
     comunicaPython(event.target.value,"/frete", false);
     setTimeout( () => lerFrete(), 50);
-    const abrirMapa = () =>  window.open("static/assets/mapa/mapa_grafo_salvador.html", "_blank");
-    setTimeout( () => abrirMapa(), 500);
+    verMapa.removeAttribute("disabled");
+    finalizarCompra.removeAttribute("disabled");
+    verMapa.classList.add('coloridoButao');
     
 })
+
 
 function criarOptions(bairros){
      bairros.forEach(bairro => {
         const newOption = document.createElement("option");
         newOption.value = bairro;
-        dataList.appendChild(newOption);
+        newOption.textContent = bairro.toString();
+        destino.appendChild(newOption);
+
      })
 }
 
@@ -100,12 +106,16 @@ iniciarCompra.addEventListener("click", () => {
 })
 
 finalizarCompra.addEventListener('click', () => {
-    localStorage.removeItem("listaProdutos");
-    let tudo = []
-    tudo.push(listaProdutos)
-    tudo.push(destino.value)
-    
-    comunicaPython(tudo, '/comprar')
+    if(!(listaProdutos.length === 0)){
+        localStorage.removeItem("listaProdutos");
+        let tudo = []
+        tudo.push(listaProdutos)
+        tudo.push(destino.value)
+        comunicaPython(tudo, '/comprar')
+    }
+    else{
+        document.getElementById("warn").style.display = "inline"
+    }
 })
 
 gridBoxes.forEach((gridBox) => {
@@ -147,6 +157,7 @@ function adicionaProdutos(nome, preco) {
 
     }
     let listaString = JSON.stringify(listaProdutos);
+    document.getElementById("warn").style.display = 'none';
     localStorage.setItem("listaProdutos", listaString);
     
 }

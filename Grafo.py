@@ -60,7 +60,7 @@ def criaGrafo(destino):
     grafo.es['label'] = pesos
 
     # Criando o mapa centrado em Salvador
-    m = folium.Map(location=[-12.9714, -38.5014], zoom_start=12)
+    m = folium.Map(location=[-12.9714, -38.5014], zoom_start=13)
     
     adicionaLinhasGrafo(grafo, m, destino)
     

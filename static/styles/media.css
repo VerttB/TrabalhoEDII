@@ -12,11 +12,17 @@
         grid-template-columns: repeat(5, [col-start] 1fr [col-end]);
         align-items:start;
         width: fit-content;
+        overflow-y: auto;
     }
 
     .box__conteudo{
-        max-width: 200px;
-        height: 230px;
+        max-width: 190px;
+        height: 220px;
+    }
+
+    .grid__box{
+        max-width: 190px;
+        height: 220px;
     }
 
     .showDialogoCompras{
